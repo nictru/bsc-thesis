@@ -6,5 +6,13 @@
 	},
 	"containerEnv": {
 		"TEXINPUTS": "tum//:"
-	}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"James-Yu.latex-workshop"
+			]
+		},
+		
+	},
 }
