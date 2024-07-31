@@ -1,6 +1,6 @@
 {
 	"name": "Texlive",
-	"build": { 
+	"build": {
 		"context": "..",
 		"dockerfile": "Dockerfile"
 	},
@@ -12,7 +12,6 @@
 			"extensions": [
 				"James-Yu.latex-workshop"
 			]
-		},
-		
-	},
+		}
+	}
 }
