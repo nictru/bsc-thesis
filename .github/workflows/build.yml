@@ -4,16 +4,13 @@ on:
   push:
     branches:
       - '*'
-  release:
-    types:
-      - created
   
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       packages: write
-      contents: read
+      contents: write
 
     steps:
       - name: Checkout (GitHub)
@@ -40,3 +37,10 @@ jobs:
           name: Thesis.pdf
           path: build/main.pdf
           if-no-files-found: error
+
+      - name: Release asset
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          files: build/main.pdf
+          asset_name: Thesis.pdf
