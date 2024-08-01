@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - '*'
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        uses: devcontainers/ci@v0.3
+        with:
+          runCmd: ./build.sh
