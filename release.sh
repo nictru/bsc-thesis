@@ -12,6 +12,9 @@ if [ -n "$(git status --porcelain)" ]; then
     exit 1
 fi
 
+MOST_RECENT_VERSION=$(git describe --tags --abbrev=0)
+echo "Most recent version: $MOST_RECENT_VERSION"
+
 # Request the user to enter the version number
 RELEASE_VERSION=""
 while [ -z "$RELEASE_VERSION" ]; do
