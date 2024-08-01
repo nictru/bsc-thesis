@@ -16,4 +16,7 @@ jobs:
       - name: Build PDF
         uses: devcontainers/ci@v0.3
         with:
+          imageName: ghcr.io/nictru/bsc-thesis-devcontainer
+          cacheFrom: ghcr.io/nictru/bsc-thesis-devcontainer
+          push: always
           runCmd: ./build.sh
