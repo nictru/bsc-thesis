@@ -46,6 +46,13 @@
 \usepackage{lipsum}
 \usepackage{float}
 
+\usepackage[
+    backend=biber,
+    style=numeric,
+]{biblatex}
+
+\addbibresource{thesis.bib}
+
 % thesis metadata
 \title{Circular RNAs in estrogen signaling and breast cancer biology}
 \subtitle{Zirkuläre RNAs in der Östrogensignalgebung und der Biologie des Brustkrebses}
@@ -86,5 +93,7 @@
 
 % \backmatter
 % \bibliography{}
+
+\printbibliography
 
 \end{document}
