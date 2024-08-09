@@ -3,25 +3,34 @@ A very high-level overview of the topic is given here.
 \lipsum[1]
 
 \section{circRNAs}
-This section describes what circRNAs are, how they are formed, and what their functions are.
-It also gives insights into the current state of research.
+This section describes what circRNAs are, how they are formed, and what their
+functions are. It also gives insights into the current state of research.
 
 \subsection{Biogenesis}
-During standard gene expression, pre-mRNA is transcribed from DNA.
-Splicing then removes introns and joins exons to produce mature mRNA \supercite{black_mechanisms_2003}.
-In conventional splicing, an upstream 5' splice site (donor) connects to a downstream 3' splice site (acceptor), forming linear mRNA (\cref{fig:circRNA_splicing}a).
-Conversely, for circRNAs, a downstream 5' splice site connects to an upstream 3' splice site in reverse order across at least one exon \supercite{chen_expanding_2020}.
-This backsplicing process is - just like conventional splicing - catalyzed by the canonical spliceosome \supercite{starke_exon_2015} and results in a circular RNA molecule (\cref{fig:circRNA_splicing}b).
+During standard gene expression, pre-mRNA is transcribed from DNA. Splicing then
+removes introns and joins exons to produce mature mRNA
+\supercite{black_mechanisms_2003}. In conventional splicing, an upstream 5'
+splice site (donor) connects to a downstream 3' splice site (acceptor), forming
+linear mRNA (\cref{fig:circRNA_splicing}a). Conversely, for circRNAs, a
+downstream 5' splice site connects to an upstream 3' splice site in reverse
+order across at least one exon \supercite{chen_expanding_2020}. This
+backsplicing process is - just like conventional splicing - catalyzed by the
+canonical spliceosome \supercite{starke_exon_2015} and results in a circular RNA
+molecule (\cref{fig:circRNA_splicing}b).
 
 \subsubsection{Models}
-Two models have been proposed to explain the formation of circRNAs: The direct backsplicing model and the lariat-intermediate model.
+Two models have been proposed to explain the formation of circRNAs: The direct
+backsplicing model and the lariat-intermediate model.
 % TODO: Add more details, reference {fig:circRNA_splicing}d
 
 \subsubsection{Alternative splicing}
 In conventional splicing, introns are removed and exons are joined linearly.
-However, in some cases, exons are skipped or introns are retained, leading to alternative mature mRNA transcripts based on the same pre-mRNA.
-This process is known as alternative splicing \supercite{nilsen_expansion_2010}.
-Similarly, circRNAs can be subject to alternative splicing. This can result in the structures shown in \cref{fig:circRNA_splicing}e and \cref{fig:circRNA_splicing}f.
+However, in some cases, exons are skipped or introns are retained, leading to
+alternative mature mRNA transcripts based on the same pre-mRNA. This process is
+known as alternative splicing \supercite{nilsen_expansion_2010}. Similarly,
+circRNAs can be subject to alternative splicing. This can result in the
+structures shown in \cref{fig:circRNA_splicing}e and
+\cref{fig:circRNA_splicing}f.
 
 \begin{figure}[h]
     \centering
@@ -32,30 +41,38 @@ Similarly, circRNAs can be subject to alternative splicing. This can result in t
 
 \subsection{circRNA types}
 \subsubsection{Circular intronic RNAs (ciRNAs)}
-Introns excised during conventional splicing typically form a lariat shape, which is usually debranched and degraded shortly after splicing (\cref{fig:circRNA_splicing}a).
-However, sometimes the introns avoid debranching and instead form covalent circular RNA molecules (\cref{fig:circRNA_splicing}c).
-These are known as circular intronic RNAs (ciRNAs) \supercite{chen_expanding_2020,zhang_circular_2013}.
+Introns excised during conventional splicing typically form a lariat shape,
+which is usually debranched and degraded shortly after splicing
+(\cref{fig:circRNA_splicing}a). However, sometimes the introns avoid debranching
+and instead form covalent circular RNA molecules (\cref{fig:circRNA_splicing}c).
+These are known as circular intronic RNAs (ciRNAs)
+\supercite{chen_expanding_2020,zhang_circular_2013}.
 
 \subsubsection{Exonic circular RNAs (EcircRNAs)}
-Exonic circular RNAs (EcircRNAs) arise from exon skipping events.
-In this case, the lariat contains at least one exon and (potentially multiple) introns.
-The introns are then removed through internal splicing,
-resulting in a circular RNA molecule that consists of only exonic sequence \supercite{xiao_circular_2022, li_biogenesis_2018}.
+Exonic circular RNAs (EcircRNAs) arise from exon skipping events. In this case,
+the lariat contains at least one exon and (potentially multiple) introns. The
+introns are then removed through internal splicing, resulting in a circular RNA
+molecule that consists of only exonic sequence \supercite{xiao_circular_2022,
+li_biogenesis_2018}.
 
 \subsubsection{Exon-intron circular RNAs (EIcircRNAs)}
-The genesis of EIcircRNAs is similar to that of EcircRNAs.
-However, in this case, introns are not fully during splicing,
-leading to a circular RNA molecule that contains both exonic and intronic sequences \supercite{xiao_circular_2022}.
+The genesis of EIcircRNAs is similar to that of EcircRNAs. However, in this
+case, introns are not fully during splicing, leading to a circular RNA molecule
+that contains both exonic and intronic sequences \supercite{xiao_circular_2022}.
 
 \subsection{Biological functions}
-circRNAs have emerged as key players in various biological processes,
-showcasing a wide range of functions that contribute substantially to cellular regulation. 
+circRNAs have emerged as key players in various biological processes, showcasing
+a wide range of functions that contribute substantially to cellular regulation.
 
 \subsubsection{Micro RNA sponging}
-Micro RNAs (miRNAs) are a class of small non-coding RNAs that regulate gene expression \supercite{bartel_micrornas_2009}.
-They can bind to their target mRNAs and either inhibit translation or induce degradation \supercite{bartel_micrornas_2009}.
-Competing endogenous RNAs (ceRNAs) are RNA molecules that can bind to miRNAs and thus prevent them from binding to their target mRNAs \supercite{tay_multilayered_2014}.
-circRNAs can act as ceRNAs by sponging miRNAs, thereby regulating gene expression \supercite{xiao_circular_2022}.
+Micro RNAs (miRNAs) are a class of small non-coding RNAs that regulate gene
+expression \supercite{bartel_micrornas_2009}. They can bind to their target
+mRNAs and either inhibit translation or induce degradation
+\supercite{bartel_micrornas_2009}. Competing endogenous RNAs (ceRNAs) are RNA
+molecules that can bind to miRNAs and thus prevent them from binding to their
+target mRNAs \supercite{tay_multilayered_2014}. circRNAs can act as ceRNAs by
+sponging miRNAs, thereby regulating gene expression
+\supercite{xiao_circular_2022}.
 
 \subsubsection{Protein binding}
 This subsubsection describes how circRNAs can bind to proteins.
@@ -70,8 +87,9 @@ As we have seen, circRNAs can interact with miRNAs and proteins.
 This subsection describes potential applications of circRNAs.
 
 \subsubsection{Biomarkers}
-Since circRNAs do not possess 5' caps or 3' polyA tails, they are not prone to RNase R digestion.
-Thus, they are generally more stable and have longer half-lives than linear RNAs \supercite{kristensen_biogenesis_2019}.
+Since circRNAs do not possess 5' caps or 3' polyA tails, they are not prone to
+RNase R digestion. Thus, they are generally more stable and have longer
+half-lives than linear RNAs \supercite{kristensen_biogenesis_2019}.
 
 \subsection{Existing research}
 This subsection describes the current state of research on circRNAs.
@@ -82,19 +100,22 @@ This subsection describes the sequencing method used to identify circRNAs.
 \lipsum[2]
 
 \section{Breast cancer}
-This section describes what breast cancer is, how it is diagnosed, and what the current treatment options are.
-It also gives insights into the current state of research.
+This section describes what breast cancer is, how it is diagnosed, and what the
+current treatment options are. It also gives insights into the current state of
+research.
 
 \lipsum[3]
 
 \section{Estrogen signaling}
-This section describes what estrogen is, how it affects breast cancer, and what the current treatment options are.
-It also gives insights into the current state of research.
+This section describes what estrogen is, how it affects breast cancer, and what
+the current treatment options are. It also gives insights into the current state
+of research.
 
 \lipsum[4]
 
 \section{Related work}
-This section describes related work on circRNAs, breast cancer, and estrogen signaling.
+This section describes related work on circRNAs, breast cancer, and estrogen
+signaling.
 
 \subsection{circRNA-sponging pipeline}
 This subsection describes a pipeline for identifying circRNA sponges.
