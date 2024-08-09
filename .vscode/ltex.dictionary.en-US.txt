@@ -5,3 +5,11 @@ RNAs
 intronic
 debranching
 debranched
+polyA
+ceRNAs
+miRNAs
+EcircRNAs
+EIcircRNAs
+Exonic
+exonic
+circRNA
