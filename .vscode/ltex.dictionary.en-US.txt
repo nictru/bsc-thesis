@@ -13,3 +13,13 @@ EIcircRNAs
 Exonic
 exonic
 circRNA
+UTR
+UTRs
+IRES
+Sarnow
+methyladenosine
+RNase
+totalRNA
+spliceosome
+MicroRNAs
+IRESs

@@ -32,7 +32,7 @@ circRNAs can be subject to alternative splicing. This can result in the
 structures shown in \cref{fig:circRNA_splicing}e and
 \cref{fig:circRNA_splicing}f.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{chapters/background/figures/circRNA-splicing.png}
     \caption{Splicing of circRNAs} % TODO: Add detailed caption
@@ -81,23 +81,25 @@ In the canonical initiation of translation, ribosomes bind to the 5' cap of an
 mRNA \supercite{hinnebusch_mechanism_2012}. Because circRNAs are circular and
 lack a 5' cap, they were long thought to be non-coding
 \supercite{bao_regulatory_2019,greene_circular_2017}. However, research has
-shown that some circRNAs can indeed be translated into proteins
-\supercite{chen_expanding_2020}:
+shown that circRNAs with internal ribosome entry sites can indeed be translated
+into proteins \supercite{chen_expanding_2020}:
 
-\paragraph{Internal ribosome entry site (IRES)-dependent mechanism}
+\paragraph{Internal ribosome entry sites (IRESs)}
 In 1988, researchers discovered that certain viral and cellular mRNAs contain
 sequences allowing ribosomes to initiate translation without a 5' cap
 \supercite{pelletier_internal_1988, jang_segment_1988}. These sequences are
 known as internal ribosome entry sites (IRES). In 1995, Chen and Sarnow
 demonstrated that artificially engineered circRNAs containing an IRES sequence
-could be translated into peptides \supercite{chen_initiation_1995}. Later, it
+are translated into peptides \supercite{chen_initiation_1995}. Later, it
 was found that some circRNAs naturally possess IRES sequences and can thus be
 translated into peptides
 \supercite{chen_expanding_2020,legnini_circ-znf609_2017,pamudurti_translation_2017}.
+A concrete example for an IRES is the consensus motif for
+N\textsuperscript{6}-methyladenosine modification \supercite{yang_extensive_2017}.
 
-\paragraph{N\textsuperscript{6}-methyladenosine
-    (m\textsuperscript{6}A)-dependent mechanism} M\textsuperscript{6}A is the most
-abundant base modification in eukaryotic RNA
+\paragraph{N\textsuperscript{6}-methyladenosine (m\textsuperscript{6}A)}
+% General introduction to m6A
+M\textsuperscript{6}A is the most abundant base modification in eukaryotic RNA
 \supercite{yang_extensive_2017,li_pivotal_2014,wei_methylated_1975}. Research
 has shown that m\textsuperscript{6}A modification can affect localization,
 splicing, translation and degradation of RNA molecules
@@ -108,10 +110,13 @@ efficiency\supercite{wang_n6-methyladenosine_2015}, while m\textsuperscript{6}A
 modifications in 5' UTRs can promote cap-independent translation, especially in
 heat shock stress\supercite{zhou_dynamic_2015,meyer_5_2015}.
 
-In circRNAs, a single m\textsuperscript{6}A modification is often
-enough to initiate translation \supercite{yang_extensive_2017}. Furthermore,
-consensus motifs for m\textsuperscript{6}A modification have been identified to
-be enriched in circRNAs \supercite{yang_extensive_2017}.
+% Build bridge to IRES-dependent mechanism
+m\textsuperscript{6}A modifications mostly occur in the consensus motif
+RRm\textsuperscript{6}ACH (R = purine, H = non-guanine base)
+\supercite{csepany_sequence_1990,harper_sequence_1990}, which has been found to
+be enriched in circRNAs \supercite{yang_extensive_2017}. In circRNAs, a single
+m\textsuperscript{6}A modification is often enough to initiate translation
+\supercite{yang_extensive_2017}.
 
 \subsubsection{Gene regulation}
 As we have seen, circRNAs can interact with miRNAs and proteins.
