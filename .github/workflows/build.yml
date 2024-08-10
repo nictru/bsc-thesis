@@ -33,6 +33,7 @@ jobs:
         with:
           path: build/Thesis.pdf
           if-no-files-found: error
+          name: Thesis
 
       - name: Release asset
         uses: softprops/action-gh-release@v2
