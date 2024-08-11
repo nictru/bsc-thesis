@@ -45,7 +45,24 @@ that the resulting workflows are robust, efficient, and easy to use
 \supercite{ewels_nf-core_2020}.
 
 \section{nf-core/circrna}
-High-level overview
+The nf-core/circrna pipeline has originally been published by Digby et al. in
+2023 \supercite{digby_nf-corecircrna_2023}. Since then, the pipeline has gone
+through several updates and improvements. The pipeline can utilize seven
+different tools for BSJ detection, including CIRIquant, CIRCexplorer2, circRNA
+finder, DCC, find\_circ, MapSplice, and Segemehl. It then annotates the detected
+circRNAs using GTF-based and database-based annotation. The pipeline also
+extracts the sequences of the circRNAs and quantifies their expression levels
+together with the linear transcripts. Finally, the pipeline performs miRNA
+interaction analysis using miRanda and TargetScan, and provides several
+downstream analyses through a Shiny application. An overview of the pipeline is
+shown in \cref{fig:circrna_pipeline}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/materials_and_methods/figures/nf-core_circrna.png}
+    \caption{nf-core/circrna} % TODO: Add detailed caption
+    \label{fig:circrna_pipeline}
+\end{figure}
 
 \subsection{circRNA detection}
 What is the main task here?
@@ -62,7 +79,7 @@ Describe circRNA finder
 \subsubsection{DCC}
 Describe DCC
 
-\subsubsection{find circ}
+\subsubsection{find\_circ}
 Describe find circ
 
 \subsubsection{MapSplice}
