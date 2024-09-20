@@ -152,8 +152,31 @@ Describe database based annotation
 
 Why is this important?
 
+\subsubsection{CIRIquant}
+CIRIquant is an extension of the CIRI (CircRNA Identifier) framework, which
+focuses on the accurate quantification of circRNAs by re-aligning back-splice
+junction (BSJ) reads against a pseudo-reference sequence. This approach
+significantly reduces the false discovery rate (FDR) associated with circRNA
+identification, making it a robust choice for researchers\supercite{zhang_accurate_2020}.
+CIRIquant utilizes HISAT2 for aligning RNA-seq reads to the reference genome,
+followed by the application of CIRI2 to identify putative circRNAs. The
+integration of these methods allows for a comprehensive analysis of circRNA
+expression, ensuring that only high-confidence circRNAs are
+quantified\supercite{munz_exonintron_2021,made_circrna-mirna-mrna_2023}. In
+studies, CIRIquant has been shown to correlate well
+with other quantification methods, reinforcing its utility in circRNA
+research\supercite{zhang_accurate_2020}.
+
 \subsubsection{psirc-quant}
-Describe psirc-quant
+On the other hand, psirc-quant is a more recent tool that focuses on the
+quantification of circRNAs derived from RNA-seq data. It employs a unique
+strategy that combines circRNA identification with expression quantification,
+allowing researchers to analyze circRNA dynamics in various biological contexts.
+Psirc-quant is particularly advantageous for its ability to handle large
+datasets and provide insights into circRNA expression patterns across different
+conditions\supercite{yu_quantifying_2021}. This tool has been integrated into workflows
+that facilitate comprehensive circRNA analyses, including differential
+expression studies and interaction network construction\supercite{zhang_expression_2022}.
 
 \subsection{miRNA interaction analysis}
 The analysis of circular RNA (circRNA) interactions with microRNAs (miRNAs) is
