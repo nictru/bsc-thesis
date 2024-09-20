@@ -69,26 +69,75 @@ shown in \cref{fig:circrna_pipeline}.
 \subsection{circRNA detection}
 What is the main task here?
 
-\subsubsection{CIRIquant}
-Describe CIRIquant
+\subsubsection{CIRI2}
+CIRI2 (CircRNA Identifier version 2) is an efficient algorithm designed for de
+novo identification of circRNAs. It utilizes a two-step approach: first, it
+identifies back-splice junction reads, and then it filters these reads based on
+specific criteria to enhance detection accuracy. CIRI2 has been shown to
+outperform other tools in terms of sensitivity and specificity, particularly in
+datasets with varying sequencing depths\supercite{gao_ciri_2015,zheng_reconstruction_2019}.
+This tool is particularly advantageous for large-scale circRNA studies due to
+its unbiased nature and ability to handle complex transcriptomes\supercite{chuang_assessing_2023}.
 
 \subsubsection{CIRCexplorer2}
-Describe CIRCexplorer2
+CIRCexplorer2 is another widely used tool that focuses on the detection of
+circRNAs by analyzing RNA-seq data. It employs a unique strategy that combines
+both back-splice junction reads and linear RNA reads to improve circRNA
+identification. CIRCexplorer2 has demonstrated robust performance in various
+studies, often ranking high in comparative evaluations against other circRNA
+detection tools\supercite{zeng_comprehensive_2017,nicolet_circular_2018}. Its ability to
+provide detailed annotations and quantifications of circRNAs makes it a valuable
+resource for researchers\supercite{hansen_comparison_2016}.
 
 \subsubsection{circRNA finder}
-Describe circRNA finder
+The circRNA finder is a tool specifically designed for the identification of
+circRNAs from RNA-seq data. It employs a read mapping strategy that focuses on
+detecting chimeric reads, which are indicative of circRNA formation. This tool
+has been effectively utilized in various studies to identify circRNAs across
+different biological contexts, although it may have limitations in detecting
+circRNAs with non-canonical splice
+signals\supercite{sekar_circular_2018,liu_prkra_2022}. Its straightforward
+approach makes it accessible for researchers new to
+circRNA analysis.
 
 \subsubsection{DCC}
-Describe DCC
+DCC (DCC: Detecting Circular RNAs) is a versatile software that allows for the
+detection and quantification of circRNAs from RNA-seq data. It computes
+expression levels of circRNAs independently of their linear counterparts, which
+is crucial for understanding the functional roles of circRNAs in various
+biological processes\supercite{jakobi_profiling_2016,man_profiling_2020}. DCC has been
+validated in numerous studies, demonstrating high reliability and accuracy in
+circRNA detection\supercite{paraboschi_interpreting_2018}. Its ability to
+integrate with other bioinformatics tools further enhances its utility in
+comprehensive circRNA analyses.
 
 \subsubsection{find\_circ}
-Describe find circ
+Find\_circ is a widely recognized tool that identifies circRNAs by focusing on
+back-splice junctions and employing a filtering strategy based on splice
+signals. While it has been effective in many studies, it may not capture
+circRNAs with non-canonical splice signals, which can limit its detection
+capabilities\supercite{sekar_circular_2018,liu_prkra_2022}. Nonetheless, find\_circ
+remains a popular choice for researchers due to its ease of use and integration
+with RNA-seq workflows.
 
 \subsubsection{MapSplice}
-Describe MapSplice
+MapSplice is primarily known for its role in splicing analysis but has also been
+adapted for circRNA detection. It utilizes a splice-aware alignment strategy to
+identify back-splice junctions, making it suitable for circRNA studies. However,
+its performance in circRNA detection may not be as robust as dedicated circRNA
+tools like CIRI2 or DCC\supercite{zeng_comprehensive_2017,chuang_nclscan_2016}. MapSplice's
+strength lies in its ability to handle complex splicing events, which can be
+beneficial in certain research contexts.
 
 \subsubsection{Segemehl}
-Describe Segemehl
+Segemehl is another tool that has been employed for circRNA detection,
+particularly in studies involving complex transcriptomes. It utilizes a unique
+alignment strategy that allows for the detection of both linear and circular
+transcripts. While Segemehl has shown promise in identifying circRNAs, its
+performance can vary depending on the specific dataset and experimental
+conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}. Its flexibility in handling
+different types of RNA-seq data makes it a valuable option for researchers
+exploring circRNA biology.
 
 \subsection{circRNA annotation}
 What is the main task here?
