@@ -11,8 +11,7 @@
 		"vscode": {
 			"extensions": [
 				"James-Yu.latex-workshop",
-				"valentjn.vscode-ltex",
-				"stkb.rewrap"
+				"valentjn.vscode-ltex"
 			]
 		}
 	}
