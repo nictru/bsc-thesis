@@ -47,6 +47,7 @@
 \usepackage{float}
 \usepackage{cleveref}
 \usepackage{textgreek}
+\usepackage{svg}
 
 \usepackage[
     backend=biber,
@@ -93,9 +94,9 @@ Brustkrebses}
 
 \appendix
 \chapter{Appendix}
-\lipsum[4]
+\input{chapters/appendix/0_appendix.tex}
 
-% \backmatter
+\backmatter
 % \bibliography{}
 
 \printbibliography
