@@ -1,15 +1,14 @@
 \chapter{Introduction}
 
-Breast cancer continues to be one of the most pressing challenges in modern
-healthcare, representing the most frequently diagnosed cancer among women
-worldwide.
-In 2022 alone, approximately 2.3 million new cases were recorded, alongside
-666,000 deaths, illustrating its substantial impact as a global health issue.
+Breast cancer remains one of the most significant challenges in modern
+healthcare, as the most frequently diagnosed cancer among women worldwide.
+In 2022 alone, approximately 2.3 million new cases were recorded, along with
+666,000 deaths, illustrating its substantial impact on global health.
 Accounting for 23.8\% of all cancer diagnoses in
-women\supercite{bray_global_2024,ferlay_global_2024}, breast cancer remains the
-leading cause of cancer-related death for women.
-Projections suggest an alarming rise in incidence, with estimates reaching 4.4
-million cases annually by 2070, placing even greater strain on healthcare
+women\supercite{bray_global_2024,ferlay_global_2024}, breast cancer continues
+to be the leading cause of cancer-related death for women.
+Projections estimate an alarming rise in incidence, with cases expected to
+reach 4.4 million annually by 2070, further straining healthcare
 systems\supercite{lei_global_2021}.
 
 Despite advancements in screening, early detection, and treatment, disparities
@@ -20,63 +19,62 @@ Globally, the age-standardized mortality rate for breast cancer remains high at
 approximately 12.65 deaths per 100,000 women per year, highlighting the ongoing
 challenges in managing this complex
 disease\supercite{bray_global_2024,ferlay_global_2024}.
-Given the persistence of these challenges, significant efforts are required in
-research, public health strategies, and healthcare delivery to improve patient
+Given these persistent challenges, significant efforts are needed in research,
+public health strategies, and healthcare delivery to improve patient
 outcomes\supercite{desantis_breast_2019}.
 
-At the molecular level, an emerging area of research involves circular RNAs
+At the molecular level, a growing body of research focuses on circular RNAs
 (circRNAs), a novel class of RNA molecules characterized by their covalently
 closed loop structures.
 Unlike linear RNAs, circRNAs exhibit increased stability and resistance to
-degradation, making them reliable biomarkers and potential therapeutic targets
-across a variety of diseases, including
+degradation, making them attractive as biomarkers and potential therapeutic
+targets in various diseases, including
 cancer\supercite{ma_circular_2020,hoque_exploring_2023,wilusz_circular_2017}.
-Initially considered byproducts of mRNA splicing, circRNAs are now recognized
-for their regulatory roles in gene expression, cellular processes, and disease
-mechanisms\supercite{cherubini_foxp1_2019,wilusz_360_2018}.
+Initially thought to be byproducts of mRNA splicing, circRNAs are now
+recognized for their regulatory roles in gene expression, cellular processes,
+and disease mechanisms\supercite{cherubini_foxp1_2019,wilusz_360_2018}.
 
-The unique characteristics of circRNAs — stability, abundance, and
-tissue-specific expression — have made them attractive candidates for
-diagnostic and therapeutic applications, particularly in cancer.
-CircRNAs show promise as biomarkers for tumor progression and treatment
-response\supercite{bao_prognostic_2020,ren_construction_2017}, and their
-stability in bodily fluids enhances their utility in non-invasive liquid
+The unique properties of circRNAs — stability, abundance, and tissue-specific
+expression — make them promising candidates for diagnostic and therapeutic
+applications, especially in cancer.
+CircRNAs have demonstrated potential as biomarkers for tumor progression and
+treatment response\supercite{bao_prognostic_2020,ren_construction_2017}, with
+their stability in bodily fluids enhancing their utility in non-invasive liquid
 biopsies\supercite{bao_prognostic_2020,zhang_circular_2018}.
-In breast cancer specifically, circRNAs have been identified as key players in
-disease progression, particularly in relation to estrogen receptor (ER)
-signaling.
-Dysregulated circRNA expression has been observed in breast cancer, with
-circRNAs functioning as competing endogenous RNAs (ceRNAs) that sponge miRNAs
-involved in crucial pathways like ER
+In breast cancer specifically, circRNAs have emerged as key players in disease
+progression, particularly in relation to estrogen receptor (ER) signaling.
+Dysregulated circRNA expression is observed in breast cancer, where circRNAs
+function as competing endogenous RNAs (ceRNAs), sponging miRNAs involved in
+critical pathways such as ER
 signaling\supercite{nair_circular_2016,xu_circrna_2022}.
-Certain circRNAs, such as circRNA-SFMBT2, have been implicated in tamoxifen
-resistance, a major hurdle in the treatment of ER-positive breast
+Certain circRNAs, such as circRNA-SFMBT2, have even been linked to tamoxifen
+resistance, a significant hurdle in treating ER-positive breast
 cancer\supercite{li_circrna-sfmbt2_2023}.
-Additionally, circRNAs like circTADA2As and circFBXL5 have been shown to
-regulate miRNAs involved in key signaling pathways that promote cell
-proliferation and metastasis, further highlighting their clinical
-significance\supercite{xu_circtada2as_2019,gao_hsa_circrna_0006528_2019}.
+Moreover, circRNAs like circTADA2As and circFBXL5 have been shown to regulate
+miRNAs involved in key signaling pathways that promote cell proliferation and
+metastasis, highlighting their clinical
+relevance\supercite{xu_circtada2as_2019,gao_hsa_circrna_0006528_2019}.
 
-This thesis seeks to further explore the role of circRNAs in breast cancer,
-with a specific focus on their involvement in estrogen signaling and tumor
-progression.
-To achieve this, sequencing data from two mouse model studies conducted by
-Furth et al.
+This thesis aims to deepen our understanding of the role of circRNAs in breast
+cancer, with a particular focus on their involvement in estrogen signaling and
+tumor progression.
+To this end, sequencing data from two mouse model studies conducted by Furth et
+al.
 \supercite{furth_esr1_2023,furth_overexpression_2023}
-will be analyzed, examining circRNA expression profiles in relation to
-variables such as age, transgene induction, and anti-hormone treatments.
+are analyzed, exploring circRNA expression profiles in relation to variables
+such as age, transgene induction, and anti-hormone treatments.
+The nf-core/circrna pipeline\supercite{digby_nf-corecircrna_2023} is employed
+to identify and quantify circRNAs from the RNA-seq data, followed by
+differential expression analysis to identify circRNAs differentially expressed
+across experimental conditions.
+Additionally, this thesis compares different methods for circRNA
+identification, quantification, and differential expression analysis, assessing
+their performance and reliability in capturing circRNA dynamics.
 
-To identify and quantify circRNAs from the RNA-seq data, the nf-core/circrna
-pipeline\supercite{digby_nf-corecircrna_2023} will be employed, followed by
-differential expression analysis to uncover circRNAs that are differentially
-expressed across various experimental conditions.
-Additionally, this thesis will compare different tools and methodologies for
-circRNA identification, quantification, and differential expression analysis,
-assessing their performance and reliability in capturing circRNA dynamics.
+\medskip
+\noindent The thesis is structured to guide the reader through the key concepts,
+methodologies, and findings related to the role of circRNAs in breast cancer.
 
-The structure of this thesis is designed to guide the reader through the key
-concepts, methodologies, and findings related to the role of circRNAs in breast
-cancer.
 The Background section (\cref{chap:background}) provides the foundational
 knowledge necessary to understand the subsequent chapters on methodology and
 analysis.
