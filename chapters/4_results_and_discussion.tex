@@ -56,19 +56,35 @@ are the only ones which work with single-end sequencing data.
 
             \end{subfigure}}
     \end{tabular}
-    \caption{Upset plots indicating the overlaps of BSJs detected by different
-        tools with different grouping criteria.
-        Considering the strand information and only counting BSJs with exact same start
-        and end positions delivers only plenty of BSJs detected by 2 tools, and a very
-        small number of BSJs detected by 3 tools (\cref{fig:detection_upset_full}).
-        Ignoring the strand information increases the number of BSJs detected by 3
-        tools substantially (\cref{fig:detection_upset_nostrand}).
-        Allowing a shift of 1 bp in the start and end positions while ignoring
-        the strand information changes the results drastically, leading to a
-        large number of circRNAs with agreement between 4 and even 5 tools
+    \caption{Upset plots showing the overlap of BSJs detected by different
+        tools using various grouping criteria.
+        Only groups with at least two agreeing tools are displayed.
+        When considering strand information and only counting BSJs with identical start
+        and end positions, many BSJs are detected by just two tools, with very few
+        detected by three tools (\cref{fig:detection_upset_full}).
+        Ignoring the strand information substantially increases the number of BSJs
+        detected by 3 tools (\cref{fig:detection_upset_nostrand}).
+        Allowing a shift of 1 bp in the start and end positions while ignoring the
+        strand information changes the results drastically, leading to a large number
+        of circRNAs with agreement between 4 and even 5 tools
         (\cref{fig:detection_upset_microshift}).
     }
     \label{fig:detection_upset}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+
+    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/pies.png}
+    \caption{Pie charts showing the agreement of each tool with the others.
+        The inner circle shows the agreement without allowing a shift in the start and
+        end positions, while the outer circle shows the agreement when allowing a shift
+        of 1 bp.
+        While find\_circ, dcc, circexplorer2, and ciriquant behave similarly, segemehl
+        detects a much larger number of BSJs, with a large portion of them not being
+        detected by any other tool.
+    }
+    \label{fig:detection_pies}
 \end{figure}
 
 \begin{figure}[ht]
@@ -76,7 +92,7 @@ are the only ones which work with single-end sequencing data.
         \begin{subfigure}{.5\textwidth}
             \centering
 
-            \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/circexplorer2.png}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/circexplorer2.png}
             \caption{CircExplorer2}
             \label{fig:detection_density_circexplorer2}
         \end{subfigure}
@@ -84,14 +100,14 @@ are the only ones which work with single-end sequencing data.
         \begin{subfigure}{.5\textwidth}
             \centering
 
-            \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/ciriquant.png}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/ciriquant.png}
             \caption{CiriQuant}
             \label{fig:detection_density_ciriquant}
         \end{subfigure} \\
         \begin{subfigure}{.5\textwidth}
             \centering
 
-            \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/dcc.png}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/dcc.png}
             \caption{DCC}
             \label{fig:detection_density_dcc}
         \end{subfigure}
@@ -99,12 +115,19 @@ are the only ones which work with single-end sequencing data.
         \begin{subfigure}{.5\textwidth}
             \centering
 
-            \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/find_circ.png}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/density/find_circ.png}
             \caption{find\_circ}
             \label{fig:detection_density_find-circ}
         \end{subfigure}
     \end{tabular}
-    \caption{Density plots} % TODO: Add detailed caption
+    \caption{Distributions of BSJs detected by each tool.
+        The x-axis shows the number of tools that detected a BSJ, while the y-axis
+        shows the logarithm of the number of reads supporting the BSJ across all
+        samples.
+        The color indicates the density of BSJs at a given point.
+        The stacked bar plots above and left of the scatter plots show the number of
+        agreeing tools in the respective slice.
+    }
     \label{fig:detection_density}
 \end{figure}
 
