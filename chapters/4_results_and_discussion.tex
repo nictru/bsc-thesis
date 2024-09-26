@@ -1,40 +1,73 @@
 \chapter{Results and Discussion}
 
+From a molecular perspective, circRNAs are similar to their linear
+counterparts, with the primary distinction being their circular structure.
+As explained in \cref{sec:circrna_biogenesis}, circRNAs are derived from a
+linear precursor (identical to linear RNA) that undergoes back-splicing to form
+a loop.
+Thus, the only way to computationally identify circRNAs is by detecting reads
+spanning the back-splice junction (BSJ), which cannot be accounted for by
+canonical forward splicing.
+Several tools for BSJ detection are discussed in
+\cref{subsec:circrna_detection}.
+
+However, detecting BSJs only pinpoints the start and end of a circRNA within
+the genome, without revealing its internal structure.
+To reconstruct the full circRNA sequence, a de novo assembly of the circular
+transcriptome that accounts for back-splice junctions is required.
+Tools like CIRI-full, circRNAfull, and JCcirc are capable of this task, but
+they rely on paired-end or long-read sequencing data.
+To date, no tools are available for de novo assembly of circRNAs using
+single-end short-read data.
+Since the data used in this thesis is single-end, the focus is limited to the
+detection, quantification, and analysis of BSJs.
+
 \section{Back-splice junction (BSJ) detection}
 
-- Five different BSJ detection tools were used
-- Basic upset plot
-- Ignoring strand information
-- Analysis of allowed mismatch distances
+For detection of BSJs, five different detection tools were used: circexplorer2,
+ciriquant, dcc, find\_circ and segemehl.
+While the nf-core/circrna pipeline provides a wider selection of tools, these
+are the only ones which work with single-end sequencing data.
 
 \begin{figure}[ht]
     \begin{tabular}{cc}
         \begin{subfigure}{.5\textwidth}
             \centering
 
-            \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/upset/diff_0.png}
-            \caption{1:1 match}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/upset/diff_0_strand.png}
+            \caption{No shift allowed, strand considered}
             \label{fig:detection_upset_full}
         \end{subfigure}
          &
         \begin{subfigure}{.5\textwidth}
             \centering
 
-            \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/upset/diff_0.png}
-            \caption{Ignoring strand}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/upset/diff_0_nostrand.png}
+            \caption{No shift allowed, strand ignored}
             \label{fig:detection_upset_nostrand}
         \end{subfigure} \\
         \multicolumn{2}{c}{
             \begin{subfigure}{\textwidth}
                 \centering
 
-                \includegraphics[width=.8\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/upset/diff_1.png}
-                \caption{Microshift}
+                \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/min_samples_0/upset/diff_1_nostrand.png}
+                \caption{Shift of 1 allowed, strand ignored}
                 \label{fig:detection_upset_microshift}
 
             \end{subfigure}}
     \end{tabular}
-    \caption{Upset plots} % TODO: Add detailed caption
+    \caption{Upset plots indicating the overlaps of BSJs detected by different
+        tools with different grouping criteria.
+        Considering the strand information and only counting BSJs with exact same start
+        and end positions delivers only plenty of BSJs detected by 2 tools, and a very
+        small number of BSJs detected by 3 tools (\cref{fig:detection_upset_full}).
+        Ignoring the strand information increases the number of BSJs detected by 3
+        tools substantially (\cref{fig:detection_upset_nostrand}).
+        Allowing a shift of 1 bp in the start and end positions while ignoring
+        the strand information changes the results drastically, leading to a
+        large number of circRNAs with agreement between 4 and even 5 tools
+        (\cref{fig:detection_upset_microshift}).
+    }
     \label{fig:detection_upset}
 \end{figure}
 
