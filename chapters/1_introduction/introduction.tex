@@ -45,17 +45,17 @@ miRNAs are small, non-coding RNAs that bind to target mRNAs,
 leading to their degradation or inhibition of
 translation\supercite{salmena_cerna_2011,tay_multilayered_2014}.
 CeRNAs, which include long non-coding RNAs, pseudogenes, and circular RNAs
-(circRNAs), can "sponge" miRNAs by binding to them, effectively preventing
+(\gls{crna}s), can "sponge" miRNAs by binding to them, effectively preventing
 miRNAs from silencing their target
 mRNAs\supercite{salmena_cerna_2011,poliseno_coding-independent_2010}.
 This mechanism increases the expression of mRNA targets, making ceRNAs crucial
 regulators in maintaining cellular homeostasis and influencing disease
 processes, including cancer\supercite{salmena_cerna_2011,vo_landscape_2019}.
 
-CircRNAs are unique among RNA species due to their covalently closed loop
+\Gls{crna}s are unique among RNA species due to their covalently closed loop
 structure, which provides distinct properties such as enhanced stability and
 resistance to exonucleases\supercite{vo_landscape_2019}.
-These features position circRNAs as promising candidates for diagnostic and
+These features position \gls{crna}s as promising candidates for diagnostic and
 therapeutic applications across various
 diseases\supercite{ma_circular_2020,hoque_exploring_2023,wilusz_circular_2017}.
 They have shown potential as biomarkers for tumor progression and treatment
@@ -63,40 +63,41 @@ response\supercite{bao_prognostic_2020,ren_construction_2017}, with their
 stability in bodily fluids enhancing their applicability in non-invasive liquid
 biopsies\supercite{bao_prognostic_2020,zhang_circular_2018}.
 
-In the context of breast cancer, circRNAs have emerged as significant
+In the context of breast cancer, \gls{crna}s have emerged as significant
 contributors to disease progression, particularly in relation to estrogen
 receptor (ER) signaling.
-Dysregulated circRNA expression has been observed in breast cancer, where
-circRNAs act as ceRNAs, sponging miRNAs that are critical to pathways such as
-ER signaling\supercite{nair_circular_2016,xu_circrna_2022}.
-Notably, certain circRNAs, such as circRNA-SFMBT2, have been linked to
+Dysregulated \gls{crna} expression has been observed in breast cancer, where
+\gls{crna}s act as ceRNAs, sponging miRNAs that are critical to pathways such
+as ER signaling\supercite{nair_circular_2016,xu_circrna_2022}.
+Notably, certain \gls{crna}s, such as \gls{crna}-SFMBT2, have been linked to
 tamoxifen resistance, posing a substantial challenge in the treatment of
 ER-positive breast cancer\supercite{li_circrna-sfmbt2_2023}.
-Furthermore, circRNAs like circTADA2As and circFBXL5 have been demonstrated to
-regulate miRNAs involved in key signaling pathways that promote cell
+Furthermore, \gls{crna}s like circTADA2As and circFBXL5 have been demonstrated
+to regulate miRNAs involved in key signaling pathways that promote cell
 proliferation and metastasis, underscoring their clinical
 relevance\supercite{xu_circtada2as_2019,gao_hsa_circrna_0006528_2019}.
 
-This thesis aims to deepen our understanding of the role of circRNAs in breast
-cancer, with a particular focus on their involvement in estrogen signaling and
-tumor progression.
+This thesis aims to deepen our understanding of the role of \gls{crna}s in
+breast cancer, with a particular focus on their involvement in estrogen
+signaling and tumor progression.
 To this end, sequencing data from two mouse model studies conducted by Furth et
 al.
 \supercite{furth_esr1_2023,furth_overexpression_2023}
-are analyzed, exploring circRNA expression profiles in relation to variables
+are analyzed, exploring \gls{crna} expression profiles in relation to variables
 such as age, transgene induction, and anti-hormone treatments.
 The nf-core/circrna pipeline\supercite{digby_nf-corecircrna_2023} is employed
-to identify and quantify circRNAs from the RNA-seq data, followed by
-differential expression analysis to identify circRNAs differentially expressed
-across experimental conditions.
-Additionally, this thesis compares different methods for circRNA
+to identify and quantify \gls{crna}s from the RNA-seq data, followed by
+differential expression analysis to identify \gls{crna}s differentially
+expressed across experimental conditions.
+Additionally, this thesis compares different methods for \gls{crna}
 identification, quantification, and differential expression analysis, assessing
-their performance and reliability in capturing circRNA dynamics.
+their performance and reliability in capturing \gls{crna} dynamics.
 
 \medskip
 \noindent The thesis is structured to guide the reader through the key
 concepts,
-methodologies, and findings related to the role of circRNAs in breast cancer.
+methodologies, and findings related to the role of \gls{crna}s in breast
+cancer.
 
 The Background section (\cref{chap:background}) provides the foundational
 knowledge necessary to understand the subsequent chapters on methodology and
@@ -120,15 +121,15 @@ research.
 In the Materials and Methods section (\cref{chap:materials_and_methods}), the
 thesis details the mouse model studies by Furth et al.
 \supercite{furth_esr1_2023,furth_overexpression_2023} (\cref{sec:data}),
-which form the basis for the circRNA expression
+which form the basis for the \gls{crna} expression
 analysis.
 Additionally, this section describes the nf-core/circrna
 pipeline\supercite{digby_nf-corecircrna_2023} used to process and analyze the
 RNA-seq data (\cref{sec:nf-core_circrna}).
 
 The Results and Discussion section then presents a comparison of different
-tools used for circRNA identification, quantification, and differential
+tools used for \gls{crna} identification, quantification, and differential
 expression analysis.
-This is followed by an in-depth analysis of circRNA expression profiles
+This is followed by an in-depth analysis of \gls{crna} expression profiles
 observed in the mouse models, with a focus on the implications for breast
 cancer progression and estrogen signaling.

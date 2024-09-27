@@ -1,19 +1,19 @@
-\subsection{circRNA quantification}
+\subsection{\gls{crna} quantification}
 
 While all \gls{bsj}s{bsj} detection tools quantify the number of reads
 supporting\gls{bsj} each \gls{bsj}, there are several tools that focus on the
-quantification of circRNAs based on previously detected \gls{bsj}s.
+quantification of \gls{crna}s based on previously detected \gls{bsj}s.
 nf-core/circrna offers two such tools: CIRIquant and
 psirc-quant.
 
 \subsubsection{CIRIquant}
 \label{sec:ciriquant}
-CIRIquant extends the CIRI (CircRNA Identifier) framework, focusing on accurate
-circRNA quantification by re-aligning \gls{bsj} reads to a pseudo-reference
-sequence.
+CIRIquant extends the CIRI (\Gls{crna} Identifier) framework, focusing on
+accurate \gls{crna} quantification by re-aligning \gls{bsj} reads to a
+pseudo-reference sequence.
 Although it natively utilizes CIRI2 for \gls{bsj} detection, it can also
 process \gls{bsj}s identified by other tools\supercite{zhang_accurate_2020}.
-For each \gls{bsj}, CIRIquant constructs a pseudo circRNA reference by
+For each \gls{bsj}, CIRIquant constructs a pseudo \gls{crna} reference by
 concatenating two copies of the sequence between the \gls{bsj} start and end
 positions.
 By comparing alignments to both the reference genome and the pseudo-reference
@@ -50,7 +50,7 @@ If no exonic regions are present, the entire sequence is retained.
 In contrast, the nf-core/circrna pipeline takes a different approach, retaining
 the entire sequence within the \gls{bsj} boundaries, regardless of exonic
 region presence.
-This method avoids assumptions about the internal structure of the circRNA.
+This method avoids assumptions about the internal structure of the \gls{crna}.
 
 For the quantification phase, psirc requires a combined transcriptome FASTA
 file containing both linear and circular transcripts.
@@ -58,8 +58,8 @@ Psirc constructs a Transcript de Bruijn Graph (T-DBG) from this combined
 transcriptome and utilizes Kallisto to jointly quantify the expression levels
 of both transcript types\supercite{yu_quantifying_2021}.
 This approach enables a direct comparison between linear and circular isoforms,
-potentially offering deeper insights into the regulatory roles of circRNAs in
-gene expression.
+potentially offering deeper insights into the regulatory roles of \gls{crna}s
+in gene expression.
 Notably, psirc does not explicitly differentiate between reads spanning the
 \gls{bsj} and those fully contained within it; instead, it relies on Kallisto's
 likelihood maximization to distinguish between linear and circular

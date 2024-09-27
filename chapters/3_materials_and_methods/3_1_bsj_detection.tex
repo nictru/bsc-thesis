@@ -1,17 +1,17 @@
-\subsection{circRNA detection}
+\subsection{\gls{crna} detection}
 \label{subsec:circrna_detection}
-From a molecular perspective, circRNAs are similar to their linear
+From a molecular perspective, \gls{crna}s are similar to their linear
 counterparts, with the primary distinction being their circular structure.
-As explained in \cref{sec:circrna_biogenesis}, circRNAs are derived from a
+As explained in \cref{sec:circrna_biogenesis}, \gls{crna}s are derived from a
 linear precursor (identical to linear RNA) that undergoes back-splicing to form
 a loop.
-Thus, the only way to computationally identify circRNAs is by detecting reads
-spanning the \gls{bsj}, which cannot be accounted for by canonical forward
-splicing.
+Thus, the only way to computationally identify \gls{crna}s is by detecting
+reads spanning the \gls{bsj}, which cannot be accounted for by canonical
+forward splicing.
 
 \subsubsection{find\_circ (2013)\supercite{memczak_circular_2013}}
-Find\_circ is one of the pioneering tools for circRNA detection, specifically
-designed for identifying circular RNAs by leveraging RNA-seq data.
+Find\_circ is one of the pioneering tools for \gls{crna} detection,
+specifically designed for identifying circular RNAs by leveraging RNA-seq data.
 It employs a novel alignment strategy, splitting reads that do not map linearly
 to the genome into smaller fragments, which are then re-aligned to detect
 \gls{bsj}s\supercite{memczak_circular_2013}.
@@ -21,8 +21,8 @@ One of its key features is that it filters for \gls{bsj} reads, removing those
 that align entirely to the genome, which makes it stand out from methods
 relying heavily on gene annotations\supercite{memczak_circular_2013}.
 
-While it has been effective in many studies, it may not capture circRNAs with
-non-canonical splice signals, which can limit its detection
+While it has been effective in many studies, it may not capture \gls{crna}s
+with non-canonical splice signals, which can limit its detection
 capabilities\supercite{sekar_circular_2018,liu_prkra_2022}.
 Nonetheless, find\_circ remains a popular choice for researchers due to its
 ease of use and integration with RNA-seq workflows.
@@ -34,12 +34,12 @@ It identifies \gls{bsj} reads through split-read mapping, where the RNA-seq
 data is aligned using a dynamic programming strategy that identifies splicing,
 trans-splicing, and fusion transcripts.
 Its major advantage over other tools is its ability to map reads containing
-multiple split sites, which boosts sensitivity for detecting circRNAs even in
-complex cases like long reads or sequences with
+multiple split sites, which boosts sensitivity for detecting \gls{crna}s even
+in complex cases like long reads or sequences with
 errors\supercite{hoffmann_multi-split_2014}.
 
-While Segemehl has shown promise in identifying circRNAs, its performance can
-vary depending on the specific dataset and experimental
+While Segemehl has shown promise in identifying \gls{crna}s, its performance
+can vary depending on the specific dataset and experimental
 conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}.
 
 \subsubsection{DCC (2016)\supercite{cheng_specific_2016}}
@@ -48,24 +48,24 @@ genome.
 It uses a combination of filters to detect \gls{bsj}s by distinguishing
 back-splice reads from linear splicing.
 DCC integrates across replicates to minimize false positives and improve the
-precision of circRNA detection.
+precision of \gls{crna} detection.
 What sets DCC apart is its post-mapping step, where it not only detects
-circRNAs but also estimates their expression relative to the host gene using
+\gls{crna}s but also estimates their expression relative to the host gene using
 read counts from junction and non-junction reads.
-This makes it highly useful for comparing circRNA expression across
+This makes it highly useful for comparing \gls{crna} expression across
 conditions\supercite{cheng_specific_2016}.
 DCC has been validated in numerous studies, demonstrating high reliability and
-accuracy in circRNA detection\supercite{paraboschi_interpreting_2018}.
+accuracy in \gls{crna} detection\supercite{paraboschi_interpreting_2018}.
 
 \subsubsection{CIRCexplorer2 (2016)\supercite{zhang_diverse_2016}}
 CIRCexplorer2 is another widely used tool that focuses on the detection of
-circRNAs by analyzing RNA-seq data.
+\gls{crna}s by analyzing RNA-seq data.
 It employs a unique strategy that combines both \gls{bsj} reads and linear RNA
-reads to improve circRNA identification.
+reads to improve \gls{crna} identification.
 CIRCexplorer2 has demonstrated robust performance in various studies, often
-ranking high in comparative evaluations against other circRNA detection
+ranking high in comparative evaluations against other \gls{crna} detection
 tools\supercite{zeng_comprehensive_2017,nicolet_circular_2018}.
-Its ability to provide detailed annotations and quantifications of circRNAs
+Its ability to provide detailed annotations and quantifications of \gls{crna}s
 makes it a valuable resource for researchers\supercite{hansen_comparison_2016}.
 %TODO: Update
 
