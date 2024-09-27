@@ -11,16 +11,16 @@ canonical forward splicing.
 Several tools for BSJ detection are discussed in
 \cref{subsec:circrna_detection}.
 
-However, detecting BSJs only pinpoints the start and end of a circRNA within
-the genome, without revealing its internal structure.
+However, detecting BSJs only reveals the start and end positions of a circRNA
+within the genome, without providing information on its internal structure.
 To reconstruct the full circRNA sequence, a de novo assembly of the circular
-transcriptome that accounts for back-splice junctions is required.
-Tools like CIRI-full, circRNAfull, and JCcirc are capable of this task, but
-they rely on paired-end or long-read sequencing data.
-To date, no tools are available for de novo assembly of circRNAs using
-single-end short-read data.
-Since the data used in this thesis is single-end, the focus is limited to the
-detection, quantification, and analysis of BSJs.
+transcriptome that accounts for back-splice junctions is necessary.
+Tools like CIRI-full, circRNAfull, JCcirc, and psirc can achieve this, but they
+rely on paired-end or long-read sequencing data.
+As of now, no tools are available for de novo assembly of circRNAs using
+single-end short-read data, to my knowledge.
+Since the data used in this thesis is single-end, the focus will be limited to
+the detection, quantification, and analysis of BSJs.
 
 \include{chapters/4_results_and_discussion/1_bsj_detection.tex}
 \include{chapters/4_results_and_discussion/2_quantification.tex}
