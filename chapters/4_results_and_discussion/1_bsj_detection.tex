@@ -45,8 +45,9 @@ are very close to each other, but not identical - thus not being counted as the
 same \gls{bsj} when grouping in the conventional way.
 In order to investigate this further, I introduced a more lenient grouping
 criterion: two \gls{bsj}s are considered the same if both their starts and ends
-differ by a certain maximum number of base pairs. In the following analysis, I
-will refer to this maximum difference as the \textit{shift}.
+differ by a certain maximum number of base pairs.
+In the following analysis, I will refer to this maximum difference as the
+\textit{shift}.
 
 When allowing a shift of only 1 bp, the results change drastically.
 As shown in \cref{fig:detection_upset_1_nostrand}, a large number of \gls{bsj}s
@@ -94,13 +95,17 @@ As shown in \cref{fig:detection_upset_1_strand}, allowing a shift of 1 bp while
 considering the strand information also leads to a number of \gls{bsj}s
 detected by four and five tools, but the number is way lower than when ignoring
 the strand information.
-
 Increasing the allowed shift to larger values, e.g., 20 bp, does not lead to a
 substantial change compared to the results when allowing a shift of 1 bp, as
 shown in \cref{fig:detection_upset_20_nostrand}.
 
-\begin{figure}[ht]
-    \centering
+In my interpretation, the results show that the tools generally agree on the
+detection of \gls{bsj}s, but the agreement is not perfect.
+The fact that a shift of 1 bp leads to substantial changes while further
+increasing the shift does not, indicates that the clustering \gls{bsj}s form
+continuous chains between their 
+
+\begin{figure}[ht] \centering 
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/pies.png}
     \caption{Pie charts showing the agreement of each tool with the others.
