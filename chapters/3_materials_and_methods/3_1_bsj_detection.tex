@@ -34,20 +34,21 @@ errors\supercite{hoffmann_multi-split_2014}.
 While Segemehl has shown promise in identifying circRNAs, its performance can
 vary depending on the specific dataset and experimental
 conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}.
-Its flexibility in handling different types of RNA-seq data makes it a valuable
-option for researchers exploring circRNA biology.
 
 \subsubsection{DCC (2016)\supercite{cheng_specific_2016}}
-DCC (DCC: Detecting Circular RNAs) is a versatile software that allows for the
-detection and quantification of circRNAs from RNA-seq data.
-It computes expression levels of circRNAs independently of their linear
-counterparts, which is crucial for understanding the functional roles of
-circRNAs in various biological
-processes\supercite{jakobi_profiling_2016,man_profiling_2020}.
+DCC relies on STAR as its underlying aligner, which maps RNA-seq reads to the
+genome.
+It uses a combination of filters to detect BSJs by distinguishing back-splice
+reads from linear splicing.
+DCC integrates across replicates to minimize false positives and improve the
+precision of circRNA detection.
+What sets DCC apart is its post-mapping step, where it not only detects
+circRNAs but also estimates their expression relative to the host gene using
+read counts from junction and non-junction reads.
+This makes it highly useful for comparing circRNA expression across
+conditions\supercite{cheng_specific_2016}.
 DCC has been validated in numerous studies, demonstrating high reliability and
 accuracy in circRNA detection\supercite{paraboschi_interpreting_2018}.
-Its ability to integrate with other bioinformatics tools further enhances its
-utility in comprehensive circRNA analyses.
 
 \subsubsection{CIRCexplorer2 (2016)\supercite{zhang_diverse_2016}}
 CIRCexplorer2 is another widely used tool that focuses on the detection of
