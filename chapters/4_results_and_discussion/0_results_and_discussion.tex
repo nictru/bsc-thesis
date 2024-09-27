@@ -1,26 +1,19 @@
 \chapter{Results and Discussion}
 
-From a molecular perspective, circRNAs are similar to their linear
-counterparts, with the primary distinction being their circular structure.
-As explained in \cref{sec:circrna_biogenesis}, circRNAs are derived from a
-linear precursor (identical to linear RNA) that undergoes back-splicing to form
-a loop.
-Thus, the only way to computationally identify circRNAs is by detecting reads
-spanning the back-splice junction (BSJ), which cannot be accounted for by
-canonical forward splicing.
-Several tools for BSJ detection are discussed in
+Several tools for \gls{bsj} detection are discussed in
 \cref{subsec:circrna_detection}.
 
-However, detecting BSJs only reveals the start and end positions of a circRNA
-within the genome, without providing information on its internal structure.
+However, detecting \gls{bsj}s only reveals the start and end positions of a
+circRNA within the genome, without providing information on its internal
+structure.
 To reconstruct the full circRNA sequence, a de novo assembly of the circular
-transcriptome that accounts for back-splice junctions is necessary.
+transcriptome that accounts for \gls{bsj}s is necessary.
 Tools like CIRI-full, circRNAfull, JCcirc, and psirc can achieve this, but they
 rely on paired-end or long-read sequencing data.
 As of now, no tools are available for de novo assembly of circRNAs using
 single-end short-read data, to my knowledge.
 Since the data used in this thesis is single-end, the focus will be limited to
-the detection, quantification, and analysis of BSJs.
+the detection, quantification, and analysis of \gls{bsj}s.
 
 \input{chapters/4_results_and_discussion/1_bsj_detection.tex}
 \input{chapters/4_results_and_discussion/2_quantification.tex}

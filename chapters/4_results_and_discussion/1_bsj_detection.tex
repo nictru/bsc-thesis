@@ -1,7 +1,7 @@
-\section{Back-splice junction (BSJ) detection}
+\section{\Acrfull{bsj} detection}
 
-For detection of BSJs, five different detection tools were used: circexplorer2,
-CIRI2, DCC, find\_circ and segemehl.
+For detection of \gls{bsj}s, five different detection tools were used:
+circexplorer2, CIRI2, DCC, find\_circ and segemehl.
 While the nf-core/circrna pipeline provides a wider selection of tools, these
 are the only ones which work with single-end sequencing data.
 
@@ -9,9 +9,9 @@ are the only ones which work with single-end sequencing data.
     \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/n_bsjs_detected.png}
-    \caption{Number of BSJs detected by each tool.
+    \caption{Number of \gls{bsj}s detected by each tool.
         While find\_circ, CIRI2, DCC and circexplorer2 detect a similar number of
-        BSJs, segemehl detects a much larger number of BSJs.
+        \gls{bsj}s, segemehl detects a much larger number of \gls{bsj}s.
     }
     \label{fig:detection_bars}
 \end{figure}
@@ -43,14 +43,15 @@ are the only ones which work with single-end sequencing data.
 
             \end{subfigure}}
     \end{tabular}
-    \caption{Upset plots showing the overlap of BSJs detected by different
+    \caption{Upset plots showing the overlap of \gls{bsj}s detected by
+        different
         tools using various grouping criteria.
         Only groups with at least two agreeing tools are displayed.
-        When considering strand information and only counting BSJs with identical start
-        and end positions, many BSJs are detected by just two tools, with very few
-        detected by three tools (\cref{fig:detection_upset_full}).
-        Ignoring the strand information substantially increases the number of BSJs
-        detected by 3 tools (\cref{fig:detection_upset_nostrand}).
+        When considering strand information and only counting \gls{bsj}s with identical
+        start and end positions, many \gls{bsj}s are detected by just two tools, with
+        very few detected by three tools (\cref{fig:detection_upset_full}).
+        Ignoring the strand information substantially increases the number of
+        \gls{bsj}s detected by 3 tools (\cref{fig:detection_upset_nostrand}).
         Allowing a shift of 1 bp in the start and end positions while ignoring the
         strand information changes the results drastically, leading to a large number
         of circRNAs with agreement between 4 and even 5 tools
@@ -68,8 +69,8 @@ are the only ones which work with single-end sequencing data.
         end positions, while the outer circle shows the agreement when allowing a shift
         of 1 bp.
         While find\_circ, dcc, circexplorer2, and ciriquant behave similarly, segemehl
-        detects a much larger number of BSJs, with a large portion of them not being
-        detected by any other tool.
+        detects a much larger number of \gls{bsj}s, with a large portion of them not
+        being detected by any other tool.
     }
     \label{fig:detection_pies}
 \end{figure}
@@ -121,11 +122,11 @@ are the only ones which work with single-end sequencing data.
             \caption{Legend}
         \end{subfigure}
     \end{tabular}
-    \caption{Distributions of BSJs detected by each tool.
-        The x-axis shows the number of tools that detected a BSJ, while the y-axis
-        shows the logarithm of the number of reads supporting the BSJ across all
-        samples.
-        The color indicates the density of BSJs at a given point.
+    \caption{Distributions of \gls{bsj}s detected by each tool.
+        The x-axis shows the number of tools that detected a \gls{bsj}, while the
+        y-axis shows the logarithm of the number of reads supporting the \gls{bsj}
+        across all samples.
+        The color indicates the density of \gls{bsj}s at a given point.
         The stacked bar plots above and left of the scatter plots show the number of
         agreeing tools in the respective slice.
     }

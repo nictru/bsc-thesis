@@ -1,18 +1,25 @@
 \subsection{circRNA detection}
 \label{subsec:circrna_detection}
-What is the main task here?
+From a molecular perspective, circRNAs are similar to their linear
+counterparts, with the primary distinction being their circular structure.
+As explained in \cref{sec:circrna_biogenesis}, circRNAs are derived from a
+linear precursor (identical to linear RNA) that undergoes back-splicing to form
+a loop.
+Thus, the only way to computationally identify circRNAs is by detecting reads
+spanning the \gls{bsj}, which cannot be accounted for by canonical forward
+splicing.
 
 \subsubsection{find\_circ (2013)\supercite{memczak_circular_2013}}
 Find\_circ is one of the pioneering tools for circRNA detection, specifically
 designed for identifying circular RNAs by leveraging RNA-seq data.
 It employs a novel alignment strategy, splitting reads that do not map linearly
 to the genome into smaller fragments, which are then re-aligned to detect
-back-splice junctions (BSJs)\supercite{memczak_circular_2013}.
+\gls{bsj}s\supercite{memczak_circular_2013}.
 This tool does not rely on any known annotations and processes RNA-seq reads
-using Bowtie, an efficient aligner for identifying BSJ reads.
-One of its key features is that it filters for BSJ reads, removing those that
-align entirely to the genome, which makes it stand out from methods relying
-heavily on gene annotations\supercite{memczak_circular_2013}.
+using Bowtie, an efficient aligner for identifying \gls{bsj} reads.
+One of its key features is that it filters for \gls{bsj} reads, removing those
+that align entirely to the genome, which makes it stand out from methods
+relying heavily on gene annotations\supercite{memczak_circular_2013}.
 
 While it has been effective in many studies, it may not capture circRNAs with
 non-canonical splice signals, which can limit its detection
@@ -23,8 +30,8 @@ ease of use and integration with RNA-seq workflows.
 \subsubsection{Segemehl (2014)\supercite{hoffmann_multi-split_2014}}
 Segemehl integrates a sensitive and flexible read-matching algorithm based on
 enhanced suffix arrays (ESAs).
-It identifies BSJ reads through split-read mapping, where the RNA-seq data is
-aligned using a dynamic programming strategy that identifies splicing,
+It identifies \gls{bsj} reads through split-read mapping, where the RNA-seq
+data is aligned using a dynamic programming strategy that identifies splicing,
 trans-splicing, and fusion transcripts.
 Its major advantage over other tools is its ability to map reads containing
 multiple split sites, which boosts sensitivity for detecting circRNAs even in
@@ -38,8 +45,8 @@ conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}.
 \subsubsection{DCC (2016)\supercite{cheng_specific_2016}}
 DCC relies on STAR as its underlying aligner, which maps RNA-seq reads to the
 genome.
-It uses a combination of filters to detect BSJs by distinguishing back-splice
-reads from linear splicing.
+It uses a combination of filters to detect \gls{bsj}s by distinguishing
+back-splice reads from linear splicing.
 DCC integrates across replicates to minimize false positives and improve the
 precision of circRNA detection.
 What sets DCC apart is its post-mapping step, where it not only detects
@@ -53,18 +60,19 @@ accuracy in circRNA detection\supercite{paraboschi_interpreting_2018}.
 \subsubsection{CIRCexplorer2 (2016)\supercite{zhang_diverse_2016}}
 CIRCexplorer2 is another widely used tool that focuses on the detection of
 circRNAs by analyzing RNA-seq data.
-It employs a unique strategy that combines both back-splice junction reads and
-linear RNA reads to improve circRNA identification.
+It employs a unique strategy that combines both \gls{bsj} reads and linear RNA
+reads to improve circRNA identification.
 CIRCexplorer2 has demonstrated robust performance in various studies, often
 ranking high in comparative evaluations against other circRNA detection
 tools\supercite{zeng_comprehensive_2017,nicolet_circular_2018}.
 Its ability to provide detailed annotations and quantifications of circRNAs
 makes it a valuable resource for researchers\supercite{hansen_comparison_2016}.
+%TODO: Update
 
 \subsubsection{CIRI2 (2018)\supercite{gao_circular_2018}}
 CIRI2 improves upon the original CIRI\supercite{gao_ciri_2015} by using a
 maximum likelihood estimation (MLE) based on multiple seed matching to detect
-BSJ reads.
+\gls{bsj} reads.
 This algorithm is optimized for high sensitivity while maintaining a low false
 discovery rate by filtering out false positives from repetitive sequences and
 mapping errors.

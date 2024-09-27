@@ -48,6 +48,8 @@
 \usepackage{cleveref}
 \usepackage{textgreek}
 \usepackage{svg}
+\usepackage{glossaries}
+\makeglossaries
 
 \usepackage[
     backend=biber,
@@ -73,6 +75,8 @@ Brustkrebses}
 \begin{document}
 \setcounter{tocdepth}{4}
 
+\input{abbreviations.tex}
+
 \frontmatter
 \maketitle
 \input{chapters/0_abstract.tex}
@@ -89,8 +93,8 @@ Brustkrebses}
 \input{chapters/6_appendix/0_appendix.tex}
 
 \backmatter
-% \bibliography{}
 
+\printglossary
 \printbibliography
 
 \end{document}
