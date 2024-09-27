@@ -180,36 +180,56 @@ Describe GTF based annotation
 
 \subsection{circRNA quantification} 
 
-Why is this important?
+While all BSJ detection tools quantify the number of reads supporting each BSJ,
+there are several tools that focus on the quantification of circRNAs based on
+previously detected BSJs.
+nf-core/circrna offers two such tools: CIRIquant and
+psirc-quant.
 
 \subsubsection{CIRIquant}
 CIRIquant is an extension of the CIRI (CircRNA Identifier) framework, which
 focuses on the accurate quantification of circRNAs by re-aligning back-splice
 junction (BSJ) reads against a pseudo-reference sequence.
-This approach significantly reduces the false discovery rate (FDR) associated
-with circRNA identification, making it a robust choice for
-researchers\supercite{zhang_accurate_2020}.
-CIRIquant utilizes HISAT2 for aligning RNA-seq reads to the reference genome,
-followed by the application of CIRI2 to identify putative circRNAs.
-The integration of these methods allows for a comprehensive analysis of circRNA
-expression, ensuring that only high-confidence circRNAs are
-quantified\supercite{munz_exonintron_2021,made_circrna-mirna-mrna_2023}.
-In studies, CIRIquant has been shown to correlate well with other
-quantification methods, reinforcing its utility in circRNA
-research\supercite{zhang_accurate_2020}.
+Natively it utilizes CIRI2 for BSJ detection, but it can also be used with BSJs
+detected by other tools\supercite{zhang_accurate_2020}.
+For each BSJ, it builds a pseudo circRNA reference sequence by concatenating
+two copies of the sequence between the BSJ start and end positions.
+By comparing the results of an alignment to the reference genome and to the
+pseudo-reference sequence, CIRIquant derives the fraction of reads that use the
+BSJ among all reads which span at least one of the BSJ
+boundaries\supercite{zhang_accurate_2020}.
 
-\subsubsection{psirc-quant}
-On the other hand, psirc-quant is a more recent tool that focuses on the
-quantification of circRNAs derived from RNA-seq data.
-It employs a unique strategy that combines circRNA identification with
-expression quantification, allowing researchers to analyze circRNA dynamics in
-various biological contexts.
-Psirc-quant is particularly advantageous for its ability to handle large
-datasets and provide insights into circRNA expression patterns across different
-conditions\supercite{yu_quantifying_2021}.
-This tool has been integrated into workflows that facilitate comprehensive
-circRNA analyses, including differential expression studies and interaction
-network construction\supercite{zhang_expression_2022}.
+\subsubsection{psirc}
+Psirc follows an entirely different approach to circRNA quantification.
+As shown in \cref{fig:psirc_workflow}, psirc first identifies BSJs, then infers
+the full-length isoform sequences of circRNAs, and finally quantifies the
+expression levels of these isoforms\supercite{yu_quantifying_2021}.
+
+nf-core/circrna does not currently support the BSJ detection provided by psirc,
+but the BSJs detected by other tools can conveniently be used as input for
+psirc.
+While inference of full-length isoforms is only supported with paired-end
+data\supercite{yu_quantifying_2021}, previous studies have used information
+from the linear transcriptome to retain only exonic regions within the limits
+set by the BSJ \supercite{hoffmann_circrna-sponging_2023} - if there are any,
+otherwise the entire sequence is retained.
+nf-core/circrna follows a different approach, where the entire sequence within
+the BSJ is retained, regardless of the presence of exonic regions.
+This way, it does not make any assumptions about the internal structure of the
+circRNA.
+
+For the quantification step, psirc expects a combined transcriptome FASTA file
+containing both linear and circular transcripts.
+It then uses Kallisto to jointly quantify the expression levels of both
+transcript types\supercite{yu_quantifying_2021}.
+This allows for the direct comparison of linear and circular isoforms,
+potentially providing deeper insights into the regulatory roles of circRNAs in
+gene expression.
+
+\begin{figure}[ht] \centering
+
+    \includegraphics[width=0.5\textwidth]{chapters/3_materials_and_methods/figures/psirc_pipeline.png}
+    \caption{psirc-workflow} \label{fig:psirc_workflow} \end{figure}
 
 \subsection{miRNA interaction analysis}
 The analysis of circular RNA (circRNA) interactions with microRNAs (miRNAs) is
