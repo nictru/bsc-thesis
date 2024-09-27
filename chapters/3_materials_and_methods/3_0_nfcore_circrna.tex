@@ -1,0 +1,31 @@
+\section{nf-core/circrna}
+\label{sec:nf-core_circrna}
+The nf-core/circrna pipeline has originally been published by Digby et al.
+in
+2023 \supercite{digby_nf-corecircrna_2023}.
+Since then, the pipeline has gone through several updates and improvements.
+The pipeline can utilize seven different tools for BSJ detection, including
+CIRIquant, CIRCexplorer2, circRNA finder, DCC, find\_circ, MapSplice, and
+Segemehl.
+It then annotates the detected circRNAs using GTF-based and database-based
+annotation.
+The pipeline also extracts the sequences of the circRNAs and quantifies their
+expression levels together with the linear transcripts.
+Finally, the pipeline performs miRNA interaction analysis using miRanda and
+TargetScan, and provides several downstream analyses through a Shiny
+application.
+An overview of the pipeline is shown in \cref{fig:circrna_pipeline}.
+
+\begin{figure}[ht]
+    \centering
+
+    \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/nf-core_circrna.png}
+    \caption{nf-core/circrna} % TODO: Add detailed caption
+    \label{fig:circrna_pipeline}
+\end{figure}
+
+\input{chapters/3_materials_and_methods/3_1_bsj_detection.tex}
+\input{chapters/3_materials_and_methods/3_2_annotation.tex}
+\input{chapters/3_materials_and_methods/3_3_quantification.tex}
+\input{chapters/3_materials_and_methods/3_4_mirna.tex}
+\input{chapters/3_materials_and_methods/3_5_downstream.tex}
