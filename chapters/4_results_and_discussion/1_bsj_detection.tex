@@ -1,27 +1,3 @@
-\chapter{Results and Discussion}
-
-From a molecular perspective, circRNAs are similar to their linear
-counterparts, with the primary distinction being their circular structure.
-As explained in \cref{sec:circrna_biogenesis}, circRNAs are derived from a
-linear precursor (identical to linear RNA) that undergoes back-splicing to form
-a loop.
-Thus, the only way to computationally identify circRNAs is by detecting reads
-spanning the back-splice junction (BSJ), which cannot be accounted for by
-canonical forward splicing.
-Several tools for BSJ detection are discussed in
-\cref{subsec:circrna_detection}.
-
-However, detecting BSJs only pinpoints the start and end of a circRNA within
-the genome, without revealing its internal structure.
-To reconstruct the full circRNA sequence, a de novo assembly of the circular
-transcriptome that accounts for back-splice junctions is required.
-Tools like CIRI-full, circRNAfull, and JCcirc are capable of this task, but
-they rely on paired-end or long-read sequencing data.
-To date, no tools are available for de novo assembly of circRNAs using
-single-end short-read data.
-Since the data used in this thesis is single-end, the focus is limited to the
-detection, quantification, and analysis of BSJs.
-
 \section{Back-splice junction (BSJ) detection}
 
 For detection of BSJs, five different detection tools were used: circexplorer2,
@@ -130,18 +106,3 @@ are the only ones which work with single-end sequencing data.
     }
     \label{fig:detection_density}
 \end{figure}
-
-\section{Quantification}
-
-\begin{figure}[ht]
-    \centering
-
-    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/quantification/correlation_heatmap.png}
-    \caption{Correlation heatmap
-    }
-    \label{fig:quantification_correlation_heatmap}
-\end{figure}
-
-\section{Differential expression analysis}
-
-\section{Biological interpretation}
