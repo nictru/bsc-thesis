@@ -127,9 +127,8 @@ The terminology used here is illustrated in \cref{fig:clustering_expl}.
                 \centering
 
                 \includegraphics[width=0.7\linewidth]{chapters/4_results_and_discussion/figures/grouping.png}
-                \caption{Schematic illustrating the terminology for the
-                    following
-                    plot.}
+                \caption{Schematic illustrating the terminology used in the
+                    clustering process}
                 \label{fig:clustering_expl}
             \end{subfigure}}
         \\
@@ -145,8 +144,8 @@ The terminology used here is illustrated in \cref{fig:clustering_expl}.
             \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_bar.png}
-            \caption{Relation between intra-cluster distance and \gls{bsj}
-                length}
+            \caption{Bar plot showing the number of clusters within a given
+                ratio range}
             \label{fig:clustering_bar}
         \end{subfigure}
     \end{tabular}
@@ -154,14 +153,15 @@ The terminology used here is illustrated in \cref{fig:clustering_expl}.
         distance and the minimum \gls{bsj} length the ratio between the two was
         used as a measure.
         The results show that the majority of clusters have a ratio of 50 or higher.
+        Only clusters supported by four or more detection tools were considered.
     }
     \label{fig:clustering}
 \end{figure}
 
-In order to investigate this further, I investigated the ratio between the
+In order to investigate this further, I calculated the ratio between the
 intra-cluster distances and the minimum \gls{bsj} length.
 The results of this analysis are shown in \cref{fig:clustering_scatter}.
-While there are a few clusters with a low ratio of 20 or lower, the majority of
+While there are 41 clusters with a ratio of 20 or lower, the vast majority of
 clusters have a ratio of 50 or higher (indicating that for an intra-cluster
 distance of 2, the \gls{bsj} must span at least 100 bp).
 
