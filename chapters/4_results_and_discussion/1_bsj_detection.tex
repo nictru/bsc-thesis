@@ -144,7 +144,7 @@ All tools have a small number of \gls{bsj}s with a very high mean read count.
 For these, the agreement appears to be much lower, even if the \gls{bsj} is
 detected in many samples.
 
-\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{.4\textwidth}
+\begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{.4\textwidth}
                                            \centering
 
                                            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/circexplorer2.png}
@@ -204,6 +204,14 @@ detected in many samples.
                   are considered
         \end{itemize} } }
 
+\begin{figure}[ht] \centering
+
+    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/grouping.png}
+    \caption{Schematic illustrating the terminology used in the
+        clustering
+        process}
+    \label{fig:clustering_expl} \end{figure}
+
 The terminology used in this section is illustrated in
 \cref{fig:clustering_expl}.
 In theory, the clustering process allows for the build-up of large clusters,
@@ -220,24 +228,7 @@ the intra-cluster distance could be used as a measure to identify overly
 unstable clusters.
 In order to validate this, I created the plots shown in \cref{fig:clustering}.
 
-Interestingly, \cref{fig:clustering_scatter} shows that there is no visible
-connection between the minimum \gls{bsj} length and the intra-cluster distance.
-Although there are a total of 23 clusters with an intra-cluster distance larger
-than 5 bp, the majority of clusters has relatively lower intra-cluster
-distances.
-The clusters that do exhibit a large intra-cluster distance are associated with
-a relatively low minimum \gls{bsj} length.
-This might be a stochastic effect, as the number of \gls{bsj}s spanning a long
-distance is comparatively low.
-
-\begin{figure}[ht] \centering
-
-    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/grouping.png}
-    \caption{Schematic illustrating the terminology used in the clustering
-        process}
-    \label{fig:clustering_expl} \end{figure}
-
-\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
+\begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
                                            \centering
 
                                            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_scatter.png}
@@ -263,5 +254,14 @@ distance is comparatively low.
     \label{fig:clustering}
 \end{figure}
 
-% TODO: Investigate outliers
+Interestingly, \cref{fig:clustering_scatter} shows that there is no visible
+connection between the minimum \gls{bsj} length and the intra-cluster distance.
+Although there are a total of 23 clusters with an intra-cluster distance larger
+than 5 bp, the majority of clusters has relatively lower intra-cluster
+distances.
+The clusters that do exhibit a large intra-cluster distance are associated with
+a relatively low minimum \gls{bsj} length.
+This might be a stochastic effect, as the number of \gls{bsj}s spanning a long
+distance is comparatively low.
 
+% TODO: Investigate outliers
