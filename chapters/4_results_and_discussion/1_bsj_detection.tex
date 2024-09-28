@@ -8,7 +8,7 @@ almost ten times as many \gls{bsj}s as its closest competitor, DCC.
 
 \begin{figure}[ht] \centering
 
-    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/n_bsjs_detected.png}
+    \includegraphics[width=0.6\textwidth]{chapters/4_results_and_discussion/figures/detection/n_bsjs_detected.png}
     \caption{Number of \gls{bsj}s detected by each tool.
         While find\_circ, CIRI2, DCC and circexplorer2 detect a similar number of
         \gls{bsj}s, segemehl detects a much larger number of \gls{bsj}s.
@@ -44,9 +44,14 @@ When exploring the data, I noticed that there are many detected \gls{bsj}s that
 are very close to each other, but not identical - thus not being counted as the
 same \gls{bsj} when grouping in the conventional way.
 In order to investigate this further, I introduced a more lenient grouping
-criterion: two \gls{bsj}s are considered the same if both their starts and ends
-differ by a certain maximum number of base pairs.
-In the following analysis, I will refer to this maximum difference as the
+criterion.
+Here, both the start and end positions of the \gls{bsj}s are separately
+clustered using single linkage clustering.
+This means, a \gls{bsj} is considered to be part of a cluster if it is within a
+certain distance of any other \gls{bsj}'s start/end position.
+Two \gls{bsj}s are considered the same if they are part of the same cluster
+regarding both their start and end positions.
+In the following analysis, I will refer to the distance limit as the
 \textit{shift}.
 
 When allowing a shift of only 1 bp, the results change drastically.
@@ -99,13 +104,68 @@ Increasing the allowed shift to larger values, e.g., 20 bp, does not lead to a
 substantial change compared to the results when allowing a shift of 1 bp, as
 shown in \cref{fig:detection_upset_20_nostrand}.
 
-In my interpretation, the results show that the tools generally agree on the
-detection of \gls{bsj}s, but the agreement is not perfect.
+In my interpretation, the results show that in many cases the tools generally
+agree on the detection of \gls{bsj}s, but the agreement is not perfect.
 The fact that a shift of 1 bp leads to substantial changes while further
-increasing the shift does not, indicates that the clustering \gls{bsj}s form
-continuous chains between their 
+increasing the shift does not, indicates that in most cases the clustering
+\gls{bsj}s form continuous chains between their start and end positions between
+their extremes.
+This suggests, that the tools are generally able to detect the back-spliced
+reads, but have difficulties in determining the exact location of the
+\gls{bsj}.
 
-\begin{figure}[ht] \centering 
+In theory, the clustering process allows for the build-up of large clusters,
+where the intra-cluster distance of both the start and end positions is large
+compared to the minimum \gls{bsj} length derived from the start and end
+clusters.
+The terminology used here is illustrated in \cref{fig:clustering_expl}.
+
+\begin{figure}[ht]
+    \begin{tabular}{cc}
+        \multicolumn{2}{c}{
+            \begin{subfigure}{\textwidth}
+                \centering
+
+                \includegraphics[width=0.7\linewidth]{chapters/4_results_and_discussion/figures/grouping.png}
+                \caption{Schematic illustrating the terminology for the
+                    following
+                    plot.}
+                \label{fig:clustering_expl}
+            \end{subfigure}}
+        \\
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_scatter.png}
+            \caption{Relation between intra-cluster distance and \gls{bsj}
+                length}
+            \label{fig:clustering_scatter}
+        \end{subfigure} &
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_bar.png}
+            \caption{Relation between intra-cluster distance and \gls{bsj}
+                length}
+            \label{fig:clustering_bar}
+        \end{subfigure}
+    \end{tabular}
+    \caption{In order to investigate the relation between the intra-cluster
+        distance and the minimum \gls{bsj} length the ratio between the two was
+        used as a measure.
+        The results show that the majority of clusters have a ratio of 50 or higher.
+    }
+    \label{fig:clustering}
+\end{figure}
+
+In order to investigate this further, I investigated the ratio between the
+intra-cluster distances and the minimum \gls{bsj} length.
+The results of this analysis are shown in \cref{fig:clustering_scatter}.
+While there are a few clusters with a low ratio of 20 or lower, the majority of
+clusters have a ratio of 50 or higher (indicating that for an intra-cluster
+distance of 2, the \gls{bsj} must span at least 100 bp).
+
+\begin{figure}[ht] \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/pies.png}
     \caption{Pie charts showing the agreement of each tool with the others.
