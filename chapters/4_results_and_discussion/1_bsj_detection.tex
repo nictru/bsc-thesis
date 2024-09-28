@@ -218,11 +218,17 @@ I assumed that the intra-cluster distance will increase with the minimum
 Furthermore, I assumed that the ratio between the minimum \gls{bsj} length and
 the intra-cluster distance could be used as a measure to identify overly
 unstable clusters.
-The results of this analysis are shown in \cref{fig:clustering}.
+In order to validate this, I created the plots shown in \cref{fig:clustering}.
 
-Interestingly, the results show that there are a few clusters with 
-
-
+Interestingly, \cref{fig:clustering_scatter} shows that there is no visible
+connection between the minimum \gls{bsj} length and the intra-cluster distance.
+Although there are a total of 23 clusters with an intra-cluster distance larger
+than 5 bp, the majority of clusters has relatively lower intra-cluster
+distances.
+The clusters that do exhibit a large intra-cluster distance are associated with
+a relatively low minimum \gls{bsj} length.
+This might be a stochastic effect, as the number of \gls{bsj}s spanning a long
+distance is comparatively low.
 
 \begin{figure}[ht] \centering
 
@@ -243,14 +249,19 @@ Interestingly, the results show that there are a few clusters with
                \begin{subfigure}{0.5\textwidth} \centering
 
                        \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_bar.png}
-                       \caption{Bar plot showing the number of clusters within
-                           a given ratio range}
+                       \caption{Number of clusters with a given intra-cluster
+                           distance}
                        \label{fig:clustering_bar} \end{subfigure}\end{tabular}
-    \caption{In order to
-        investigate the relation between the intra-cluster distance and the
-        minimum
-        \gls{bsj} length the ratio between the two was used as a measure.
-        The results show that the majority of clusters have a ratio of 50 or higher.
+    \caption{Investigation of the relation between minimum \gls{bsj} length and
+        intra-cluster distance.
+        There is no visible connection between the minimum \gls{bsj} length and the
+        intra-cluster distance (\cref{fig:clustering_scatter}).
+        While there are a few clusters with a large intra-cluster distance, the
+        majority of clusters has a relatively low intra-cluster distance
+        (\cref{fig:clustering_bar}).
     }
     \label{fig:clustering}
 \end{figure}
+
+% TODO: Investigate outliers
+
