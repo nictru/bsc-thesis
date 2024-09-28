@@ -24,6 +24,8 @@ positives\supercite{zhang_diverse_2016,gao_circular_2018}.
 
 \subsection{Agreement between tools and the role of clustering}
 
+% TODO: Why is agreement important?
+
 To assess the agreement between the tools, I used UpSet plots, which show the
 overlap of \gls{bsj}s detected by different tools.
 When identifying the overlap between tools, the most strict approach is to
@@ -114,8 +116,17 @@ This suggests, that the tools are generally able to detect the back-spliced
 reads, but have difficulties in determining the exact location of the
 \gls{bsj}.
 
-\subsection{Investigating the influence of the number of per-tool metrics on the
-    agreement between tools}
+\subsection{Investigating the influence of the number of per-tool metrics on
+    the clustering}
+
+So far, the entire set of \gls{bsj}s detected by each tool was used to for the
+analysis.
+Now, I will investigate if the number of samples a \gls{bsj} was detected in
+and the total number of reads supporting the \gls{bsj} across all samples
+influences the agreement between tools.
+
+The plot in \cref{fig:detection_density} shows the distribution of \gls{bsj}s
+detected by each tool.
 
 \begin{figure}[ht]
     \begin{tabular}{cc}
@@ -124,68 +135,53 @@ reads, but have difficulties in determining the exact location of the
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/circexplorer2.png}
             \caption{CircExplorer2}
-            \label{fig:detection_density_circexplorer2}
-        \end{subfigure}
-         &
-        \begin{subfigure}{.4\textwidth}
-            \centering
+
+            \label{fig:detection_density_circexplorer2} \end{subfigure} &
+        \begin{subfigure}{.4\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/ciri2.png}
-            \caption{CIRI2}
-            \label{fig:detection_density_ciri2}
-        \end{subfigure}     \\
-        \begin{subfigure}{.4\textwidth}
-            \centering
+            \caption{CIRI2} \label{fig:detection_density_ciri2}
+        \end{subfigure}
+        \\
+        \begin{subfigure}{.4\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/dcc.png}
-            \caption{DCC}
-            \label{fig:detection_density_dcc}
-        \end{subfigure}
-         &
-        \begin{subfigure}{.4\textwidth}
-            \centering
+            \caption{DCC} \label{fig:detection_density_dcc}
+        \end{subfigure}           &
+        \begin{subfigure}{.4\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
             \caption{find\_circ}
-            \label{fig:detection_density_find-circ}
-        \end{subfigure} \\
-        \begin{subfigure}{.4\textwidth}
-            \centering
+            \label{fig:detection_density_find-circ} \end{subfigure}
+        \\
+        \begin{subfigure}{.4\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/segemehl.png}
             \caption{Segemehl}
-            \label{fig:detection_density_segemehl}
+            \label{fig:detection_density_segemehl} \end{subfigure}
+
+                                                                                                                          &
+        \begin{subfigure}{.4\textwidth} \centering \caption{Legend}
         \end{subfigure}
-         &
-        \begin{subfigure}{.4\textwidth}
-            \centering
-            % TODO: Add legend
-            %\includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
-            \caption{Legend}
-        \end{subfigure}
-    \end{tabular}
-    \caption{Distributions of \gls{bsj}s detected by each tool.
+    \end{tabular} \caption{Distributions of \gls{bsj}s detected by each tool.
+        % TODO: Add legend%\includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
         The x-axis shows the number of tools that detected a \gls{bsj}, while the
         y-axis shows the logarithm of the number of reads supporting the \gls{bsj}
         across all samples.
-        The color indicates the density of \gls{bsj}s at a given point.
-        The stacked bar plots above and left of the scatter plots show the number of
+        The color indicates the logarithmized density of \gls{bsj}s at a given point.
+        The stacked bar plots above and left of the scatter plots show the fraction of
         agreeing tools in the respective slice.
-    }
-    \label{fig:detection_density}
-\end{figure}
+        The total counts were subtracted by the number of samples the \gls{bsj} was
+        detected in, in order } \label{fig:detection_density} \end{figure}
 
-\noindent\fbox{
-    \parbox{\textwidth}{
-        From now on, I will use the following filtering criteria:
-        \begin{itemize}
-            \item Clusters are formed by grouping \gls{bsj}s with a shift of 1
-                  bp and ignoring the strand information
-            \item Only \gls{bsj}s within clusters supported by at least four
-                  tools are considered
-        \end{itemize}
-    }
-}
+\noindent\fbox{ \parbox{\textwidth}{ From now on, I will use the following
+        filtering criteria: \begin{itemize} \item Clusters are formed by grouping
+                  \gls{bsj}s with a shift of 1 bp and ignoring the strand information \item Only
+                  \gls{bsj}s within clusters supported by at least four tools are considered
+        \end{itemize} } } 
+
+While all tools have the highest density of \gls{bsj}s detected in only a very
+small number of samples, it does not se 
 
 \subsubsection{Investigating the size of the intra-cluster distances}
 
@@ -238,4 +234,3 @@ The results of this analysis are shown in \cref{fig:clustering_scatter}.
 While there are 41 clusters with a ratio of 20 or lower, the vast majority of
 clusters have a ratio of 50 or higher (indicating that for an intra-cluster
 distance of 2, the \gls{bsj} must span at least 100 bp).
-
