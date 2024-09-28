@@ -117,71 +117,82 @@ reads, but have difficulties in determining the exact location of the
 \gls{bsj}.
 
 \subsection{Investigating the influence of the number of per-tool metrics on
-    the clustering}
+    the agreement}
 
-So far, the entire set of \gls{bsj}s detected by each tool was used to for the
-analysis.
+So far, the entire set of \gls{bsj}s detected by each tool was used for
+investigation of agreement with other tools.
 Now, I will investigate if the number of samples a \gls{bsj} was detected in
 and the total number of reads supporting the \gls{bsj} across all samples
-influences the agreement between tools.
-
-The plot in \cref{fig:detection_density} shows the distribution of \gls{bsj}s
+influences the agreement.
+The plots in \cref{fig:detection_density} show the distribution of \gls{bsj}s
 detected by each tool.
 
-\begin{figure}[ht]
-    \begin{tabular}{cc}
-        \begin{subfigure}{.4\textwidth}
-            \centering
+When looking at the distribution along the x-axis, it is apparent that all
+tools have a large fraction of \gls{bsj}s detected in only a very small number
+of samples.
+While all tools have the lowest level of agreement in this region, after a
+certain threshold the agreement becomes relatively stable and does not further
+increase.
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/circexplorer2.png}
-            \caption{CircExplorer2}
+The mean count of reads supporting a \gls{bsj} across all samples where the
+\gls{bsj} was detected is shown on the y-axis.
+Here, the behavior of the tools is more heterogenous: While for CircExplorer2
+and DCC the agreement increases with the mean read count, for CIRI2 and
+find\_circ the opposite appears to be the case.
 
-            \label{fig:detection_density_circexplorer2} \end{subfigure} &
-        \begin{subfigure}{.4\textwidth} \centering
+All tools have a small number of \gls{bsj}s with a very high mean read count.
+For these, the agreement appears to be much lower, even if the \gls{bsj} is
+detected in many samples.
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/ciri2.png}
-            \caption{CIRI2} \label{fig:detection_density_ciri2}
-        \end{subfigure}
-        \\
-        \begin{subfigure}{.4\textwidth} \centering
+\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{.4\textwidth}
+                                           \centering 
+
+                                           \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/circexplorer2.png}
+                                           \caption{CircExplorer2} 
+
+                                           \label{fig:detection_density_circexplorer2} \end{subfigure} &
+               \begin{subfigure}{.4\textwidth} \centering 
+
+                       \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/ciri2.png}
+                       \caption{CIRI2} \label{fig:detection_density_ciri2} \end{subfigure}
+               \\ \begin{subfigure}{.4\textwidth}
+            \centering 
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/dcc.png}
-            \caption{DCC} \label{fig:detection_density_dcc}
-        \end{subfigure}           &
-        \begin{subfigure}{.4\textwidth} \centering
+            \caption{DCC} \label{fig:detection_density_dcc} \end{subfigure} &
+                  \begin{subfigure}{.4\textwidth} \centering 
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
-            \caption{find\_circ}
-            \label{fig:detection_density_find-circ} \end{subfigure}
-        \\
-        \begin{subfigure}{.4\textwidth} \centering
+                       \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
+                       \caption{find\_circ} \label{fig:detection_density_find-circ} \end{subfigure}
+               \\ \begin{subfigure}{.4\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/segemehl.png}
-            \caption{Segemehl}
-            \label{fig:detection_density_segemehl} \end{subfigure}
+            \caption{Segemehl} \label{fig:detection_density_segemehl} \end{subfigure}
 
-                                                                                                                          &
-        \begin{subfigure}{.4\textwidth} \centering \caption{Legend}
-        \end{subfigure}
-    \end{tabular} \caption{Distributions of \gls{bsj}s detected by each tool.
-        % TODO: Add legend%\includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
+                                                                                                                                 & \begin{subfigure}{.4\textwidth}	 \centering \caption{Legend}
+
+                                                                                                                                       \end{subfigure}\end{tabular} \caption{Distributions of \gls{bsj}s detected by
+        each tool.
+        % TODO: Add legend
         The x-axis shows the number of tools that detected a \gls{bsj}, while the
-        y-axis shows the logarithm of the number of reads supporting the \gls{bsj}
-        across all samples.
+        y-axis shows mean number of reads supporting each \gls{bsj} across all samples
+        where the \gls{bsj} was detected.
         The color indicates the logarithmized density of \gls{bsj}s at a given point.
         The stacked bar plots above and left of the scatter plots show the fraction of
         agreeing tools in the respective slice.
-        The total counts were subtracted by the number of samples the \gls{bsj} was
-        detected in, in order } \label{fig:detection_density} \end{figure}
+    }
+    \label{fig:detection_density}
+\end{figure}
 
 \noindent\fbox{ \parbox{\textwidth}{ From now on, I will use the following
-        filtering criteria: \begin{itemize} \item Clusters are formed by grouping
-                  \gls{bsj}s with a shift of 1 bp and ignoring the strand information \item Only
-                  \gls{bsj}s within clusters supported by at least four tools are considered
-        \end{itemize} } } 
+        filtering criteria: \begin{itemize} \item Clusters are formed by
+                  grouping
+                  \gls{bsj}s with a shift of 1 bp and ignoring the strand
+                  information \item Only
+                  \gls{bsj}s within clusters supported by at least four tools
+                  are considered
+        \end{itemize} } }
 
-While all tools have the highest density of \gls{bsj}s detected in only a very
-small number of samples, it does not se 
 
 \subsubsection{Investigating the size of the intra-cluster distances}
 
