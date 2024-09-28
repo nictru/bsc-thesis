@@ -116,7 +116,7 @@ This suggests, that the tools are generally able to detect the back-spliced
 reads, but have difficulties in determining the exact location of the
 \gls{bsj}.
 
-\subsection{Investigating the influence of the number of per-tool metrics on
+\subsubsection{Investigating the influence of the number of per-tool metrics on
     the agreement}
 
 So far, the entire set of \gls{bsj}s detected by each tool was used for
@@ -145,33 +145,39 @@ For these, the agreement appears to be much lower, even if the \gls{bsj} is
 detected in many samples.
 
 \begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{.4\textwidth}
-                                           \centering 
+                                           \centering
 
                                            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/circexplorer2.png}
-                                           \caption{CircExplorer2} 
+                                           \caption{CircExplorer2}
 
                                            \label{fig:detection_density_circexplorer2} \end{subfigure} &
-               \begin{subfigure}{.4\textwidth} \centering 
+               \begin{subfigure}{.4\textwidth} \centering
 
                        \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/ciri2.png}
-                       \caption{CIRI2} \label{fig:detection_density_ciri2} \end{subfigure}
+                       \caption{CIRI2} \label{fig:detection_density_ciri2}
+                   \end{subfigure}
                \\ \begin{subfigure}{.4\textwidth}
-            \centering 
+            \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/dcc.png}
             \caption{DCC} \label{fig:detection_density_dcc} \end{subfigure} &
-                  \begin{subfigure}{.4\textwidth} \centering 
+                  \begin{subfigure}{.4\textwidth} \centering
 
                        \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/find_circ.png}
-                       \caption{find\_circ} \label{fig:detection_density_find-circ} \end{subfigure}
+                       \caption{find\_circ}
+                       \label{fig:detection_density_find-circ} \end{subfigure}
                \\ \begin{subfigure}{.4\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/density/segemehl.png}
-            \caption{Segemehl} \label{fig:detection_density_segemehl} \end{subfigure}
+            \caption{Segemehl} \label{fig:detection_density_segemehl}
+        \end{subfigure}
 
-                                                                                                                                 & \begin{subfigure}{.4\textwidth}	 \centering \caption{Legend}
+                                                                                                                                 &
+               \begin{subfigure}{.4\textwidth}	     \centering
+                       \caption{Legend}
 
-                                                                                                                                       \end{subfigure}\end{tabular} \caption{Distributions of \gls{bsj}s detected by
+                   \end{subfigure}\end{tabular} \caption{Distributions of
+        \gls{bsj}s detected by
         each tool.
         % TODO: Add legend
         The x-axis shows the number of tools that detected a \gls{bsj}, while the
@@ -184,64 +190,67 @@ detected in many samples.
     \label{fig:detection_density}
 \end{figure}
 
-\noindent\fbox{ \parbox{\textwidth}{ From now on, I will use the following
-        filtering criteria: \begin{itemize} \item Clusters are formed by
+\subsubsection{Investigating the intra-cluster distances}
+
+\noindent\fbox{ \parbox{\textwidth}{
+        From now on, the following filtering criteria will be used:
+        \begin{itemize}
+            \item Clusters are formed by
                   grouping
                   \gls{bsj}s with a shift of 1 bp and ignoring the strand
-                  information \item Only
+                  information
+            \item Only
                   \gls{bsj}s within clusters supported by at least four tools
                   are considered
         \end{itemize} } }
 
-
-\subsubsection{Investigating the size of the intra-cluster distances}
-
+The terminology used in this section is illustrated in
+\cref{fig:clustering_expl}.
 In theory, the clustering process allows for the build-up of large clusters,
 where the intra-cluster distance of both the start and end positions is large
 compared to the minimum \gls{bsj} length derived from the maximum of the start
 cluster and the minimum of the end cluster.
+In this situation, the exact location of the \gls{bsj} cannot easily be assumed
+from the detected \gls{bsj} locations.
 
-The terminology used here is illustrated in \cref{fig:clustering_expl}.
+I assumed that the intra-cluster distance will increase with the minimum
+\gls{bsj} length.
+Furthermore, I assumed that the ratio between the minimum \gls{bsj} length and
+the intra-cluster distance could be used as a measure to identify overly
+unstable clusters.
+The results of this analysis are shown in \cref{fig:clustering}.
 
-\begin{figure}[ht]
-    \centering
+Interestingly, the results show that there are a few clusters with 
+
+
+
+\begin{figure}[ht] \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/grouping.png}
-    \caption{Schematic illustrating the terminology used in the
-        clustering process}
-    \label{fig:clustering_expl}
-\end{figure}
+    \caption{Schematic illustrating the terminology used in the clustering
+        process}
+    \label{fig:clustering_expl} \end{figure}
 
-\begin{figure}[ht]
-    \begin{tabular}{cc}
-        \begin{subfigure}{0.5\textwidth}
-            \centering
+\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
+                                           \centering
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_scatter.png}
-            \caption{Relation between intra-cluster distance and \gls{bsj}
-                length}
-            \label{fig:clustering_scatter}
-        \end{subfigure} &
-        \begin{subfigure}{0.5\textwidth}
-            \centering
+                                           \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_scatter.png}
+                                           \caption{Relation between
+                                               intra-cluster distance and
+                                               \gls{bsj} length}
+                                           \label{fig:clustering_scatter}
+                                       \end{subfigure} &
+               \begin{subfigure}{0.5\textwidth} \centering
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_bar.png}
-            \caption{Bar plot showing the number of clusters within a given
-                ratio range}
-            \label{fig:clustering_bar}
-        \end{subfigure}
-    \end{tabular}
-    \caption{In order to investigate the relation between the intra-cluster
-        distance and the minimum \gls{bsj} length the ratio between the two was
-        used as a measure.
+                       \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/distances/diff_1_bar.png}
+                       \caption{Bar plot showing the number of clusters within
+                           a given ratio range}
+                       \label{fig:clustering_bar} \end{subfigure}\end{tabular}
+    \caption{In order to
+        investigate the relation between the intra-cluster distance and the
+        minimum
+        \gls{bsj} length the ratio between the two was used as a measure.
         The results show that the majority of clusters have a ratio of 50 or higher.
     }
     \label{fig:clustering}
 \end{figure}
-
-In order to investigate this further, I calculated the ratio between the
-intra-cluster distances and the minimum \gls{bsj} length.
-The results of this analysis are shown in \cref{fig:clustering_scatter}.
-While there are 41 clusters with a ratio of 20 or lower, the vast majority of
-clusters have a ratio of 50 or higher (indicating that for an intra-cluster
-distance of 2, the \gls{bsj} must span at least 100 bp).
