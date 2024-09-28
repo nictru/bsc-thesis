@@ -11,7 +11,8 @@
 		"vscode": {
 			"extensions": [
 				"James-Yu.latex-workshop",
-				"valentjn.vscode-ltex"
+				"valentjn.vscode-ltex",
+				"pomdtr.excalidraw-editor"
 			]
 		}
 	}
