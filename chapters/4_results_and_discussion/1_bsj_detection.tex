@@ -22,7 +22,7 @@ The lowest numbers of \gls{bsj}s were detected by circexplorer2 and CIRI2,
 which both have built-in filters to reduce false
 positives\supercite{zhang_diverse_2016,gao_circular_2018}.
 
-\subsection{Agreement between tools and the role of clustering}
+\subsection{Agreement between tools and the role of \textit{max shift}}
 
 Although tools like CIRI2 and CircExplorer2 have shown good performance in
 benchmarks, having multiple tools agree on the same \gls{bsj} can be a good
@@ -41,7 +41,7 @@ tools.
 \begin{figure}[ht]
     \centering
 
-    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_0.png}
+    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_0.png}
     \caption{Upset plot illustrating the overlap between \gls{bsj}s detected by
         different tools.
         Only \gls{bsj}s with identical start and end positions are considered the same.
@@ -62,7 +62,7 @@ With this parameter, if tool A detects a \gls{bsj} and tool B detects another
 tools.
 A more detailed explanation is given in \cref{fig:detection_shift_schematic}.
 
-\begin{figure}[H] \centering
+\begin{figure}[ht] \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/grouping.png}
     \caption{Schematic illustrating two different scenarios of \gls{bsj}
@@ -103,8 +103,36 @@ The results are shown in \cref{fig:shift_agreement}.
         higher values.
         While the number of \gls{bsj}s detected by 2-3 tools continues to increase when
         raising the \textit{max shift} parameter to 20 or 50, the number of \gls{bsj}s
-        detected by 4-5 tools remains pretty much constant.
+        detected by 4-5 tools remains nearly constant.
     }
     \label{fig:shift_agreement}
 \end{figure}
 
+As shown in \cref{fig:shift_agreement}, the distribution of the number of tools
+supporting a \gls{bsj} changes drastically when increasing the \textit{max
+    shift} parameter from 0 to 1.
+However, the distribution remains relatively stable, especially for agreement
+between four or five tools.
+Increasing the \textit{max shift} parameter to large values does have an effect
+on the number of \gls{bsj}s detected by two or three tools, but this comes with
+the risk of increasing the number of false positives, since this way \gls{bsj}s
+with a relatively large difference in start and end positions are still
+considered as evidence for each other.
+
+For the following analyses, I chose a \textit{max shift} parameter of 3 and a
+minimum agreement of 4 tools, as this appeared to be a good compromise between
+sensitivity and specificity.
+The resulting UpSet plot is shown in \cref{fig:detection_upset_3}.
+
+\begin{figure}[ht]
+    \centering
+
+    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_3.png}
+    \caption{Upset plot illustrating the overlap between \gls{bsj}s detected by
+        different tools.
+        Agreement was calculated using a \textit{max shift} of 3.
+        Only combinations including at least 2 tools and 10 common \gls{bsj}s are
+        shown.
+    }
+    \label{fig:detection_upset_3}
+\end{figure}
