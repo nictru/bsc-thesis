@@ -6,7 +6,7 @@ As shown in \cref{fig:detection_bars}, find\_circ, CIRI2, DCC, and
 circexplorer2 detect a similar number of \gls{bsj}s, while segemehl detects
 almost ten times as many \gls{bsj}s as its closest competitor, DCC.
 
-\begin{figure}[ht] \centering
+\begin{figure}[H] \centering
 
     \includegraphics[width=0.6\textwidth]{chapters/4_results_and_discussion/figures/detection/n_bsjs_detected.png}
     \caption{Number of \gls{bsj}s detected by each tool.
@@ -38,7 +38,7 @@ While there are a total of x \gls{bsj}s detected by at least two tools, only y
 \gls{bsj}s are detected by three tools, and none are detected by four or five
 tools.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
 
     \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_0.png}
@@ -46,9 +46,11 @@ tools.
         different tools.
         Only \gls{bsj}s with identical start and end positions are considered the same.
         Only combinations with at least 10 common \gls{bsj}s are shown.
-    }
-    \label{fig:detection_upset_0}
-\end{figure}
+        While most detection tools show similar results, segemehl stands out with the
+        largest number of \gls{bsj}s detected by only one tool.
+        On the other hand, it is also involved in most of the combinations with 2-3
+        tools.
+    } \label{fig:detection_upset_0} \end{figure}
 
 As this agreement is relatively low, I investigated the detected \gls{bsj}s
 more closely and found that tools often have very similar \gls{bsj}s, but with
@@ -62,7 +64,7 @@ With this parameter, if tool A detects a \gls{bsj} and tool B detects another
 tools.
 A more detailed explanation is given in \cref{fig:detection_shift_schematic}.
 
-\begin{figure}[ht] \centering
+\begin{figure}[H] \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/grouping.png}
     \caption{Schematic illustrating two different scenarios of \gls{bsj}
@@ -92,7 +94,7 @@ parameter, I calculated the level of agreement between tools for different
 values of \textit{max shift}.
 The results are shown in \cref{fig:shift_agreement}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/shift_agreement.png}
@@ -124,7 +126,7 @@ minimum agreement of 4 tools, as this appeared to be a good compromise between
 sensitivity and specificity.
 The resulting UpSet plot is shown in \cref{fig:detection_upset_3}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
 
     \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_3.png}
