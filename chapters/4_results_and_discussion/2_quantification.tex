@@ -74,5 +74,67 @@ analyses.
 \paragraph{CIRIquant}
 CIRIquant, on the other hand, shows a higher correlation with the detection
 tools and aggregations.
-However, it is still relatively low (< 0.3 in all comparisons when treating
+However, it is still relatively low ($<$0.3 in all comparisons when treating
 missing values as 0).
+Here, it is not clear why the correlation is so low, as CIRIquant uses a
+similar approach to the detection tools.
+Again, the lack of a ground truth makes it impossible to say whether the
+quantification results of CIRIquant are trustworthy in this setting.
+
+\subsection{Detection tools}
+It appears like there are two groups of detection tools: One including
+Segemehl, find\_circ and ciri2, and the other including DCC and CircExplorer2.
+Both show high internal correlation in both settings ($>$0.75) and low
+correlation between the groups ($\leq$0.5 for missing values treated as 0).
+
+%TODO: Add reasoning
+
+\subsection{Aggregations}
+Many of the investigated aggregations seem to be able to smoothen out the
+differences between the two groups of detection tools.
+In the following paragraphs, I will look into the individual aggregations in
+more detail.
+
+\paragraph{min}
+Using the minimum expression value of all tools for each \gls{bsj}
+interestingly results in high correlations with find\_circ and Segemehl wenn
+treating missing values as NaN.
+In this setting, the minimum expression will be the smallest value of tools
+with an expression value.
+When looking at the behaviour of the min aggregation when treating missing
+values as 0, we see that all correlation values are $<$0.25.
+Here, the min aggregation will be 0 if any of the tools did not detect any
+reads supporting a \gls{bsj}, which is true for many \gls{bsj}s.
+
+\paragraph{max}
+The max aggregation interestingly has high correlations with DCC and
+CircExplorer2 in the NaN setting.
+This indicates that - if they detect a \gls{bsj} - they often detect a high
+number of reads supporting it.
+In the 0 setting, the max aggregation achieved a correlation $>$0.6 with all
+tools, thus yielding stable, but slightly worse results than the following
+aggregations.
+
+\paragraph{sum}
+The sum aggregation results in robust correlations in both settings.
+While the correlation with CircExplorer2 is lower than with the other tools in
+the 0 setting, this is mostly due to the fact that CircExplorer2 detects fewer
+\gls{bsj}s than the other tools.
+This is supported by the fact that CircExplorer2 has a high correlation of 0.96
+in the NaN setting, where only \gls{bsj}s where CircExplorer2 detected reads
+are considered.
+
+\paragraph{mean}
+This behaves very similarly to the sum aggregation.
+Mathematically, the mean aggregation is the sum divided by the number of tools
+with an expression value.
+Thus, in the 0 setting, they are equal, while in the NaN setting, the mean
+aggregation will deviate if a tool did not detect any reads supporting a
+\gls{bsj}.
+
+\paragraph{median}
+The median aggregation shows a tendency to correlate with the
+segemehl-find\_circ-CIRI2 group.
+This is not surprising, as this group consists of 3 tools whereas the
+DCC-CircExplorer2 group consists of only 2 tools. Thus, if all tools detect a
+\gls{bsj}, the median will be the lowest entry from the first group.
