@@ -1,39 +1,65 @@
 \section{Quantification}
 
-As mentioned in \cref{sec:crna_quantification}, all the \gls{bsj} detection
-tools also quantify the number of reads supporting each \gls{bsj}.
-However, there are several tools that focus on the quantification of
-\gls{crna}s based on previously detected \gls{bsj}s.
-nf-core/circrna offers two such tools: CIRIquant and psirc-quant.
+\subsection{Approaches to quantify \gls{crna}s}
+In order to perform a differential expression analysis, the expression of each
+\gls{crna} needs to be quantified.
+Depending on the tool used for differential expression analysis, there are
+different ways to quantify the expression of \gls{crna}s.
 
-Due to the lack of a ground truth or a gold standard, the quantification
-results were compared to each other.
-The correlation heatmaps in \cref{fig:correlation_heatmap} show the Pearson
-correlation coefficient between the quantification results of the detection
+\paragraph{Using read counts from \gls{bsj} detection tools}
+Many studies used aggregations of the counts of reads supporting a \gls{bsj}
+from multiple detection tools followed by differential expression analysis
+using traditional tools like DESeq2 and EdgeR
+\supercite{digby_nf-corecircrna_2023,gaffo_sensitive_2022,love_moderated_2014,robinson_edger_2010}.
+
+This approach has recently been improved by \textcite{buratin_detecting_2022},
+who implemented a generalized linear mixed model approach which can handle the
+count information from multiple detection tools, without the need for prior
+aggregation\supercite{digby_computational_2024}.
+
+\paragraph{Using multi-purpose tools}
+Other tools, such as CIRIquant can perform both the detection and
+quantification of \gls{crna}s\supercite{zhang_accurate_2020}.
+However, every tool has its own strengths and weaknesses, and using counts from
+multiple tools can help to mitigate the weaknesses of individual tools.
+
+\paragraph{Using the full-length \gls{crna} sequence}
+In a third approach, the full-length \gls{crna} sequence is used to quantify
+the expression of \gls{crna}s using tools like
+psirc-quant\supercite{yu_quantifying_2021}.
+The resulting expression information can then be used with tools designed for
+differential transcript expression analysis, such as Fishpond
+\supercite{love_swimming_2018}.
+However, as mentioned before in \cref{sec:psirc}, this approach is not properly
+applicable to single-end data.
+
+\paragraph{Feasibility of the approaches}
+Both using a CIRIquant and the expression information from \gls{bsj} detection
+tools are feasible with the data at hand.
+While the generalized linear mixed model approach is interesting, it is not yet
+implemented as an easy-to-use tool, and due to limited time, it was not used in
+this study.
+In the following, I will compare the quantification results of the detection
 tools, multiple aggregations of the detection tools, and the quantification
 tools.
 
-\begin{figure}[ht]
-    \begin{tabular}{cc}
-        \begin{subfigure}{0.5\textwidth}
+\subsection{Comparison of quantification results}
+\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
             \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/quantification/correlation_heatmap_3_na.png}
             \caption{Missing values treated as NaN}
             \label{fig:correlation_heatmap_3_na}
-        \end{subfigure}
-         &
-        \begin{subfigure}{0.5\textwidth}
-            \centering
+        \end{subfigure} & \begin{subfigure}{0.5\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/quantification/correlation_heatmap_3_0.png}
             \caption{Missing values treated as 0}
             \label{fig:correlation_heatmap_3_0}
-        \end{subfigure}
-    \end{tabular}
-    \caption{Pearson correlation heatmap between the quantification results of
-        the detection tools, multiple aggregations of the detection tools, and
-        the quantification tools.
+        \end{subfigure} \end{tabular} \caption{Pearson correlation heatmap
+        between the
+        quantification results of the detection tools, multiple aggregations of
+        the
+        detection tools, and the quantification tools.
         The expression values were scaled so that the sum per sample and tool was
         constant.
         For each detected \gls{bsj}, expression information of all \gls{bsj}s within a
@@ -47,7 +73,7 @@ tools.
         show relatively low correlation with the detection tools and aggregations.
     } \label{fig:correlation_heatmap} \end{figure}
 
-\subsection{Quantification tools}
+\subsubsection{Quantification tools}
 Interestingly, the quantification tools show relatively low correlation with
 the detection tools and aggregations.
 While both show robust results in their respective publications, they were only
@@ -81,7 +107,7 @@ similar approach to the detection tools.
 Again, the lack of a ground truth makes it impossible to say whether the
 quantification results of CIRIquant are trustworthy in this setting.
 
-\subsection{Detection tools}
+\subsubsection{Detection tools}
 It appears like there are two groups of detection tools: One including
 Segemehl, find\_circ and ciri2, and the other including DCC and CircExplorer2.
 Both show high internal correlation in both settings ($>$0.75) and low
@@ -89,7 +115,7 @@ correlation between the groups ($\leq$0.5 for missing values treated as 0).
 
 %TODO: Add reasoning
 
-\subsection{Aggregations}
+\subsubsection{Aggregations}
 Many of the investigated aggregations seem to be able to smoothen out the
 differences between the two groups of detection tools.
 In the following paragraphs, I will look into the individual aggregations in
@@ -136,5 +162,11 @@ aggregation will deviate if a tool did not detect any reads supporting a
 The median aggregation shows a tendency to correlate with the
 segemehl-find\_circ-CIRI2 group.
 This is not surprising, as this group consists of 3 tools whereas the
-DCC-CircExplorer2 group consists of only 2 tools. Thus, if all tools detect a
-\gls{bsj}, the median will be the lowest entry from the first group.
+DCC-CircExplorer2 group consists of only 2 tools.
+Thus, if all tools detect a \gls{bsj}, the median will be the lowest entry from
+the first group.
+
+\subsection{How to proceed}
+
+As I cannot say which of the quantification results reflect the biological
+reality, I will rely on what has been done in previous studies.
