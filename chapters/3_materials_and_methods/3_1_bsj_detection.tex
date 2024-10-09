@@ -9,10 +9,11 @@ Thus, the only way to computationally identify \gls{crna}s is by detecting
 reads spanning the \gls{bsj}, which cannot be accounted for by canonical
 forward splicing.
 nf-core/circrna provides a total of seven tools for \gls{bsj}
-detection. However, only five of them are compatible with single-end sequencing
-data. I will briefly discuss these five tools below.
+detection.
+However, only five of them are compatible with single-end sequencing data.
+I will briefly discuss these five tools below.
 
-\subsubsection{find\_circ (2013)\supercite{memczak_circular_2013}}
+\subsubsection{find\_circ (2013)}
 Find\_circ is one of the pioneering tools for \gls{crna} detection,
 specifically designed for identifying circular RNAs by leveraging RNA-seq data.
 It employs a novel alignment strategy, splitting reads that do not map linearly
@@ -30,7 +31,7 @@ capabilities\supercite{sekar_circular_2018,liu_prkra_2022}.
 Nonetheless, find\_circ remains a popular choice for researchers due to its
 ease of use and integration with RNA-seq workflows.
 
-\subsubsection{Segemehl (2014)\supercite{hoffmann_multi-split_2014}}
+\subsubsection{Segemehl (2014)}
 Segemehl integrates a sensitive and flexible read-matching algorithm based on
 enhanced suffix arrays (ESAs).
 It identifies \gls{bsj} reads through split-read mapping, where the RNA-seq
@@ -45,7 +46,7 @@ While Segemehl has shown promise in identifying \gls{crna}s, its performance
 can vary depending on the specific dataset and experimental
 conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}.
 
-\subsubsection{DCC (2016)\supercite{cheng_specific_2016}}
+\subsubsection{DCC (2016)}
 DCC relies on STAR as its underlying aligner, which maps RNA-seq reads to the
 genome.
 It uses a combination of filters to detect \gls{bsj}s by distinguishing
@@ -60,7 +61,7 @@ conditions\supercite{cheng_specific_2016}.
 DCC has been validated in numerous studies, demonstrating high reliability and
 accuracy in \gls{crna} detection\supercite{paraboschi_interpreting_2018}.
 
-\subsubsection{CIRCexplorer2 (2016)\supercite{zhang_diverse_2016}}
+\subsubsection{CIRCexplorer2 (2016)}
 CIRCexplorer2 is another widely used tool that focuses on the detection of
 \gls{crna}s by analyzing RNA-seq data.
 It employs a unique strategy that combines both \gls{bsj} reads and linear RNA
@@ -72,7 +73,7 @@ Its ability to provide detailed annotations and quantifications of \gls{crna}s
 makes it a valuable resource for researchers\supercite{hansen_comparison_2016}.
 %TODO: Update
 
-\subsubsection{CIRI2 (2018)\supercite{gao_circular_2018}}
+\subsubsection{CIRI2 (2018)}
 CIRI2 improves upon the original CIRI\supercite{gao_ciri_2015} by using a
 maximum likelihood estimation (MLE) based on multiple seed matching to detect
 \gls{bsj} reads.
