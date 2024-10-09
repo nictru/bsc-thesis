@@ -1,7 +1,41 @@
 \subsection{\gls{crna} annotation}
-What is the main task here?
+In its minimal form, a \gls{crna} is defined by the chromosome it is located on
+and the start and end position of the \gls{bsj}.
+While this information is sufficient to uniquely identify a \gls{bsj}, it does
+not provide any information about the gene or genes it is part of.
+Furthermore, it does not give any information about the type of \gls{crna} it
+is (types of \gls{crna} are described in \cref{sec:circrna_types}) and if it is
+already has an entry in any \gls{crna} database.
+While some tools like CircExplorer2 and DCC provide their own annotation, other
+tools like find\_circ and segemehl do not.
+To provide a consistent annotation for all \glspl{bsj}, nf-core/circrna uses a
+custom annotation process that will be described in the following sections.
 
 \subsubsection{GTF based annotation}
-Describe GTF based annotation
+GTF files are a common way to store genomic annotations like gene locations and
+transcript structures.
+Such files are available for many reference genomes and can be used to identify
+the genes and linear transcripts a \gls{crna} overlaps with.
+This information can be used to infer the host gene(s) and the type of
+\gls{crna}.
+The nf-core/circrna pipeline approaches this as follows: \begin{enumerate}
+    \item If the \gls{crna} does not overlap with any gene, it is labeled as
+          intergenic.
+    \item If the \gls{crna} overlaps with at least one gene, but is not fully
+          contained by any gene, it is labeled as partially intergenic.
+    \item If the \gls{crna} is fully contained in any gene, the following
+          classification is performed:
+          \begin{itemize}
+              \item If the \gls{crna} is fully contained in an exon, it is
+                    labeled as
+                    exonic.
+              \item If the \gls{crna} is fully contained in an intron, it is
+                    labeled
+                    as intronic.
+              \item If the \gls{crna} spans both exonic and intronic regions,
+                    it is
+                    labeled as exonic-intronic.
+          \end{itemize}
+\end{enumerate}
 
 \subsubsection{Database based annotation} Describe database based annotation

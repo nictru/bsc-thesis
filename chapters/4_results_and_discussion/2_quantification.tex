@@ -98,8 +98,8 @@ Thus, I will not use the quantification results of psirc in the following
 analyses.
 
 \paragraph{CIRIquant}
-CIRIquant, on the other hand, shows a higher correlation with the detection
-tools and aggregations.
+CIRIquant, on the other hand, shows a higher correlation than psirc with the
+detection tools and aggregations.
 However, it is still relatively low ($<$0.3 in all comparisons when treating
 missing values as 0).
 Here, it is not clear why the correlation is so low, as CIRIquant uses a
@@ -108,8 +108,9 @@ Again, the lack of a ground truth makes it impossible to say whether the
 quantification results of CIRIquant are trustworthy in this setting.
 
 \subsubsection{Detection tools}
-It appears like there are two groups of detection tools: One including
-Segemehl, find\_circ and ciri2, and the other including DCC and CircExplorer2.
+In \cref{fig:correlation_heatmap} it appears like there are two groups of
+detection tools: One including Segemehl, find\_circ and ciri2, and the other
+including DCC and CircExplorer2.
 Both show high internal correlation in both settings ($>$0.75) and low
 correlation between the groups ($\leq$0.5 for missing values treated as 0).
 
@@ -168,5 +169,7 @@ the first group.
 
 \subsection{How to proceed}
 
-As I cannot say which of the quantification results reflect the biological
-reality, I will rely on what has been done in previous studies.
+While psirc appears to be unsuitable for quantification if the full-length
+\gls{crna} sequence is not available, CIRIquant at least shows some correlation
+with the detection tools and aggregations.
+
