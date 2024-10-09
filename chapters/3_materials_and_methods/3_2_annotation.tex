@@ -43,13 +43,15 @@ The nf-core/circrna pipeline identifies the type of \gls{crna} as shown in
           \end{itemize}
 \end{enumerate}
 
-\subsubsection{Database based annotation}
+\subsubsection{Database-based annotation}
 In addition to \gls{gtf}-based annotation, nf-core/circrna also provides
 database-based annotation.
-Databases like x and y store information about known \gls{crna}s, often
-including functional information.
+Databases like circBase and circAtlas store information about known
+\gls{crna}s, often including functional
+information\supercite{glazar_circbase_2014,wu_circatlas_2023}.
 Most \gls{crna} databases provide their stored \gls{crna}s in form of a
-\gls{bed} file.
+\gls{bed} file, providing a fairly unified interface for tools to process their
+stored information in an automated fashion.
 nf-core/circrna allows the user to provide an arbitrary number of such
 \gls{bed}
 files for database-based annotation.
@@ -57,3 +59,18 @@ The pipeline identifies a match between a detected \gls{crna} and a database
 entry, if the bi-directional overlap is at least 90\%.
 This means that at least 90\% of the detected \gls{crna} must overlap with the
 database entry and vice versa.
+
+In this study, the following databases were used for annotation:
+
+\paragraph{circBase} circBase, established in 2014, was one of the first
+databases dedicated to circRNAs.
+It compiled data from nine large-scale studies, encompassing 92,375 circRNAs
+from humans and key model organisms\supercite{glazar_circbase_2014}.
+Although circBase was accessible at the beginning of this study, it has since
+been taken offline.
+
+\paragraph{circAtlas 3.0}
+The third version of circAtlas was released in early 2024 and offers a more
+extensive dataset with three million vertebrate circRNAs.
+It covers ten species and 33 different tissues, providing valuable
+cross-species conservation scores for researchers\supercite{wu_circatlas_2023}.
