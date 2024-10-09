@@ -5,35 +5,43 @@ Breast cancer remains a major challenge in contemporary healthcare, being the
 most frequently diagnosed cancer among women worldwide.
 In 2022, approximately 2.3 million new cases were recorded, along with 666,000
 deaths, highlighting its impact as a critical public health issue.
-That year, breast cancer accounted for 23.8\% of all cancer diagnoses in
+That year, breast cancer accounted for 26.2\% of all cancer diagnoses in
 women\supercite{bray_global_2024,ferlay_global_2024}.
 As shown in \cref{fig:brca_incidence_mortality}, breast cancer is the cancer
-type with the highest incidence and the highest mortality rate.
+type with the highest incidence and the highest mortality rate in women.
 
 Projections indicate that by 2070, the incidence could rise to 4.4 million
 cases, placing an increasing strain on healthcare
 systems\supercite{lei_global_2021}.
 
-\begin{figure}[ht]
-    \centering
+\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
+            \centering
 
-    \includegraphics[width=\textwidth]{chapters/2_background/figures/incidence.png}
-    \caption{Overview of the cancer types with the highest global incidence in
-        women in 2022.
+            \includegraphics[width=\linewidth]{chapters/2_background/figures/bar.png}
+            \caption{Incidence and mortality of cancer types}
+            \label{fig:brca_bar}
+        \end{subfigure} & \begin{subfigure}{0.5\textwidth} \centering
+
+            \includegraphics[width=\linewidth]{chapters/2_background/figures/pie.png}
+            \caption{Relative incidence of cancer types}
+            \label{fig:brca_pie}
+        \end{subfigure} \end{tabular} \caption{Overview of the cancer types
+        with the highest global incidence in women in 2022.
         Data were obtained from the Global Cancer Observatory
         \supercite{bray_global_2024,ferlay_global_2024}.
-        Both subplots show the 6 cancer types with the highest incidence ASR.
-        The numbers represent the ASR of incidence and mortality per 100,000
+        Both subplots show the 6 cancer types with the highest incidence \gls{asr}.
+        The numbers represent the \gls{asr} of incidence and mortality per 100,000
         individuals.
         Age standardization is necessary when comparing populations with different age
         structures\supercite{segi_age-adjusted_1960,doll_cancer_1966}.
         \textbf{a}: Absolute incidence and mortality values.
         Breast cancer is the cancer type with the highest incidence and the highest
-        mortality rate with an incidence ASR of 46.82 and a mortality ASR of 12.65.
-        \textbf{b}: Relative incidence ASR values.
+        mortality rate with an incidence \gls{asr} of 46.82 and a mortality \gls{asr}
+        of 12.65.
+        \textbf{b}: Relative incidence \gls{asr} values.
         Breast cancer makes up 26.2\% of all newly diagnosed cancer cases.
-    } \label{fig:brca_incidence_mortality}
-\end{figure}
+    }
+    \label{fig:brca_incidence_mortality} \end{figure}
 
 Despite advancements in treatment and early detection, disparities in access to
 care and late-stage diagnoses remain prevalent, particularly in low-resource

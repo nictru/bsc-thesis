@@ -1,10 +1,10 @@
 \section{Quantification}
 
-\subsection{Approaches to quantify \gls{crna}s}
+\subsection{Approaches to quantify \glspl{crna}}
 In order to perform a differential expression analysis, the expression of each
 \gls{crna} needs to be quantified.
 Depending on the tool used for differential expression analysis, there are
-different ways to quantify the expression of \gls{crna}s.
+different ways to quantify the expression of \glspl{crna}.
 
 \paragraph{Using read counts from \gls{bsj} detection tools}
 Many studies used aggregations of the counts of reads supporting a \gls{bsj}
@@ -19,13 +19,13 @@ aggregation\supercite{digby_computational_2024}.
 
 \paragraph{Using multi-purpose tools}
 Other tools, such as CIRIquant can perform both the detection and
-quantification of \gls{crna}s\supercite{zhang_accurate_2020}.
+quantification of \glspl{crna}\supercite{zhang_accurate_2020}.
 However, every tool has its own strengths and weaknesses, and using counts from
 multiple tools can help to mitigate the weaknesses of individual tools.
 
 \paragraph{Using the full-length \gls{crna} sequence}
 In a third approach, the full-length \gls{crna} sequence is used to quantify
-the expression of \gls{crna}s using tools like
+the expression of \glspl{crna} using tools like
 psirc-quant\supercite{yu_quantifying_2021}.
 The resulting expression information can then be used with tools designed for
 differential transcript expression analysis, such as Fishpond
@@ -62,7 +62,7 @@ tools.
         detection tools, and the quantification tools.
         The expression values were scaled so that the sum per sample and tool was
         constant.
-        For each detected \gls{bsj}, expression information of all \gls{bsj}s within a
+        For each detected \gls{bsj}, expression information of all \glspl{bsj} within a
         \textit{max shift} of 3 was summed.
         While treating missing values as NaN results in higher correlations overall,
         treating the zeros as actual 0 values better reflects the underlying data.
@@ -81,7 +81,7 @@ tested on paired end data\supercite{zhang_accurate_2020,yu_quantifying_2021}.
 
 \paragraph{psirc}
 For psirc, there is an additional complication: As mentioned in
-\cref{sec:psirc}, it expects the full-length isoform \gls{crna}sequence as
+\cref{sec:psirc}, it expects the full-length isoform \glspl{crna}equence as
 input.
 As we only have single-end data, we cannot provide this information.
 Therefor, the entire sequence within the \gls{bsj} boundaries is used as the
@@ -131,7 +131,7 @@ with an expression value.
 When looking at the behaviour of the min aggregation when treating missing
 values as 0, we see that all correlation values are $<$0.25.
 Here, the min aggregation will be 0 if any of the tools did not detect any
-reads supporting a \gls{bsj}, which is true for many \gls{bsj}s.
+reads supporting a \gls{bsj}, which is true for many \glspl{bsj}.
 
 \paragraph{max}
 The max aggregation interestingly has high correlations with DCC and
@@ -146,9 +146,9 @@ aggregations.
 The sum aggregation results in robust correlations in both settings.
 While the correlation with CircExplorer2 is lower than with the other tools in
 the 0 setting, this is mostly due to the fact that CircExplorer2 detects fewer
-\gls{bsj}s than the other tools.
+\glspl{bsj} than the other tools.
 This is supported by the fact that CircExplorer2 has a high correlation of 0.96
-in the NaN setting, where only \gls{bsj}s where CircExplorer2 detected reads
+in the NaN setting, where only \glspl{bsj} where CircExplorer2 detected reads
 are considered.
 
 \paragraph{mean}

@@ -3,7 +3,7 @@
 
 While all \gls{bsj} detection tools quantify the number of reads
 supporting each \gls{bsj}, there are several tools that focus on the
-quantification of \gls{crna}s based on previously detected \gls{bsj}s.
+quantification of \glspl{crna} based on previously detected \glspl{bsj}.
 nf-core/circrna offers two such tools: CIRIquant and
 psirc-quant.
 
@@ -13,7 +13,7 @@ CIRIquant extends the CIRI (\Gls{crna} Identifier) framework, focusing on
 accurate \gls{crna} quantification by re-aligning \gls{bsj} reads to a
 pseudo-reference sequence.
 Although it natively utilizes CIRI2 for \gls{bsj} detection, it can also
-process \gls{bsj}s identified by other tools\supercite{zhang_accurate_2020}.
+process \glspl{bsj} identified by other tools\supercite{zhang_accurate_2020}.
 For each \gls{bsj}, CIRIquant constructs a pseudo \gls{crna} reference by
 concatenating two copies of the sequence between the \gls{bsj} start and end
 positions.
@@ -59,7 +59,7 @@ Psirc constructs a Transcript de Bruijn Graph (T-DBG) from this combined
 transcriptome and utilizes Kallisto to jointly quantify the expression levels
 of both transcript types\supercite{yu_quantifying_2021}.
 This approach enables a direct comparison between linear and circular isoforms,
-potentially offering deeper insights into the regulatory roles of \gls{crna}s
+potentially offering deeper insights into the regulatory roles of \glspl{crna}
 in gene expression.
 Notably, psirc does not explicitly differentiate between reads spanning the
 \gls{bsj} and those fully contained within it; instead, it relies on Kallisto's
