@@ -11,7 +11,7 @@ tools like find\_circ and segemehl do not.
 To provide a consistent annotation for all \glspl{bsj}, nf-core/circrna uses a
 custom annotation process that will be described in the following sections.
 
-\subsubsection{\gls{gtf} based annotation}
+\subsubsection{\gls{gtf}-based annotation}
 \gls{gtf} files are a common way to store genomic annotations like gene
 locations and
 transcript structures.
@@ -24,15 +24,13 @@ This information can be used to infer the host gene(s) and the type of
     \centering
 
     \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/annotation.png}
-    \caption{\gls{gtf} annotation workflow} % TODO: Add detailed caption
+    \caption{Workflow of the \gls{gtf}-based \gls{crna} type annotation}
     \label{fig:gtf_annotation}
 \end{figure}
 
-The nf-core/circrna pipeline approaches this as shown in
+The nf-core/circrna pipeline identifies the type of \gls{crna} as shown in
 \cref{fig:gtf_annotation}: \begin{enumerate} \item If the \gls{crna} does not
           overlap with any gene, it is labeled as \gls{ig-crna}.
-    \item If the \gls{crna} overlaps with at least one gene, but is not fully
-          contained by any gene, it is labeled as \gls{pig-crna}.
     \item If the \gls{crna} is fully contained in any gene, the following
           classification is performed:
           \begin{itemize}
@@ -45,4 +43,17 @@ The nf-core/circrna pipeline approaches this as shown in
           \end{itemize}
 \end{enumerate}
 
-\subsubsection{Database based annotation} Describe database based annotation
+\subsubsection{Database based annotation}
+In addition to \gls{gtf}-based annotation, nf-core/circrna also provides
+database-based annotation.
+Databases like x and y store information about known \gls{crna}s, often
+including functional information.
+Most \gls{crna} databases provide their stored \gls{crna}s in form of a
+\gls{bed} file.
+nf-core/circrna allows the user to provide an arbitrary number of such
+\gls{bed}
+files for database-based annotation.
+The pipeline identifies a match between a detected \gls{crna} and a database
+entry, if the bi-directional overlap is at least 90\%.
+This means that at least 90\% of the detected \gls{crna} must overlap with the
+database entry and vice versa.

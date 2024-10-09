@@ -340,8 +340,8 @@
     },
     {
       "type": "arrow",
-      "version": 820,
-      "versionNonce": 791819485,
+      "version": 835,
+      "versionNonce": 1207089843,
       "isDeleted": false,
       "id": "QGBlVDn_P2vDn-EueqcTg",
       "fillStyle": "solid",
@@ -368,18 +368,18 @@
           "id": "Sm-aCVfaB2SX_EWLqAIRN"
         }
       ],
-      "updated": 1728473701752,
+      "updated": 1728477132197,
       "link": null,
       "locked": false,
       "startBinding": {
         "elementId": "kcyRiFReqG4XMsEiMquwQ",
-        "focus": -0.027618895376825665,
+        "focus": 0.04470996772493778,
         "gap": 10.012104884461223
       },
       "endBinding": {
         "elementId": "8WQdZ5KYKsPgWMfJ9z9kT",
-        "focus": -0.029254788470736894,
-        "gap": 6.23328055859632
+        "focus": -0.06172587702452353,
+        "gap": 6.233280558596348
       },
       "lastCommittedPoint": null,
       "startArrowhead": null,
@@ -388,6 +388,10 @@
         [
           0,
           0
+        ],
+        [
+          20.01899820539336,
+          20.018998205393416
         ],
         [
           54.76218607087367,
