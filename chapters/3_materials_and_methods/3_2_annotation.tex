@@ -11,30 +11,37 @@ tools like find\_circ and segemehl do not.
 To provide a consistent annotation for all \glspl{bsj}, nf-core/circrna uses a
 custom annotation process that will be described in the following sections.
 
-\subsubsection{GTF based annotation}
-GTF files are a common way to store genomic annotations like gene locations and
+\subsubsection{\gls{gtf} based annotation}
+\gls{gtf} files are a common way to store genomic annotations like gene
+locations and
 transcript structures.
 Such files are available for many reference genomes and can be used to identify
 the genes and linear transcripts a \gls{crna} overlaps with.
 This information can be used to infer the host gene(s) and the type of
 \gls{crna}.
-The nf-core/circrna pipeline approaches this as follows: \begin{enumerate}
-    \item If the \gls{crna} does not overlap with any gene, it is labeled as
-          intergenic.
+
+\begin{figure}[ht]
+    \centering
+
+    \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/annotation.png}
+    \caption{\gls{gtf} annotation workflow} % TODO: Add detailed caption
+    \label{fig:gtf_annotation}
+\end{figure}
+
+The nf-core/circrna pipeline approaches this as shown in
+\cref{fig:gtf_annotation}: \begin{enumerate} \item If the \gls{crna} does not
+          overlap with any gene, it is labeled as \gls{ig-crna}.
     \item If the \gls{crna} overlaps with at least one gene, but is not fully
-          contained by any gene, it is labeled as partially intergenic.
+          contained by any gene, it is labeled as \gls{pig-crna}.
     \item If the \gls{crna} is fully contained in any gene, the following
           classification is performed:
           \begin{itemize}
               \item If the \gls{crna} is fully contained in an exon, it is
-                    labeled as
-                    exonic.
+                    labeled as \gls{e-crna}.
               \item If the \gls{crna} is fully contained in an intron, it is
-                    labeled
-                    as intronic.
+                    labeled as \gls{i-crna}.
               \item If the \gls{crna} spans both exonic and intronic regions,
-                    it is
-                    labeled as exonic-intronic.
+                    it is labeled as \gls{ei-crna}.
           \end{itemize}
 \end{enumerate}
 
