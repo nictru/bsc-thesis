@@ -163,23 +163,33 @@ The resulting UpSet plot is shown in \cref{fig:detection_upset_3}.
     \label{fig:circrna_types}
 \end{figure}
 
-\subsection{Agreement with databases}
-\begin{figure}[ht] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
-                                           \centering
+\subsection{Database agreement}
+\begin{figure}[ht] \begin{tabular}{cc}
+        \begin{subfigure}{0.5\textwidth} \centering
 
-                                           \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_upset.png}
-                                           \caption{Agreement between detected
-                                               \glspl{bsj} and databases}
-                                           \label{fig:db_upset}
-                                       \end{subfigure} &
-               \begin{subfigure}{0.5\textwidth} \centering
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_count.png}
+            \caption{Fractions of \glspl{crna} supported by
+                different numbers of databases}
+            \label{fig:db_pie}
+        \end{subfigure}
+        \begin{subfigure}{0.5\textwidth}
+            \centering
 
-                       \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_count.png}
-                       \caption{Fractions of \glspl{crna} supported by different numbers of databases}
-                       \label{fig:db_pie}
-                   \end{subfigure}
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_upset.png}
+            \caption{Agreement between detected
+                \glspl{bsj} and databases}
+            \label{fig:db_upset}
+        \end{subfigure} &
+
     \end{tabular}
-    \caption{Hello
+    \caption{As \cref{fig:db_pie} shows, while there is a large fraction of
+        \glspl{crna} without any
+        database match, more than 50\% of detected \glspl{crna} at least one
+        hit.
+        As shown in \cref{fig:db_upset}, most hits are from circAtlas, which is most
+        likely due to the fact that it is the largest database.
+        While both circBase and circBase\_lifted have some exclusive hits, the majority
+        of their hits are shared with circAtlas.
     }
     \label{fig:db_agreement}
 \end{figure}
