@@ -1,18 +1,69 @@
-Csn1s2a
-Rn18s-rs5
-Gm26917
-AY036118
-Ttn
-Setd2
-Smurf2
-Ctsd
-Fasn
-Ankhd1
-Mtus1
-Nfib
-Dnase1l1
-Baz1b
-Myh11
-Sorbs1
-Tpm2
-Stag1
+chr18:36716665-36728046:+	EI-circRNA	Ankhd1	circAtlas:mmu-Ankhd1_0031,circAtlas:mmu-Ankhd1_0062,circBase:mm9_circ_012270	FALSE
+chr18:36716665-36728046:-	EI-circRNA	Ankhd1	circAtlas:mmu-Ankhd1_0031,circAtlas:mmu-Ankhd1_0062,circBase:mm9_circ_012270	FALSE
+chr18:36708072-36716812:-	EI-circRNA	Ankhd1	circBase_lifted:hsa_circ_0074246	FALSE
+chr5:135250811-135257479:+	EI-circRNA	Baz1b	circAtlas:mmu-Baz1b_0025,circBase_lifted:hsa_circ_0006627	FALSE
+chr5:135250811-135257479:-	EI-circRNA	Baz1b	circAtlas:mmu-Baz1b_0025,circBase_lifted:hsa_circ_0006627	FALSE
+chr5:135266773-135268999:-	EI-circRNA	Baz1b	circAtlas:mmu-Baz1b_0047	FALSE
+chr5:135237897-135247148:+	EI-circRNA	Baz1b	circAtlas:mmu-Baz1b_0002	FALSE
+chr5:87925915-87926842:+	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87925915-87926842:-	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87925915-87929747:+	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87925916-87929747:-	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87934478-87936422:-	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87934477-87936421:-	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87934479-87936423:-	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87927862-87929747:-	EI-circRNA	Csn1s2a	.	TRUE
+chr5:87929622-87929747:-	circRNA	Csn1s2a	.	TRUE
+chr5:87934478-87936419:-	EI-circRNA	Csn1s2a	.	TRUE
+chr7:141937193-141939274:+	EI-circRNA	Ctsd	circAtlas:mmu-Ctsd_0006,circAtlas:mmu-Ctsd_0001	FALSE
+chr7:141937194-141939275:-	EI-circRNA	Ctsd	circAtlas:mmu-Ctsd_0006,circAtlas:mmu-Ctsd_0001	FALSE
+chr7:141937195-141939275:+	EI-circRNA	Ctsd	circAtlas:mmu-Ctsd_0006,circAtlas:mmu-Ctsd_0001	FALSE
+chr7:141929948-141930234:+	circRNA	Ctsd	.	TRUE
+chrX:73317383-73317632:+	EI-circRNA	Dnase1l1	.	TRUE
+chrX:73317383-73317632:-	EI-circRNA	Dnase1l1	.	TRUE
+chrX:73324866-73325126:+	ciRNA	Dnase1l1	.	TRUE
+chr11:120709821-120709987:+	circRNA	Fasn	circAtlas:mmu-Fasn_0008,circAtlas:mmu-Fasn_0012	FALSE
+chr11:120703602-120704357:+	EI-circRNA	Fasn	.	TRUE
+chr8:41453829-41455452:+	EI-circRNA	Mtus1	circAtlas:mmu-Mtus1_0002	FALSE
+chr16:14018710-14018904:+	EI-circRNA	Myh11	circAtlas:mmu-Myh11_0008,circAtlas:mmu-Myh11_0012	FALSE
+chr16:14018710-14018904:-	EI-circRNA	Myh11	circAtlas:mmu-Myh11_0008,circAtlas:mmu-Myh11_0012	FALSE
+chr16:14021040-14022238:+	EI-circRNA	Myh11	circAtlas:mmu-Myh11_0001	FALSE
+chr16:14018887-14019946:-	EI-circRNA	Myh11	.	TRUE
+chr16:14051404-14068488:+	EI-circRNA	Myh11	.	TRUE
+chr4:82236129-82238784:+	EI-circRNA	Nfib	circAtlas:mmu-Nfib_0026	FALSE
+chr4:82236129-82238784:-	EI-circRNA	Nfib	circAtlas:mmu-Nfib_0026	FALSE
+chr4:82357963-82358177:+	ciRNA	Nfib	.	TRUE
+chr9:110396864-110398828:+	EI-circRNA	Setd2	circAtlas:mmu-Setd2_0040,circAtlas:mmu-Setd2_0074	FALSE
+chr9:110396864-110398828:-	EI-circRNA	Setd2	circAtlas:mmu-Setd2_0040,circAtlas:mmu-Setd2_0074	FALSE
+chr9:110419456-110433299:+	EI-circRNA	Setd2	circAtlas:mmu-Setd2_0035,circBase_lifted:hsa_circ_0004692	FALSE
+chr11:106736808-106747090:+	EI-circRNA	Smurf2	circAtlas:mmu-Smurf2_0006,circBase_lifted:hsa_circ_0045318	FALSE
+chr11:106736809-106747090:-	EI-circRNA	Smurf2	circAtlas:mmu-Smurf2_0006,circBase_lifted:hsa_circ_0045318	FALSE
+chr11:106736809-106766765:+	EI-circRNA	Smurf2	circAtlas:mmu-Smurf2_0003,circAtlas:mmu-Smurf2_0034	FALSE
+chr19:40310237-40313276:+	EI-circRNA	Sorbs1	circAtlas:mmu-Sorbs1_0010,circAtlas:mmu-Sorbs1_0087,circAtlas:mmu-Sorbs1_0100	FALSE
+chr19:40310237-40313276:-	EI-circRNA	Sorbs1	circAtlas:mmu-Sorbs1_0010,circAtlas:mmu-Sorbs1_0087,circAtlas:mmu-Sorbs1_0100	FALSE
+chr19:40415695-40415864:+	ciRNA	Sorbs1	.	TRUE
+chr19:40281674-40282043:+	circRNA	Sorbs1	.	TRUE
+chr9:100716470-100748267:+	EI-circRNA	Stag1	circAtlas:mmu-Stag1_0060	FALSE
+chr9:100716471-100748267:-	EI-circRNA	Stag1	circAtlas:mmu-Stag1_0060	FALSE
+chr9:100810102-100811962:-	EI-circRNA	Stag1	circAtlas:mmu-Stag1_0010	FALSE
+chr4:43519226-43519506:-	EI-circRNA	Tpm2	circAtlas:mmu-Tpm2_0016	FALSE
+chr4:43519227-43519506:+	EI-circRNA	Tpm2	circAtlas:mmu-Tpm2_0016	FALSE
+chr4:43515020-43515170:+	EI-circRNA	Tpm2	.	TRUE
+chr2:76656419-76656496:+	EI-circRNA	Ttn	.	TRUE
+chr2:76596062-76612833:+	EI-circRNA	Ttn	.	TRUE
+chr2:76596062-76612833:-	EI-circRNA	Ttn	.	TRUE
+chr2:76782445-76783179:-	EI-circRNA	Ttn	.	TRUE
+chr2:76698631-76698840:-	EI-circRNA	Ttn	.	TRUE
+chr2:76726664-76736876:+	EI-circRNA	Ttn	.	TRUE
+chr2:76660369-76661400:+	EI-circRNA	Ttn	.	TRUE
+chr2:76688248-76689890:+	EI-circRNA	Ttn	.	TRUE
+chr2:76580401-76580561:+	circRNA	Ttn	.	TRUE
+chr2:76701420-76702073:-	EI-circRNA	Ttn	circAtlas:mmu-Ttn_1004	FALSE
+chr2:76706141-76706854:+	EI-circRNA	Ttn	.	TRUE
+chr2:76640604-76640756:-	circRNA	Ttn	circAtlas:mmu-Ttn_0266	FALSE
+chr2:76805441-76807483:+	EI-circRNA	Ttn	.	TRUE
+chr2:76795436-76795572:+	circRNA	Ttn	.	TRUE
+chr2:76624496-76627849:+	EI-circRNA	Ttn	.	TRUE
+chr2:76669156-76736876:-	EI-circRNA	Ttn	.	TRUE
+chr2:76662445-76662528:+	EI-circRNA	Ttn	.	TRUE
+chr2:76731100-76731379:+	EI-circRNA	Ttn	.	TRUE
