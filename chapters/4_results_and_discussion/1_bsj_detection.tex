@@ -182,24 +182,30 @@ The resulting UpSet plot is shown in \cref{fig:detection_upset_3_nostrand}.
 \begin{figure}[H]
     \centering
 
-    \includegraphics[width=0.5\textwidth]{chapters/4_results_and_discussion/figures/detection/types.png}
-    \caption{Pie chart showing the distribution of different types of
+    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/types.png}
+    \caption{Pie chart showing the relative abundance of different types of
         \glspl{crna} detected by the pipeline.
-        While according to literature \glspl{e-crna} are the most abundant type of
-        \glspl{crna}, here we see \glspl{ei-crna} as the most abundant type.
-        This is most likely due to the fact that we only know the start and end
-        positions of the \glspl{bsj}, but not the internal structure of the
-        \glspl{crna}.
-        Thus, \glspl{crna} are only labeled as \glspl{e-crna} if they are fully
-        contained in a single exon.
-        If they span multiple exons (thus, overlapping with at least one intron), they
-        are labeled as \glspl{ei-crna}.
     }
     \label{fig:circrna_types}
 \end{figure}
 
+While according to literature \glspl{e-crna} are the most abundant type of
+\glspl{crna}, in \cref{fig:circrna_types} we see that \glspl{ei-crna} is the
+most abundant \gls{crna} type annotation in this study.
+This is most likely due to the fact that we only know the start and end
+positions of the \glspl{bsj}, but not the internal structure of the
+\glspl{crna}.
+Thus, \glspl{crna} are only labeled as \glspl{e-crna} if they are fully
+contained in a single exon.
+If they span multiple exons (thus, overlapping with at least one intron), they
+are labeled as \glspl{ei-crna}.
+A detailed description about how the \gls{crna} types are determined can be
+found in \cref{sec:gtf_annotation}.
+Biological background on the different \gls{crna} types can be found in
+\cref{sec:circrna_types}.
+
 \subsection{Database agreement}
-\begin{figure}[ht] \begin{tabular}{cc}
+\begin{figure}[H] \begin{tabular}{cc}
         \begin{subfigure}{0.5\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_count.png}
