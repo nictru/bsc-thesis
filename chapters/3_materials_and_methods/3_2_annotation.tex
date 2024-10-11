@@ -6,8 +6,8 @@ not provide any information about the gene or genes it is part of.
 Furthermore, it does not give any information about the type of \gls{crna} it
 is (types of \gls{crna} are described in \cref{sec:circrna_types}) and if it is
 already has an entry in any \gls{crna} database.
-While some tools like \gls{cex2} and \gls{dcc} provide their own annotation, other
-tools like \gls{findcirc} and \gls{segemehl} do not.
+While some tools like \gls{cex2} and \gls{dcc} provide their own annotation,
+other tools like \gls{findcirc} and \gls{segemehl} do not.
 To provide a consistent annotation for all \glspl{bsj}, \gls{nf-circrna} uses a
 custom annotation process that will be described in the following sections.
 
@@ -22,28 +22,28 @@ This information can be used to infer the host gene(s) and the type of
 \gls{crna}.
 
 \begin{figure}[ht]
-    \centering
+      \centering
 
-    \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/annotation.png}
-    \caption{Workflow of the \gls{gtf}-based \gls{crna} type annotation}
-    \label{fig:gtf_annotation}
+      \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/annotation.png}
+      \caption{Workflow of the \gls{gtf}-based \gls{crna} type annotation}
+      \label{fig:gtf_annotation}
 \end{figure}
 
 The \gls{nf-circrna} pipeline identifies the type of \gls{crna} as shown in
 \cref{fig:gtf_annotation}: \begin{enumerate} \item If the \gls{crna} does not
-          overlap with any gene, it is labeled as \gls{ig-crna}.
-    \item If the \gls{crna} is fully contained in any gene, the following
-          classification is performed:
-          \begin{itemize}
-              \item If the \gls{crna} is fully contained in an exon, it is
-                    labeled as \gls{e-crna}.
-              \item If the \gls{crna} is fully contained in an intron, it
-                    is
-                    labeled as \gls{i-crna}.
-              \item If the \gls{crna} spans both exonic and intronic
-                    regions,
-                    it is labeled as \gls{ei-crna}.
-          \end{itemize}
+            overlap with any gene, it is labeled as \gls{ig-crna}.
+      \item If the \gls{crna} is fully contained in any gene, the following
+            classification is performed:
+            \begin{itemize}
+                  \item If the \gls{crna} is fully contained in an exon, it is
+                        labeled as \gls{e-crna}.
+                  \item If the \gls{crna} is fully contained in an intron, it
+                        is
+                        labeled as \gls{i-crna}.
+                  \item If the \gls{crna} spans both exonic and intronic
+                        regions,
+                        it is labeled as \gls{ei-crna}.
+            \end{itemize}
 \end{enumerate}
 
 \subsubsection{Database-based annotation}
@@ -67,14 +67,15 @@ database entry and vice versa.
 In this study, the following databases were used for annotation:
 
 \paragraph{circBase} circBase, established in 2014, was one of the first
-databases dedicated to circRNAs.
-It compiled data from nine large-scale studies, encompassing 92,375 circRNAs
-from humans and key model organisms\supercite{glazar_circbase_2014}.
+databases dedicated to \glspl{crna}.
+It compiled data from nine large-scale studies, encompassing 92,375
+\glspl{crna} from humans and key model
+organisms\supercite{glazar_circbase_2014}.
 Although circBase was accessible at the beginning of this study, it has since
 been taken offline.
 
 \paragraph{circAtlas 3.0}
 The third version of circAtlas was released in early 2024 and offers a more
-extensive dataset with three million vertebrate circRNAs.
+extensive dataset with three million vertebrate \glspl{crna}.
 It covers ten species and 33 different tissues, providing valuable
 cross-species conservation scores for researchers\supercite{wu_circatlas_2023}.

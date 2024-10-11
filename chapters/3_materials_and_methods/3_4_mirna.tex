@@ -1,42 +1,45 @@
 \subsection{\gls{mirna} interaction analysis}
-The analysis of circular RNA (\gls{crna}) interactions with microRNAs (\glspl{mirna})
-is crucial for understanding the regulatory roles of \glspl{crna} in various
-biological processes.
+The analysis of \glspl{crna} interactions with \glspl{mirna} is crucial for
+understanding the regulatory roles of \glspl{crna} in various biological
+processes.
 Two prominent tools used for predicting \gls{crna}-\gls{mirna} interactions are
 MiRanda and TargetScan.
 These tools leverage sequence complementarity and binding energy calculations
-to identify potential \gls{mirna} binding sites within \gls{crna} sequences, thereby
-elucidating their roles as competitive endogenous RNAs (ceRNAs).
+to identify potential \gls{mirna} binding sites within \gls{crna} sequences,
+thereby elucidating their roles as \glspl{cerna}.
 
 \subsubsection{MiRanda}
-MiRanda is a widely utilized algorithm that predicts \gls{mirna} targets based on
-sequence complementarity and the stability of the RNA duplex formed between the
-\gls{mirna} and its target.
-It has been effectively employed in various studies to analyze \gls{crna}-\gls{mirna}
-interactions.
+MiRanda is a widely utilized algorithm that predicts \gls{mirna} targets based
+on sequence complementarity and the stability of the \gls{rna} duplex formed
+between the \gls{mirna} and its target.
+It has been effectively employed in various studies to analyze
+\gls{crna}-\gls{mirna} interactions.
 For instance, Vromman et al.
 noted that
-MiRanda is often used alongside TargetScan to predict \gls{mirna} binding sites in
+MiRanda is often used alongside TargetScan to predict \gls{mirna} binding sites
+in
 \gls{crna} sequences, contributing to a better understanding of \gls{crna}
 functions
 in gene regulation\supercite{vromman_closing_2021}.
 Similarly, Zhang et al.
 utilized
-MiRanda in conjunction with TargetScan to predict microRNA response elements
-(MREs) in differentially expressed \glspl{crna}, demonstrating its utility in
+MiRanda in conjunction with TargetScan to predict \glspl{mre} in differentially
+expressed \glspl{crna}, demonstrating its utility in
 identifying significant interactions\supercite{zhang_microarray_2017}.
 
 \subsubsection{TargetScan}
-TargetScan, on the other hand, focuses on the identification of conserved \gls{mirna}
-binding sites across species, which enhances the reliability of the predicted
-interactions.
+TargetScan, on the other hand, focuses on the identification of conserved
+\gls{mirna} binding sites across species, which enhances the reliability of the
+predicted interactions.
 This tool has been integrated into various studies to explore the regulatory
 networks involving \glspl{crna} and \glspl{mirna}.
 For example, Jin et al.
-employed MiRanda and TargetScan to predict interactions between \glspl{crna} and
-\glspl{mirna}, reinforcing the hypothesis that \glspl{crna} can act as \gls{mirna}
+employed MiRanda and TargetScan to predict interactions between \glspl{crna}
+and
+\glspl{mirna}, reinforcing the hypothesis that \glspl{crna} can act as
+\gls{mirna}
 sponges\supercite{jin_changes_2018}.
 Furthermore, the combination of these tools allows researchers to construct
-comprehensive \gls{crna}-\gls{mirna}-\gls{mrna} networks, elucidating the complex
-regulatory mechanisms at play in various
+comprehensive \gls{crna}-\gls{mirna}-\gls{mrna} networks, elucidating the
+complex regulatory mechanisms at play in various
 diseases\supercite{he_construction_2021,zhang_construction_2021}.

@@ -3,8 +3,8 @@
 From a molecular perspective, \glspl{crna} are similar to their linear
 counterparts, with the primary distinction being their circular structure.
 As explained in \cref{sec:circrna_biogenesis}, \glspl{crna} are derived from a
-linear precursor (identical to linear RNA) that undergoes back-splicing to form
-a loop.
+linear precursor (identical to linear \gls{rna}) that undergoes back-splicing
+to form a loop.
 Thus, the only way to computationally identify \glspl{crna} is by detecting
 reads spanning the \gls{bsj}, which cannot be accounted for by canonical
 forward splicing.
@@ -15,12 +15,13 @@ I will briefly discuss these five tools below.
 
 \subsubsection{\Glsfmtlong{findcirc} (2013)}
 \Gls{findcirc} is one of the pioneering tools for \gls{crna} detection,
-specifically designed for identifying circular RNAs by leveraging RNA-seq data.
+specifically designed for identifying \glspl{crna} by leveraging \gls{rna-seq}
+data.
 It employs a novel alignment strategy, splitting reads that do not map linearly
 to the genome into smaller fragments, which are then re-aligned to detect
 \glspl{bsj}\supercite{memczak_circular_2013}.
-This tool does not rely on any known annotations and processes RNA-seq reads
-using Bowtie, an efficient aligner for identifying \gls{bsj} reads.
+This tool does not rely on any known annotations and processes \gls{rna-seq}
+reads using Bowtie, an efficient aligner for identifying \gls{bsj} reads.
 One of its key features is that it filters for \gls{bsj} reads, removing those
 that align entirely to the genome, which makes it stand out from methods
 relying heavily on gene annotations\supercite{memczak_circular_2013}.
@@ -29,15 +30,15 @@ While it has been effective in many studies, it may not capture \glspl{crna}
 with non-canonical splice signals, which can limit its detection
 capabilities\supercite{sekar_circular_2018,liu_prkra_2022}.
 Nonetheless, \gls{findcirc} remains a popular choice for researchers due to its
-ease of use and integration with RNA-seq workflows.
+ease of use and integration with \gls{rna-seq} workflows.
 
 \subsubsection{\Glsfmtlong{segemehl} (2014)}
 \Gls{segemehl} integrates a sensitive and flexible read-matching algorithm
 based on
 enhanced suffix arrays (ESAs).
-It identifies \gls{bsj} reads through split-read mapping, where the RNA-seq
-data is aligned using a dynamic programming strategy that identifies splicing,
-trans-splicing, and fusion transcripts.
+It identifies \gls{bsj} reads through split-read mapping, where the
+\gls{rna-seq} data is aligned using a dynamic programming strategy that
+identifies splicing, trans-splicing, and fusion transcripts.
 Its major advantage over other tools is its ability to map reads containing
 multiple split sites, which boosts sensitivity for detecting \glspl{crna} even
 in complex cases like long reads or sequences with
@@ -48,7 +49,8 @@ performance can vary depending on the specific dataset and experimental
 conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}.
 
 \subsubsection{\Glsfmtlong{dcc} (2016)}
-\Gls{dcc} relies on STAR as its underlying aligner, which maps RNA-seq reads to
+\Gls{dcc} relies on STAR as its underlying aligner, which maps \gls{rna-seq}
+reads to
 the
 genome.
 It uses a combination of filters to detect \glspl{bsj} by distinguishing
@@ -67,9 +69,9 @@ accuracy in \gls{crna} detection\supercite{paraboschi_interpreting_2018}.
 
 \subsubsection{\Glsfmtlong{cex2} (2016)}
 \Gls{cex2} is another widely used tool that focuses on the detection of
-\glspl{crna} by analyzing RNA-seq data.
-It employs a unique strategy that combines both \gls{bsj} reads and linear \gls{rna}
-reads to improve \gls{crna} identification.
+\glspl{crna} by analyzing \gls{rna-seq} data.
+It employs a unique strategy that combines both \gls{bsj} reads and linear
+\gls{rna} reads to improve \gls{crna} identification.
 \Gls{cex2} has demonstrated robust performance in various studies, often
 ranking high in comparative evaluations against other \gls{crna} detection
 tools\supercite{zeng_comprehensive_2017,nicolet_circular_2018}.
