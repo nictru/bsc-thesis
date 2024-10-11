@@ -22,7 +22,7 @@ The lowest numbers of \glspl{bsj} were detected by circexplorer2 and CIRI2,
 which both have built-in filters to reduce false
 positives\supercite{zhang_diverse_2016,gao_circular_2018}.
 
-\subsection{Agreement between tools and the role of \textit{max shift}}
+\subsection{Agreement between tools}
 
 Although tools like CIRI2 and CircExplorer2 have shown good performance in
 benchmarks, having multiple tools agree on the same \gls{bsj} can be a good
@@ -41,7 +41,7 @@ tools.
 \begin{figure}[H]
     \centering
 
-    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_0.png}
+    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_0_stranded.png}
     \caption{Upset plot illustrating the overlap between \glspl{bsj} detected
         by
         different tools.
@@ -55,9 +55,10 @@ tools.
     } \label{fig:detection_upset_0} \end{figure}
 
 As this agreement is relatively low, I investigated the detected \glspl{bsj}
-more closely and found that tools often have very similar \glspl{bsj}, but with
-slight differences in the start and end positions.
+more closely and found that tools often have very similar \glspl{bsj}, but on
+different strands and with slight differences in the start and end positions.
 
+\subsubsection{The role of the \textit{max shift} parameter}
 In order to quantify how frequently the slight mismatches occur, I introduced a
 \textit{max shift} parameter.
 With this parameter, if tool A detects a \gls{bsj} and tool B detects another
@@ -99,7 +100,7 @@ The results are shown in \cref{fig:shift_agreement}.
 \begin{figure}[H]
     \centering
 
-    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/shift_agreement.png}
+    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/shift_agreement_stranded.png}
     \caption{Stacked bar plot showing the level of agreement between tools for
         different values of the \textit{max shift} parameter.
         While the distribution changes drastically when increasing the \textit{max
@@ -109,12 +110,12 @@ The results are shown in \cref{fig:shift_agreement}.
         when raising the \textit{max shift} parameter to 20 or 50, the number of
         \glspl{bsj} detected by 4-5 tools remains nearly constant.
     }
-    \label{fig:shift_agreement}
+    \label{fig:shift_agreement_stranded}
 \end{figure}
 
-As shown in \cref{fig:shift_agreement}, the distribution of the number of tools
-supporting a \gls{bsj} changes drastically when increasing the \textit{max
-    shift} parameter from 0 to 1.
+As shown in \cref{fig:shift_agreement_stranded}, the distribution of the number
+of tools supporting a \gls{bsj} changes drastically when increasing the
+\textit{max shift} parameter from 0 to 1.
 However, the distribution remains relatively stable, especially for agreement
 between four or five tools.
 Increasing the \textit{max shift} parameter to large values does have an effect
@@ -122,6 +123,26 @@ on the number of \glspl{bsj} detected by two or three tools, but this comes
 with the risk of increasing the number of false positives, since this way
 \glspl{bsj} with a relatively large difference in start and end positions are
 still considered as evidence for each other.
+
+\subsubsection{The role of strandedness}
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/shift_agreement_unstranded.png}
+    \caption{Stacked bar plot showing the level of agreement between tools for
+        different values of the \textit{max shift} parameter.
+        While the distribution changes drastically when increasing the \textit{max
+            shift} parameter from 0 to 1, the distribution remains relatively stable for
+        higher values.
+        While the number of \glspl{bsj} detected by 2-3 tools continues to increase
+        when raising the \textit{max shift} parameter to 20 or 50, the number of
+        \glspl{bsj} detected by 4-5 tools remains nearly constant.
+    }
+    \label{fig:shift_agreement_unstranded}
+\end{figure}
+
+\subsubsection{Selecting thresholds}
 
 For the following analyses, I chose a \textit{max shift} parameter of 3 and a
 minimum agreement of 4 tools, as this appeared to be a good compromise between
@@ -131,7 +152,7 @@ The resulting UpSet plot is shown in \cref{fig:detection_upset_3}.
 \begin{figure}[H]
     \centering
 
-    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_3.png}
+    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_3_unstranded.png}
     \caption{Upset plot illustrating the overlap between \glspl{bsj} detected
         by
         different tools.
