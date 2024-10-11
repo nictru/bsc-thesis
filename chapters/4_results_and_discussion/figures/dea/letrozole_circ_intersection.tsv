@@ -1,4 +1,4 @@
-chr10:127924997-127925981:-	EI-circRNA	Atp5f1b	circAtlas:mmu-Atp5b_0044,circAtlas:mmu-Atp5b_0016,circAtlas:mmu-Atp5b_0034,circAtlas:mmu-Atp5b_0052,circAtlas:mmu-Atp5b_0053,circAtlas:mmu-Atp5b_0061	FALSE
-chr5:87817372-87821139:-	EI-circRNA	Csn1s1	.	TRUE
-chr5:87817373-87821140:+	EI-circRNA	Csn1s1	.	TRUE
-chr17:40158209-40158981:+	circRNA	Rn18s-rs5,Gm26917,AY036118	.	TRUE
+chr10:127924997-127925981:-	EI-circRNA	Atp5f1b	circAtlas:mmu-Atp5b_0044,circAtlas:mmu-Atp5b_0016,circAtlas:mmu-Atp5b_0034,circAtlas:mmu-Atp5b_0052,circAtlas:mmu-Atp5b_0053,circAtlas:mmu-Atp5b_0061
+chr5:87817372-87821139:-	EI-circRNA	Csn1s1	.
+chr5:87817373-87821140:+	EI-circRNA	Csn1s1	.
+chr17:40158209-40158981:+	circRNA	Rn18s-rs5,Gm26917,AY036118	.
