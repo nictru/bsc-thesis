@@ -25,69 +25,67 @@ positives\supercite{zhang_diverse_2016,gao_circular_2018}.
 \subsection{Agreement between tools}
 
 Although tools like CIRI2 and CircExplorer2 have shown good performance in
-benchmarks, having multiple tools agree on the same \gls{bsj} can be a good
-indicator of the reliability of the detection.
+benchmarks\supercite{zeng_comprehensive_2017}, having multiple tools agree on
+the same \gls{bsj} leads to even better robustness of the
+detection\supercite{hansen_comparison_2016}.
 
 To assess the agreement between the tools, I used UpSet plots, which show the
 overlap of \glspl{bsj} detected by different tools.
 When identifying the overlap between tools, the most strict approach is to
 consider only \glspl{bsj} with identical start and end positions and on the
 same strand as the same \gls{bsj}.
-The according plot is shown in \cref{fig:detection_upset_0}.
-While there are a total of x \glspl{bsj} detected by at least two tools, only y
-\glspl{bsj} are detected by three tools, and none are detected by four or five
-tools.
+The according plot is shown in \cref{fig:detection_upset_0_stranded}.
 
 \begin{figure}[H]
     \centering
 
     \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/detection/upset/shift_0_stranded.png}
     \caption{Upset plot illustrating the overlap between \glspl{bsj} detected
-        by
-        different tools.
-        Only \glspl{bsj} with identical start and end positions are considered the
-        same.
-        Only combinations with at least 10 common \glspl{bsj} are shown.
-        While most detection tools show similar results, segemehl stands out with the
-        largest number of \glspl{bsj} detected by only one tool.
-        On the other hand, it is also involved in most of the combinations with 2-3
-        tools.
-    } \label{fig:detection_upset_0} \end{figure}
+        by different tools.
+        Only \glspl{bsj} with identical start and end positions on the same strand are
+        considered the same.
+    } \label{fig:detection_upset_0_stranded} \end{figure}
 
 As this agreement is relatively low, I investigated the detected \glspl{bsj}
-more closely and found that tools often have very similar \glspl{bsj}, but on
-different strands and with slight differences in the start and end positions.
+more closely and found that across tools and samples, in many cases
+\glspl{crna} are detected with very small differences in the start and end
+positions, or on different strands.
+When applying the strict matching criteria of identical start and end positions
+on the same strand, many \glspl{bsj} are not considered to be the same, even
+though they likely represent the same \gls{crna}.
+In the following sections, I will investigate the role of the \textit{max
+    shift} parameter and strandedness in the agreement between tools.
 
 \subsubsection{The role of the \textit{max shift} parameter}
-In order to quantify how frequently the slight mismatches occur, I introduced a
-\textit{max shift} parameter.
-With this parameter, if tool A detects a \gls{bsj} and tool B detects another
-\gls{bsj}, where the start and end positions differ by at most \textit{max
-    shift} nucleotides, both \glspl{bsj} are considered to be supported by both
-tools.
+
+In order to quantify how frequently slight shifts in start and end positions
+between \glspl{bsj} occur, I introduced a \textit{max shift} parameter.
+With this parameter, a pair of \glspl{bsj} is considered to be the same if both
+the start and end positions differ by at most \textit{max shift} nucleotides.
 A more detailed explanation is given in \cref{fig:detection_shift_schematic}.
 
 \begin{figure}[H] \centering
 
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/grouping.png}
     \caption{Schematic illustrating two different scenarios of \gls{bsj}
-        matches
-        across tools.
-        In the green scenario, the \glspl{bsj} are exactly the same.
+        matches across tools.
+        In the \textit{perfect match} scenario, the \glspl{bsj} are exactly the same.
         This is what is required in order to be counted as a match in
-        \cref{fig:detection_upset_0}.
-        However, this rarely occurs in practice.
-        More frequently, the scenario illustrated in blue occurs.
-        Here, tools detect very similar \glspl{bsj}, with only a few nucleotides
+        \cref{fig:detection_upset_0_stranded}.
+        However, this rarely occurs in the data used in this study.
+        More frequently, the \textit{realistic scenario} occurs.
+        Here, very similar \glspl{bsj} are detected, with only a few nucleotides
         difference.
         In order to account for this, a \textit{max shift} parameter is introduced.
-        While in the blue scenario, all \glspl{bsj} would only be supported by one
-        tool, with a \textit{max shift} of 1, the result would change drastically.
-        The \gls{bsj} marked as A would be supported by two others (B and D), similarly
-        B would be supported by two others (A and D).
-        C would only be supported by D, as both the ends of both A and B differ by more
-        than 1.
-        D would be supported by all others.
+        While with the \textit{perfect match} approach, there would not be any matches
+        between \glspl{bsj} at all, with a \textit{max shift} of 1, the result would
+        change drastically.
+        The \gls{bsj} marked as A would match with two others (B and D), similarly B
+        would match with A and D.
+        C would only match with D, as both the ends of both A and B differ by more than
+        1.
+        D would match with all others.
+        A \textit{max shift} of 2 would lead to matches between all \glspl{bsj}.
     }
     \label{fig:detection_shift_schematic}
 \end{figure}
@@ -95,7 +93,7 @@ A more detailed explanation is given in \cref{fig:detection_shift_schematic}.
 In order to quantify the magnitude of the effect of the \textit{max shift}
 parameter, I calculated the level of agreement between tools for different
 values of \textit{max shift}.
-The results are shown in \cref{fig:shift_agreement}.
+The results are shown in \cref{fig:shift_agreement_stranded}.
 
 \begin{figure}[H]
     \centering
@@ -103,12 +101,7 @@ The results are shown in \cref{fig:shift_agreement}.
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/shift_agreement_stranded.png}
     \caption{Stacked bar plot showing the level of agreement between tools for
         different values of the \textit{max shift} parameter.
-        While the distribution changes drastically when increasing the \textit{max
-            shift} parameter from 0 to 1, the distribution remains relatively stable for
-        higher values.
-        While the number of \glspl{bsj} detected by 2-3 tools continues to increase
-        when raising the \textit{max shift} parameter to 20 or 50, the number of
-        \glspl{bsj} detected by 4-5 tools remains nearly constant.
+        Strand information is considered.
     }
     \label{fig:shift_agreement_stranded}
 \end{figure}
@@ -116,15 +109,25 @@ The results are shown in \cref{fig:shift_agreement}.
 As shown in \cref{fig:shift_agreement_stranded}, the distribution of the number
 of tools supporting a \gls{bsj} changes drastically when increasing the
 \textit{max shift} parameter from 0 to 1.
-However, the distribution remains relatively stable, especially for agreement
-between four or five tools.
-Increasing the \textit{max shift} parameter to large values does have an effect
-on the number of \glspl{bsj} detected by two or three tools, but this comes
-with the risk of increasing the number of false positives, since this way
-\glspl{bsj} with a relatively large difference in start and end positions are
-still considered as evidence for each other.
+In contrast, increasing the \textit{max shift} parameter to higher values has
+only a minor effect on the distribution.
+While the number of \glspl{bsj} detected by 2 tools keeps increasing, the
+number of \glspl{bsj} detected by more than two tools remains relatively
+stable.
+While with low values of the \textit{max shift} parameter, one can be
+relatively sure that the matched hits actually represent the same \gls{crna},
+increasing the \textit{max shift} parameter to large values comes with the risk
+of overlooking biological differences.
+I am not aware of a study that has systematically investigated the effect of
+such shifts on the detection of \glspl{bsj}.
+Also, due to the lack of a ground truth, it is impossible to determine the
+optimal value for the \textit{max shift} parameter.
 
 \subsubsection{The role of strandedness}
+
+In order to investigate the effect of strandedness on the agreement between
+tools, I repeated the analysis, this time also allowing matches between
+\glspl{bsj} on different strands.
 
 \begin{figure}[H]
     \centering
@@ -132,22 +135,32 @@ still considered as evidence for each other.
     \includegraphics[width=0.7\textwidth]{chapters/4_results_and_discussion/figures/detection/shift_agreement_unstranded.png}
     \caption{Stacked bar plot showing the level of agreement between tools for
         different values of the \textit{max shift} parameter.
-        While the distribution changes drastically when increasing the \textit{max
-            shift} parameter from 0 to 1, the distribution remains relatively stable for
-        higher values.
-        While the number of \glspl{bsj} detected by 2-3 tools continues to increase
-        when raising the \textit{max shift} parameter to 20 or 50, the number of
-        \glspl{bsj} detected by 4-5 tools remains nearly constant.
+        Strand information is ignored.
     }
     \label{fig:shift_agreement_unstranded}
 \end{figure}
+
+Strikingly, the agreement between tools is much higher when ignoring
+strandedness.
+When using a \textit{max shift} parameter of 0, the number of \glspl{bsj}
+detected by two or more tools is increases from x to y.
+When increasing the \textit{max shift} parameter to 1, a substantial number of
+\glspl{bsj} are detected by four and even all five tools.
+This is in stark contrast to the results when considering strandedness, where
+the number of \glspl{bsj} detected by four or five tools is very low, even with
+large values of the \textit{max shift} parameter.
+This suggests that there might be a technical or biological issue in the strand
+information.
+Investigating this further is beyond the scope of this thesis, but might be an
+interesting topic for future research.
 
 \subsubsection{Selecting thresholds}
 
 For the following analyses, I chose a \textit{max shift} parameter of 3 and a
 minimum agreement of 4 tools, as this appeared to be a good compromise between
 sensitivity and specificity.
-The resulting UpSet plot is shown in \cref{fig:detection_upset_3}.
+Strand information was ignored.
+The resulting UpSet plot is shown in \cref{fig:detection_upset_3_nostrand}.
 
 \begin{figure}[H]
     \centering
@@ -156,11 +169,12 @@ The resulting UpSet plot is shown in \cref{fig:detection_upset_3}.
     \caption{Upset plot illustrating the overlap between \glspl{bsj} detected
         by
         different tools.
-        Agreement was calculated using a \textit{max shift} of 3.
+        Agreement was calculated using a \textit{max shift} of 3 and ignoring strand
+        information.
         Only combinations including at least 2 tools and 10 common \glspl{bsj} are
         shown.
     }
-    \label{fig:detection_upset_3}
+    \label{fig:detection_upset_3_nostrand}
 \end{figure}
 
 \subsection{circRNA types}

@@ -22,22 +22,66 @@
 
 \subsection{\Glspl{crna} associated with tamoxifen induction}
 
-\begin{figure}[ht]
-    \centering
+\begin{figure}[ht] \begin{tabular}{cc}
+        \begin{subfigure}{0.5\textwidth} \centering
 
-    \includegraphics[width=0.5\textwidth]{chapters/4_results_and_discussion/figures/dea/deseq2/tamoxifen/volcano.png}
-    \caption{Hello world!
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/tamoxifen/volcano.png}
+            \caption{Fractions of \glspl{crna} supported by
+                different numbers of databases}
+            \label{fig:tamoxifen_volcano_deseq2}
+        \end{subfigure}
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/ciriquant/tamoxifen/volcano.png}
+            \caption{Agreement between detected
+                \glspl{bsj} and databases}
+            \label{fig:tamoxifen_volcano_ciriquant}
+        \end{subfigure} &
+
+    \end{tabular}
+    \caption{As \cref{fig:db_pie} shows, while there is a large fraction of
+        \glspl{crna} without any
+        database match, more than 50\% of detected \glspl{crna} at least one
+        hit.
+        As shown in \cref{fig:db_upset}, most hits are from circAtlas, which is most
+        likely due to the fact that it is the largest database.
+        While both circBase and circBase\_lifted have some exclusive hits, the majority
+        of their hits are shared with circAtlas.
     }
     \label{fig:tamoxifen_volcano}
 \end{figure}
 
 \subsection{\Glspl{crna} associated with letrozole induction}
 
-\begin{figure}[ht]
-    \centering
+\begin{figure}[ht] \begin{tabular}{cc}
+        \begin{subfigure}{0.5\textwidth} \centering
 
-    \includegraphics[width=0.5\textwidth]{chapters/4_results_and_discussion/figures/dea/deseq2/letrozole/volcano.png}
-    \caption{Hello world!
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/letrozole/volcano.png}
+            \caption{Fractions of \glspl{crna} supported by
+                different numbers of databases}
+            \label{fig:letrozole_volcano_deseq2}
+        \end{subfigure}
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/ciriquant/letrozole/volcano.png}
+            \caption{Agreement between detected
+                \glspl{bsj} and databases}
+            \label{fig:letrozole_volcano_ciriquant}
+        \end{subfigure} &
+
+    \end{tabular}
+    \caption{As \cref{fig:db_pie} shows, while there is a large fraction of
+        \glspl{crna} without any
+        database match, more than 50\% of detected \glspl{crna} at least one
+        hit.
+        As shown in \cref{fig:db_upset}, most hits are from circAtlas, which is most
+        likely due to the fact that it is the largest database.
+        While both circBase and circBase\_lifted have some exclusive hits, the majority
+        of their hits are shared with circAtlas.
     }
     \label{fig:letrozole_volcano}
 \end{figure}
+
+\subsection{Known \glspl{snp} located in differentially expressed \glspl{crna}}
