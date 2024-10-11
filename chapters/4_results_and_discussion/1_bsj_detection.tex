@@ -209,28 +209,44 @@ Biological background on the different \gls{crna} types can be found in
         \begin{subfigure}{0.5\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_count.png}
-            \caption{Fractions of \glspl{crna} supported by
-                different numbers of databases}
+            \caption{Percentages of \glspl{crna} supported by
+                given numbers of databases}
             \label{fig:db_pie}
         \end{subfigure}
         \begin{subfigure}{0.5\textwidth}
             \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/detection/database_upset.png}
-            \caption{Agreement between detected
+            \caption{Upset plot illustrating the agreement between detected
                 \glspl{bsj} and databases}
             \label{fig:db_upset}
-        \end{subfigure} &
-
+        \end{subfigure}
     \end{tabular}
-    \caption{As \cref{fig:db_pie} shows, while there is a large fraction of
-        \glspl{crna} without any
-        database match, more than 50\% of detected \glspl{crna} at least one
-        hit.
-        As shown in \cref{fig:db_upset}, most hits are from circAtlas, which is most
-        likely due to the fact that it is the largest database.
-        While both circBase and circBase\_lifted have some exclusive hits, the majority
-        of their hits are shared with circAtlas.
+    \caption{
+        Overview of the agreement between detected \glspl{bsj} and databases.
+        Details on the databases used and the algorithm used for annotation can be
+        found in \cref{sec:database_annotation}.
     }
     \label{fig:db_agreement}
 \end{figure}
+
+As shown in \cref{fig:db_pie}, 76\% of the detected \glspl{crna} are supported
+by at least one database.
+This is a strong indication that the detected \glspl{crna} are not only
+technical artifacts, but likely represent real \glspl{crna}.
+The remaining 24\% of \glspl{crna} are not supported by any database.
+This does not necessarily mean that these \glspl{crna} are false positives, as
+databases might not be complete or might not contain the \glspl{crna} detected
+in this study.
+The UpSet plot in \cref{fig:db_upset} shows that circAtlas contains the most
+\glspl{crna} that were detected by the pipeline.
+This is not surprising, as circAtlas is one of the most comprehensive databases
+for \glspl{crna}.
+Only 1,629 \glspl{crna} were exclusively detected by the two variants of
+circBase, compared to 22,339 they share with circAtlas.
+CircAtlas in contrast covers 57,022 \glspl{crna} that are not covered by
+circBase.
+This suggests that circAtlas is almost a superset of circBase, which is not
+surprising as the third version of circAtlas was released in early 2024 whereas
+circBase was released in
+2014\supercite{glazar_circbase_2014,wu_circatlas_2023}.
