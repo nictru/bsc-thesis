@@ -13,8 +13,8 @@ detection.
 However, only five of them are compatible with single-end sequencing data.
 I will briefly discuss these five tools below.
 
-\subsubsection{find\_circ (2013)}
-Find\_circ is one of the pioneering tools for \gls{crna} detection,
+\subsubsection{\Glsfmtlong{findcirc} (2013)}
+\Gls{findcirc} is one of the pioneering tools for \gls{crna} detection,
 specifically designed for identifying circular RNAs by leveraging RNA-seq data.
 It employs a novel alignment strategy, splitting reads that do not map linearly
 to the genome into smaller fragments, which are then re-aligned to detect
@@ -28,11 +28,12 @@ relying heavily on gene annotations\supercite{memczak_circular_2013}.
 While it has been effective in many studies, it may not capture \glspl{crna}
 with non-canonical splice signals, which can limit its detection
 capabilities\supercite{sekar_circular_2018,liu_prkra_2022}.
-Nonetheless, find\_circ remains a popular choice for researchers due to its
+Nonetheless, \gls{findcirc} remains a popular choice for researchers due to its
 ease of use and integration with RNA-seq workflows.
 
-\subsubsection{Segemehl (2014)}
-Segemehl integrates a sensitive and flexible read-matching algorithm based on
+\subsubsection{\Glsfmtlong{segemehl} (2014)}
+\Gls{segemehl} integrates a sensitive and flexible read-matching algorithm
+based on
 enhanced suffix arrays (ESAs).
 It identifies \gls{bsj} reads through split-read mapping, where the RNA-seq
 data is aligned using a dynamic programming strategy that identifies splicing,
@@ -42,45 +43,47 @@ multiple split sites, which boosts sensitivity for detecting \glspl{crna} even
 in complex cases like long reads or sequences with
 errors\supercite{hoffmann_multi-split_2014}.
 
-While Segemehl has shown promise in identifying \glspl{crna}, its performance
-can vary depending on the specific dataset and experimental
+While \gls{segemehl} has shown promise in identifying \glspl{crna}, its
+performance can vary depending on the specific dataset and experimental
 conditions\supercite{gao_ciri_2015,zeng_comprehensive_2017}.
 
-\subsubsection{DCC (2016)}
-DCC relies on STAR as its underlying aligner, which maps RNA-seq reads to the
+\subsubsection{\Glsfmtlong{dcc} (2016)}
+\Gls{dcc} relies on STAR as its underlying aligner, which maps RNA-seq reads to
+the
 genome.
 It uses a combination of filters to detect \glspl{bsj} by distinguishing
 back-splice reads from linear splicing.
-DCC integrates across replicates to minimize false positives and improve the
+\Gls{dcc} integrates across replicates to minimize false positives and improve
+the
 precision of \gls{crna} detection.
-What sets DCC apart is its post-mapping step, where it not only detects
+What sets \gls{dcc} apart is its post-mapping step, where it not only detects
 \glspl{crna} but also estimates their expression relative to the host gene
 using read counts from junction and non-junction reads.
 This makes it highly useful for comparing \gls{crna} expression across
 conditions\supercite{cheng_specific_2016}.
-DCC has been validated in numerous studies, demonstrating high reliability and
+\Gls{dcc} has been validated in numerous studies, demonstrating high
+reliability and
 accuracy in \gls{crna} detection\supercite{paraboschi_interpreting_2018}.
 
-\subsubsection{CIRCexplorer2 (2016)}
-CIRCexplorer2 is another widely used tool that focuses on the detection of
+\subsubsection{\Glsfmtlong{cex2} (2016)}
+\Gls{cex2} is another widely used tool that focuses on the detection of
 \glspl{crna} by analyzing RNA-seq data.
-It employs a unique strategy that combines both \gls{bsj} reads and linear RNA
+It employs a unique strategy that combines both \gls{bsj} reads and linear \gls{rna}
 reads to improve \gls{crna} identification.
-CIRCexplorer2 has demonstrated robust performance in various studies, often
+\Gls{cex2} has demonstrated robust performance in various studies, often
 ranking high in comparative evaluations against other \gls{crna} detection
 tools\supercite{zeng_comprehensive_2017,nicolet_circular_2018}.
 Its ability to provide detailed annotations and quantifications of \glspl{crna}
 makes it a valuable resource for researchers\supercite{hansen_comparison_2016}.
 %TODO: Update
 
-\subsubsection{CIRI2 (2018)}
-CIRI2 improves upon the original CIRI\supercite{gao_ciri_2015} by using a
-maximum likelihood estimation (MLE) based on multiple seed matching to detect
-\gls{bsj} reads.
+\subsubsection{\Glsfmtlong{ciri2} (2018)}
+\Gls{ciri2} improves upon the original \gls{ciri}\supercite{gao_ciri_2015} by
+using a \gls{mle} based on multiple seed matching to detect \gls{bsj} reads.
 This algorithm is optimized for high sensitivity while maintaining a low false
 discovery rate by filtering out false positives from repetitive sequences and
 mapping errors.
-It employs BWA-MEM for initial alignment, with CIRI2 distinguishing itself by
-its efficient use of computational resources and ability to handle mixed read
-lengths, making it faster and more memory-efficient compared to other
-methods\supercite{gao_circular_2018}.
+It employs BWA-MEM\supercite{li_fast_2009} for initial alignment, with
+\gls{ciri2} distinguishing itself by its efficient use of computational
+resources and ability to handle mixed read lengths, making it faster and more
+memory-efficient compared to other methods\supercite{gao_circular_2018}.
