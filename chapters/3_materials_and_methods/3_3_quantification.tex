@@ -4,37 +4,38 @@
 While all \gls{bsj} detection tools quantify the number of reads supporting
 each \gls{bsj}, there are several tools that focus on the quantification of
 \glspl{crna} based on previously detected \glspl{bsj}.
-nf-core/circrna offers two such tools: CIRIquant and
+\gls{nf-circrna} offers two such tools: \gls{ciriquant} and
 psirc-quant.
 There are also studies out there that used aggregations of the counts obtained
 by detection tools to quantify \glspl{crna}\supercite{gaffo_sensitive_2022}.
 This is also the original approach used by
-nf-core/circrna\supercite{digby_nf-corecircrna_2023}.
+\gls{nf-circrna}\supercite{digby_nf-corecircrna_2023}.
 
-\subsubsection{CIRIquant}
+\subsubsection{\glsfmtlong{ciriquant}}
 \label{sec:ciriquant}
-CIRIquant extends the CIRI (\Gls{crna} Identifier) framework, focusing on
-accurate \gls{crna} quantification by re-aligning \gls{bsj} reads to a
-pseudo-reference sequence.
-Although it natively utilizes CIRI2 for \gls{bsj} detection, it can also
+\gls{ciriquant} extends the \gls{ciri} framework, focusing on accurate
+\gls{crna} quantification by
+re-aligning \gls{bsj} reads to a pseudo-reference sequence.
+Although it natively utilizes \gls{ciri2} for \gls{bsj} detection, it can also
 process \glspl{bsj} identified by other tools\supercite{zhang_accurate_2020}.
-For each \gls{bsj}, CIRIquant constructs a pseudo \gls{crna} reference by
+For each \gls{bsj}, \gls{ciriquant} constructs a pseudo \gls{crna} reference by
 concatenating two copies of the sequence between the \gls{bsj} start and end
 positions.
 By comparing alignments to both the reference genome and the pseudo-reference
-sequence, CIRIquant calculates the fraction of reads utilizing the \gls{bsj}
-among those that span at least one of its
+sequence, \gls{ciriquant} calculates the fraction of reads utilizing the
+\gls{bsj} among those that span at least one of its
 boundaries\supercite{zhang_accurate_2020}.
-The output provided by CIRIquant is essentially the CPM (counts per million) of
-reads supporting each \gls{bsj}, normalized by the total number of mapped reads
-in the sample.
+The output provided by \gls{ciriquant} is essentially the \gls{cpm} of reads
+supporting each \gls{bsj}, normalized by the total number of mapped reads in
+the sample.
 
-\subsubsection{psirc}
+\subsubsection{\Glsfmtlong{psirc}}
 \label{sec:psirc}
-As illustrated in \cref{fig:psirc_workflow}, psirc operates in two main phases:
-first, the identification of \gls{bsj} and inference of full-length isoforms
-(FLI); and second, the quantification of expression levels for the detected
+As illustrated in \cref{fig:psirc_workflow}, \gls{psirc} operates in two main
+phases: first, the identification of \gls{bsj} and inference of \glspl{fli};
+and second, the quantification of expression levels for the detected
 isoforms\supercite{yu_quantifying_2021}.
+This second phase is referred to as \gls{psirc-quant}.
 
 \begin{figure}[ht] \centering
 
@@ -42,30 +43,29 @@ isoforms\supercite{yu_quantifying_2021}.
     \caption{psirc-workflow} \label{fig:psirc_workflow} \end{figure}
 
 The initial phase of the workflow functions similarly to the implementation
-described in \cref{sec:ciriquant}, with the added step of full-length isoform
-inference.
+described in \cref{sec:ciriquant}, with the added step of \gls{fli} inference.
 However, this step requires paired-end sequencing data, which is not available
 in this thesis.
-While psirc's \gls{bsj} detection can be substituted with other tools, the FLI
-inference step is more challenging to replace.
+While \gls{psirc}'s \gls{bsj} detection can be substituted with other tools,
+the \gls{fli} inference step is more challenging to replace.
 Previous studies have attempted to address this by using information from the
 linear transcriptome to retain only exonic regions within the \gls{bsj} limits
 \supercite{hoffmann_circrna-sponging_2023}.
 If no exonic regions are present, the entire sequence is retained.
-In contrast, the nf-core/circrna pipeline takes a different approach, retaining
-the entire sequence within the \gls{bsj} boundaries, regardless of exonic
-region presence.
+In contrast, the \gls{nf-circrna} pipeline takes a different approach,
+retaining the entire sequence within the \gls{bsj} boundaries, regardless of
+exonic region presence.
 This method avoids assumptions about the internal structure of the \gls{crna}.
 
-For the quantification phase, psirc requires a combined transcriptome FASTA
-file containing both linear and circular transcripts.
-Psirc constructs a Transcript de Bruijn Graph (T-DBG) from this combined
+For the quantification phase, \gls{psirc-quant} requires a combined
+transcriptome FASTA file containing both linear and circular transcripts.
+\Gls{psirc-quant} constructs a \gls{t-dbg} from this combined
 transcriptome and utilizes Kallisto to jointly quantify the expression levels
 of both transcript types\supercite{yu_quantifying_2021}.
 This approach enables a direct comparison between linear and circular isoforms,
 potentially offering deeper insights into the regulatory roles of \glspl{crna}
 in gene expression.
-Notably, psirc does not explicitly differentiate between reads spanning the
-\gls{bsj} and those fully contained within it; instead, it relies on Kallisto's
-likelihood maximization to distinguish between linear and circular
+Notably, \gls{psirc} does not explicitly differentiate between reads spanning
+the \gls{bsj} and those fully contained within it; instead, it relies on
+Kallisto's likelihood maximization to distinguish between linear and circular
 isoforms\supercite{yu_quantifying_2021}.

@@ -8,7 +8,7 @@ is (types of \gls{crna} are described in \cref{sec:circrna_types}) and if it is
 already has an entry in any \gls{crna} database.
 While some tools like CircExplorer2 and DCC provide their own annotation, other
 tools like find\_circ and segemehl do not.
-To provide a consistent annotation for all \glspl{bsj}, nf-core/circrna uses a
+To provide a consistent annotation for all \glspl{bsj}, \gls{nf-circrna} uses a
 custom annotation process that will be described in the following sections.
 
 \subsubsection{\gls{gtf}-based annotation}
@@ -22,33 +22,33 @@ This information can be used to infer the host gene(s) and the type of
 \gls{crna}.
 
 \begin{figure}[ht]
-      \centering
+    \centering
 
-      \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/annotation.png}
-      \caption{Workflow of the \gls{gtf}-based \gls{crna} type annotation}
-      \label{fig:gtf_annotation}
+    \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/annotation.png}
+    \caption{Workflow of the \gls{gtf}-based \gls{crna} type annotation}
+    \label{fig:gtf_annotation}
 \end{figure}
 
-The nf-core/circrna pipeline identifies the type of \gls{crna} as shown in
+The \gls{nf-circrna} pipeline identifies the type of \gls{crna} as shown in
 \cref{fig:gtf_annotation}: \begin{enumerate} \item If the \gls{crna} does not
-            overlap with any gene, it is labeled as \gls{ig-crna}.
-      \item If the \gls{crna} is fully contained in any gene, the following
-            classification is performed:
-            \begin{itemize}
-                  \item If the \gls{crna} is fully contained in an exon, it is
-                        labeled as \gls{e-crna}.
-                  \item If the \gls{crna} is fully contained in an intron, it
-                        is
-                        labeled as \gls{i-crna}.
-                  \item If the \gls{crna} spans both exonic and intronic
-                        regions,
-                        it is labeled as \gls{ei-crna}.
-            \end{itemize}
+          overlap with any gene, it is labeled as \gls{ig-crna}.
+    \item If the \gls{crna} is fully contained in any gene, the following
+          classification is performed:
+          \begin{itemize}
+              \item If the \gls{crna} is fully contained in an exon, it is
+                    labeled as \gls{e-crna}.
+              \item If the \gls{crna} is fully contained in an intron, it
+                    is
+                    labeled as \gls{i-crna}.
+              \item If the \gls{crna} spans both exonic and intronic
+                    regions,
+                    it is labeled as \gls{ei-crna}.
+          \end{itemize}
 \end{enumerate}
 
 \subsubsection{Database-based annotation}
 \label{sec:database_annotation}
-In addition to \gls{gtf}-based annotation, nf-core/circrna also provides
+In addition to \gls{gtf}-based annotation, \gls{nf-circrna} also provides
 database-based annotation.
 Databases like circBase and circAtlas store information about known
 \glspl{crna}, often including functional
@@ -56,7 +56,7 @@ information\supercite{glazar_circbase_2014,wu_circatlas_2023}.
 Most \gls{crna} databases provide their stored \glspl{crna} in form of a
 \gls{bed} file, providing a fairly unified interface for tools to process their
 stored information in an automated fashion.
-nf-core/circrna allows the user to provide an arbitrary number of such
+\gls{nf-circrna} allows the user to provide an arbitrary number of such
 \gls{bed}
 files for database-based annotation.
 The pipeline identifies a match between a detected \gls{crna} and a database
