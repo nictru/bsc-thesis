@@ -13,7 +13,7 @@ tools.
             \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/quantification/correlation_heatmap_3_na.png}
-            \caption{Missing values treated as NaN}
+            \caption{Missing values treated as \gls{nan}}
             \label{fig:correlation_heatmap_3_na}
         \end{subfigure} & \begin{subfigure}{0.5\textwidth} \centering
 
@@ -28,12 +28,13 @@ tools.
         For each detected \gls{bsj}, expression information of all \glspl{bsj} within a
         \textit{max shift} of 3 on either strand was summed.
         \Cref{fig:correlation_heatmap_3_na} shows the correlation when treating
-        missing values as NaN, while \cref{fig:correlation_heatmap_3_0} shows
+        missing values as \gls{nan}, while \cref{fig:correlation_heatmap_3_0}
+        shows
         the
         correlation when treating missing values as 0.
     } \label{fig:correlation_heatmap} \end{figure}
 
-As \cref{fig:correlation_heatmap} depicts, treating missing values as NaN
+As \cref{fig:correlation_heatmap} depicts, treating missing values as \gls{nan}
 results in higher correlations overall.
 However, treating the zeros as actual 0 values better reflects the underlying
 biology.
@@ -99,7 +100,7 @@ more detail.
 \paragraph{min}
 Using the minimum expression value of all tools for each \gls{bsj}
 interestingly results in high correlations with \gls{findcirc} and
-\gls{segemehl} when treating missing values as NaN.
+\gls{segemehl} when treating missing values as \gls{nan}.
 In this setting, the minimum expression will be the smallest value of tools
 with an expression value.
 When looking at the behaviour of the min aggregation when treating missing
@@ -116,8 +117,8 @@ Thus, if all tools detect a \gls{bsj}, the median will be the lowest entry from
 the first group.
 
 \paragraph{max}
-The max aggregation interestingly has high correlations with DCC and
-\gls{cex2} in the NaN setting.
+The max aggregation interestingly has high correlations with DCC and \gls{cex2}
+in the \gls{nan} setting.
 This indicates that - if they detect a \gls{bsj} - they often detect a high
 number of reads supporting it.
 In the 0 setting, the max aggregation achieved a correlation $\geq 0.55$ with
@@ -126,26 +127,26 @@ aggregations.
 
 \paragraph{sum}
 The sum aggregation results in robust correlations in both settings.
-While the correlation with \gls{cex2} is lower than with the other tools in
-the 0 setting, this is mostly due to the fact that \gls{cex2} detects fewer
+While the correlation with \gls{cex2} is lower than with the other tools in the
+0 setting, this is mostly due to the fact that \gls{cex2} detects fewer
 \glspl{bsj} than the other tools.
-This is supported by the fact that \gls{cex2} has a high correlation of 0.96
-in the NaN setting, where only \glspl{bsj} where \gls{cex2} detected reads
+This is supported by the fact that \gls{cex2} has a high correlation of 0.96 in
+the \gls{nan} setting, where only \glspl{bsj} where \gls{cex2} detected reads
 are considered.
 
 \paragraph{mean}
 This behaves very similarly to the sum aggregation.
 Mathematically, the mean aggregation is the sum divided by the number of tools
 with an expression value.
-Thus, in the 0 setting, they are equal, while in the NaN setting, the mean
-aggregation will deviate if a tool did not detect any reads supporting a
+Thus, in the 0 setting, they are equal, while in the \gls{nan} setting, the
+mean aggregation will deviate if a tool did not detect any reads supporting a
 \gls{bsj}.
 
 \subsection{Conclusion}
 
-While psirc appears to be unsuitable for quantification if the full-length
-\gls{crna} sequence is not available, \gls{ciriquant} at least shows some
-correlation with the detection tools and aggregations.
+While \gls{psirc-quant} appears to be unsuitable for quantification if the
+full-length \gls{crna} sequence is not available, \gls{ciriquant} at least
+shows some correlation with the detection tools and aggregations.
 As there is no ground truth available, both the sum aggregation and the
 quantification results of \gls{ciriquant} will be considered in the following
 analyses.
