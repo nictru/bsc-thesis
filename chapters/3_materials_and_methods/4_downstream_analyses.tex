@@ -1,0 +1,32 @@
+\section{Downstream analyses}
+
+\subsection{Differential expression analysis}
+
+\subsubsection{DESeq2}
+
+Many studies used aggregations of the counts of reads supporting a \gls{bsj}
+from multiple detection tools followed by differential expression analysis
+using traditional tools like DESeq2\supercite{love_moderated_2014} and
+EdgeR\supercite{robinson_edger_2010}
+\supercite{digby_nf-corecircrna_2023,gaffo_sensitive_2022}.
+
+This approach has recently been improved by \textcite{buratin_detecting_2022},
+who implemented a generalized linear mixed model approach which can handle the
+count information from multiple detection tools, without the need for prior
+aggregation\supercite{digby_computational_2024}.
+However, this approach is not yet implemented as an easy-to-use tool and was
+thus not used in this study.
+
+\subsubsection{CIRIquant}
+
+While CIRIquant is primarily a quantification tool, it also provides a
+differential expression analysis feature.
+While it lacks the flexibility of DESeq2 (e.g., in terms of design matrix
+specification and tests for association with numeric covariates), it was
+specifically designed for \gls{crna} data.
+
+\subsection{Functional enrichment analysis}
+
+\subsubsection{ClusterProfiler}
+
+\subsubsection{Gene Ontology}
