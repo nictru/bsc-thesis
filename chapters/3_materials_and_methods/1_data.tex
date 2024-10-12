@@ -1,14 +1,14 @@
 \section{Data}
 \label{sec:data}
 
-\subsection{Mouse models}
+\subsection{\Glsfmtfullpl{gemm}}
 \label{sec:mouse_models}
+\glsunset{gemm}
 Mouse models play a crucial role in breast cancer research, offering a powerful
 tool for understanding the molecular mechanisms of disease development and
 progression.
-Genetically engineered mouse models (GEMMs) allow researchers to manipulate
-specific genes, such as those involved in estrogen
-signaling\supercite{park_mouse_2018}.
+\Glspl{gemm} allow researchers to manipulate specific genes, such as those
+involved in estrogen signaling\supercite{park_mouse_2018}.
 These models can closely mimic human breast cancer, providing insights into the
 initiation, progression, and metastasis of tumors in a controlled and
 reproducible environment\supercite{pfefferle_transcriptomic_2013}.
@@ -27,15 +27,13 @@ driving breast cancer in humans\supercite{peterson_amphiregulin_2015}.
 \subsection{Datasets}
 \label{sec:datasets}
 The datasets used in this thesis are derived from two complementary studies by
-Furth et al.
-\supercite{furth_esr1_2023,furth_overexpression_2023}
-that investigate the role of estrogen signaling in breast cancer through the
-use of genetically engineered mouse models.
+\textcite{furth_esr1_2023,furth_overexpression_2023} that investigate the role
+of estrogen signaling in breast cancer through the use of \glspl{gemm}.
 
 One dataset comes from an aging study, which focuses on how the overexpression
-of estrogen receptor alpha (Esr1) and aromatase (CYP19A1) in mammary epithelial
-cells influences cancer development as the mice age past reproductive
-senescence.
+of Esr1 (the gene coding for \gls{era}) and CYP19A1 (the gene coding for
+aromatase) in mammary epithelial cells influences cancer development as the
+mice age past reproductive senescence.
 
 The second dataset originates from an anti-hormonal study, which examines the
 effects of tamoxifen and letrozole treatments on these same genetically altered
@@ -44,6 +42,21 @@ Both datasets provide critical insights into the molecular mechanisms linking
 aging, estrogen signaling, and breast cancer progression.
 
 \subsubsection{Study design}
+
+\begin{figure}[H]
+    \centering
+
+    \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/datasets.png}
+    \caption{Overview of the two studies and their respective timelines.
+        Each row represents two cohorts of mice: one with the modification to
+        overexpress Esr1 and one with the modification to overexpress CYP19A1.
+        The green arrows indicate healthy mice.
+        The blue blocks indicate the period of doxycycline treatment to induce the
+        transgenes.
+        The red lines represent the times at which the mice were euthanized for tissue
+        collection.
+    } \label{fig:dataset_timeline} \end{figure}
+
 In both studies, the mice were genetically modified to overexpress Esr1 and
 CYP19A1 in their mammary epithelial cells.
 This genetic manipulation was designed to model increased estrogen signaling,
@@ -86,8 +99,8 @@ Both studies used \gls{rna-seq} to analyze gene expression in the mammary
 glands.
 After euthanasia, thoracic mammary glands were flash frozen, and \gls{rna} was
 extracted using a Direct Zol \gls{rna} miniprep kit.
-The sequencing libraries were prepared from ribosome-depleted \gls{rna} and sequenced
-using the Illumina NextSeq 550 platform with a single-end 75-bp read
+The sequencing libraries were prepared from ribosome-depleted \gls{rna} and
+sequenced using the Illumina NextSeq 550 platform with a single-end 75-bp read
 length\supercite{furth_esr1_2023,furth_overexpression_2023}.
 
 \subsubsection{Findings}
@@ -105,9 +118,10 @@ senescence\supercite{furth_esr1_2023}.
 \paragraph{Aging study}
 This study demonstrated that Esr1 overexpression in aged mice led to a higher
 prevalence of estrogen receptor-positive mammary adenocarcinomas.
-The tumors in Esr1-overexpressing mice were predominantly \gls{er}-positive, whereas
-CYP19A1 mice exhibited a mix of \gls{er}-positive and adenosquamous carcinomas.
+The tumors in Esr1-overexpressing mice were predominantly \gls{er}-positive,
+whereas CYP19A1 mice exhibited a mix of \gls{er}-positive and adenosquamous
+carcinomas.
 The Esr1 mice developed a persistent proliferative signature similar to that
-found in human \gls{er}-positive breast cancer, supporting the role of aging and
-prolonged estrogen exposure in the generation of these
+found in human \gls{er}-positive breast cancer, supporting the role of aging
+and prolonged estrogen exposure in the generation of these
 cancers\supercite{furth_overexpression_2023}.
