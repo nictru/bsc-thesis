@@ -65,7 +65,7 @@ Similarly, \glspl{crna} can be subject to alternative splicing.
 This can result in the structures shown in \cref{fig:circrna_splicing}e and
 \cref{fig:circrna_splicing}f.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
 
     \includegraphics[width=\textwidth]{chapters/2_background/figures/circRNA-splicing.png}
@@ -76,9 +76,36 @@ This can result in the structures shown in \cref{fig:circrna_splicing}e and
 \subsection{\Glsfmtshort{crna} types}
 \label{sec:circrna_types}
 
-\paragraph{\Glsfmtfullpl{e-crna}} are the most prevalent type of
-\glspl{crna}, primarily formed from back-splicing of exons from protein-coding
-genes.
+\Glspl{crna} can be classified into four main types based on their genomic
+origins and structures.
+Literature mostly uses a different nomenclature than the one presented here.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        Full name            & Thesis                & Literature
+        \\ \hline
+        \Glsfmtlong{e-crna}  & \glsfmtshort{e-crna}  & circRNA
+        \\
+        \Glsfmtlong{i-crna}  & \glsfmtshort{i-crna}  & ciRNA
+        \\
+        \Glsfmtlong{ei-crna} & \glsfmtshort{ei-crna} & EI-circRNA
+        \\
+        \Glsfmtlong{ig-crna} & \glsfmtshort{ig-crna} & Intergenic \gls{crna}
+        \\ \hline
+    \end{tabular}
+    \caption{Comparison between the thesis' and literature's nomenclature for
+        \glspl{crna}.
+        The naming for \glspl{e-crna} is changed in order to avoid confusion with the
+        overarching term \gls{crna}.
+        The naming for \glspl{i-crna} is changed to be in line with the naming of
+        \glspl{e-crna} and \glspl{ei-crna}.
+    }
+\end{table}
+
+\paragraph{\Glsfmtfullpl{e-crna}} are the most prevalent type of \glspl{crna},
+primarily formed from back-splicing of exons from protein-coding genes.
 They are typically located in the cytoplasm and can function as sponges for
 \glspl{mirna}, thereby modulating gene expression and influencing various
 cellular processes, including tumorigenesis and cellular differentiation
@@ -178,8 +205,8 @@ These sequences are known as \gls{ires}.
 In 1995, Chen and Sarnow demonstrated that artificially engineered \glspl{crna}
 containing an \gls{ires} sequence are translated into peptides
 \supercite{chen_initiation_1995}.
-Later, it was found that some \glspl{crna} naturally possess \gls{ires} sequences and
-can thus be translated into peptides
+Later, it was found that some \glspl{crna} naturally possess \gls{ires}
+sequences and can thus be translated into peptides
 \supercite{chen_expanding_2020,legnini_circ-znf609_2017,pamudurti_translation_2017}.
 A concrete example for an \gls{ires} is the consensus motif for
 N\textsuperscript{6}-methyladenosine modification
