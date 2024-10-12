@@ -2,22 +2,34 @@
 
 \subsection{\Glspl{crna} associated with estrogen receptor expression}
 
-\begin{figure}[H]
-    \centering
+\begin{figure}[H] \begin{tabular}{cc}
+        \begin{subfigure}{0.5\textwidth} \centering
 
-    \includegraphics[width=0.5\textwidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
-    \caption{Hello world!
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
+            \caption{Hello world!
+            }
+            \label{fig:esr1_volcano}
+        \end{subfigure}
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+
+            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/dot.png}
+            \caption{Hello world!
+            }
+            \label{fig:esr1_go_terms}
+        \end{subfigure} &
+
+    \end{tabular}
+    \caption{As \cref{fig:db_pie} shows, while there is a large fraction of
+        \glspl{crna} without any
+        database match, more than 50\% of detected \glspl{crna} at least one
+        hit.
+        As shown in \cref{fig:db_upset}, most hits are from \gls{circatlas}, which is
+        most likely due to the fact that it is the largest database.
+        While both \gls{cb-m} and \gls{cb-h} have some exclusive hits, the majority of
+        their hits are shared with \gls{circatlas}.
     }
-    \label{fig:esr1_volcano}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-
-    \includegraphics[width=0.5\textwidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/dot.png}
-    \caption{Hello world!
-    }
-    \label{fig:go_terms}
+    \label{fig:dea_esr1}
 \end{figure}
 
 \subsection{\Glspl{crna} associated with tamoxifen induction}
