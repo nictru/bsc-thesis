@@ -9,3 +9,14 @@ tissue.
 The dataset introduced in \cref{sec:mirna_data} was used for this analysis.
 It provides a list of identified \glspl{mirna} and the target genes they are
 predicted to regulate.
+
+For each of the differentially expressed \glspl{crna}, the pipeline predicted
+potential interactions with \glspl{mirna} based on sequence complementarity and
+binding energy calculations.
+For each \gls{crna}, the target genes of all \glspl{mirna} it interacts with
+were aggregated to a single list of potential \gls{crna} target genes.
+Then, gene set enrichment analysis was performed to identify biological
+processes and pathways that are significantly enriched among the predicted
+target genes.
+
+
