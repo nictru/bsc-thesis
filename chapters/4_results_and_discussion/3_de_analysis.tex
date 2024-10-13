@@ -1,16 +1,23 @@
 \section{Differential expression analysis}
+Differential expression analysis was performed using the methods described in
+\cref{sec:material_dea}: DESeq2 and \gls{ciriquant}.
+In the following sections of this chapter, the results of the differential
+expression analysis are presented.
 
 \subsection{\Glspl{crna} associated with estrogen receptor expression}
 
-\begin{figure}[H] \begin{tabular}{cc}
-        \begin{subfigure}{0.5\textwidth} \centering
+In order to identify potential markers of estrogen levels, the expression of the
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
-            \caption{Volcano plot based on differential expression analysis
-                using DESeq2.
-                Coloring is based on the presence of a supporting database entry in any of the
-                used databases.
-            } \label{fig:esr1_volcano} \end{subfigure}
+
+\begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
+                 \centering
+
+                 \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
+                 \caption{Volcano plot based on differential expression
+                     analysis using DESeq2.
+                     Coloring is based on the presence of a supporting database entry in any of the
+                     used databases.
+                 } \label{fig:esr1_volcano} \end{subfigure}
         \begin{subfigure}{0.5\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/dot.png}
@@ -74,6 +81,8 @@
         treatment if they had an adjusted $p$-value of less than 0.05.
     } \label{fig:tamoxifen_volcano} \end{figure}
 
+\subsubsection{Potential target genes}
+
 \subsection{\Glspl{crna} associated with letrozole treatment}
 
 \begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
@@ -108,5 +117,4 @@
     \label{fig:letrozole_volcano}
 \end{figure}
 
-\subsection{Known \glsfmtshortpl{snp} located in differentially expressed
-    \glsfmtshortpl{crna}}
+\subsubsection{Potential target genes}
