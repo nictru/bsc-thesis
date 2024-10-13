@@ -148,3 +148,65 @@ The \gls{esr1} mice developed a persistent proliferative signature similar to
 that found in human \gls{er+} breast cancer, supporting the role of aging and
 prolonged estrogen exposure in the generation of these
 cancers\supercite{furth_overexpression_2023}.
+
+\subsection{\Glsfmtshort{mirna} data}
+\label{sec:mirna_data}
+
+As explained in \cref{sec:circrna_functions}, \gls{mirna} sponging is one of
+the most well-known functions of \glspl{crna}.
+Unfortunately, the datasets described in \cref{sec:datasets} do not include
+\gls{mirna} data - thus, it is not possible to identify \glspl{mrna} that were
+actually present in the mice.
+
+The closest alternative is using information from other studies that
+investigated the \gls{mirna} expression in the same tissue and under similar
+conditions.
+For this purpose, I found a study by \textcite{wang_dynamic_2022} that
+investigates how \glspl{mirna} are involved in regulating milk protein gene
+expression during different stages of mammary gland development in mice.
+
+\subsubsection{Study design}
+The study collected mammary gland tissues from 15 specific-pathogen-free (SPF)
+female ICR mice across five developmental stages: virgin, day 16 of pregnancy,
+day 12 of lactation, and days 1 and 3 of forced weaning.
+Tissues were frozen for RNA extraction, and small \glspl{rna} ranging from 18
+to 30 nucleotides were isolated.
+Adapter ligation and cDNA synthesis were performed, followed by amplification
+for sequencing.
+Using the DNBseq platform, approximately 21 million clean reads were generated
+per sample.
+After filtering low-quality reads, the clean reads were mapped to the mouse
+genome with Bowtie2, identifying known \glspl{mirna} from existing databases,
+while novel \glspl{mirna} were predicted using miRDeep2.
+These miRNAs were grouped into 12 clusters based on expression profiles across
+the developmental stages using the Mfuzz R package, revealing stage-specific
+patterns.
+Validation of the sequencing data was performed by qPCR on eight randomly
+selected \glspl{mirna}, with strong correlation to the sequencing results.
+Target genes of the \glspl{mirna} were predicted using TargetScan, miRanda, and
+RNAhybrid, and functional analysis through \gls{go} and \gls{kegg} pathway
+analysis revealed their involvement in mammary gland development and
+lactation\supercite{wang_dynamic_2022}.
+
+\subsubsection{Findings}
+The study uncovered several key findings regarding the role of \glspl{mirna} in
+regulating mammary gland development and milk protein expression in mice.
+Researchers identified a total of 852 known \glspl{mirna} and 179 novel
+\glspl{mirna} in the mammary glands across five investigated developmental
+stages.
+These \glspl{mirna} were grouped into 12 clusters based on their expression
+patterns, with Cluster 1 \glspl{mirna} showing an inverse relationship with
+milk protein gene expression.
+Notably, the study identified a novel \gls{mirna}, mmu-miR424-5p, which was
+found to regulate the expression of CSN2 (\textbeta{}-casein), a key milk
+protein gene, indicating its role as a potential negative regulator of milk
+protein synthesis\supercite{wang_dynamic_2022}.
+
+The functional analysis of these \glspl{mirna} revealed that their target genes
+were involved in crucial biological processes related to mammary gland
+development, such as cell proliferation, differentiation, apoptosis, and lipid
+metabolism.
+Pathway analyses (\gls{go} and \gls{kegg}) further linked these \glspl{mirna}
+to important signaling pathways, including the Wnt, mTOR, and MAPK pathways,
+which are known to regulate mammary gland growth, differentiation, and milk
+production\supercite{wang_dynamic_2022}.
