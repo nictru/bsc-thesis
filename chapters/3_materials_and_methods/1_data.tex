@@ -18,7 +18,7 @@ responses, and interactions with the tumor
 microenvironment\supercite{manning_mouse_2016}.
 This makes them indispensable for preclinical testing of new therapies,
 including hormone-targeting treatments like tamoxifen and aromatase inhibitors,
-which are standard in the management of hormone receptor-positive breast
+which are standard in the management of \gls{hr+} breast
 cancer\supercite{fan_endocrine_2015,yin_disruption_2014}.
 By studying cancer in mice, researchers can identify potential biomarkers,
 refine therapeutic strategies, and deepen our understanding of the pathways
@@ -31,8 +31,8 @@ The datasets used in this thesis are derived from two complementary studies by
 of estrogen signaling in breast cancer through the use of \glspl{gemm}.
 
 One dataset comes from an aging study, which focuses on how the overexpression
-of Esr1 (the gene coding for \gls{era}) and CYP19A1 (the gene coding for
-aromatase) in mammary epithelial cells influences cancer development as the
+of \gls{esr1} (the gene coding for \gls{era}) and \gls{cyp19} (the gene coding
+for aromatase) in mammary epithelial cells influences cancer development as the
 mice age past reproductive senescence.
 The second dataset originates from an anti-hormonal study, which examines the
 effects of tamoxifen and letrozole treatments on \glspl{gemm} during
@@ -43,8 +43,9 @@ aging, estrogen signaling, and breast cancer progression.
 
 \subsubsection{Study design}
 
-In both studies, the \glspl{gemm} were modified to overexpress either Esr1 or
-CYP19A1 in their mammary epithelial cells when treated with doxycycline.
+In both studies, the \glspl{gemm} were modified to overexpress either
+\gls{esr1} or \gls{cyp19} in their mammary epithelial cells when treated with
+doxycycline.
 This genetic manipulation was designed to model increased estrogen signaling,
 which is known to be a critical factor in breast cancer development, especially
 after menopause\supercite{furth_esr1_2023,furth_overexpression_2023}.
@@ -61,7 +62,8 @@ The timeline of the two studies is illustrated in \cref{fig:dataset_timeline}.
     \includegraphics[width=\textwidth]{chapters/3_materials_and_methods/figures/datasets.png}
     \caption{Overview of the two studies and their respective timelines.
         Each red line represents two cohorts of mice that was euthanized for tissue
-        collection: one with the Esr1 transgene and one with the CYP19A1 transgene.
+        collection: one with the \gls{esr1} transgene and one with the \gls{cyp19}
+        transgene.
         The green arrows indicate periods without transgene induction, while the blue
         blocks indicate the periods of doxycycline treatment to induce the transgenes.
     } \label{fig:dataset_timeline} \end{figure}
@@ -73,7 +75,7 @@ therapies.
 
 \paragraph{Anti-hormonal study}
 In the anti-hormonal study, eight different cohorts of mice were investigated,
-four with the Esr1 transgene and four with the CYP19A1 transgene.
+four with the \gls{esr1} transgene and four with the \gls{cyp19} transgene.
 As shown in \cref{fig:dataset_timeline}, the mice were treated with doxycycline
 to induce the transgenes at 12 months of age, corresponding to middle age in
 humans.
@@ -90,8 +92,8 @@ After two more months (now 20 months of age), the remaining three cohorts
 euthanized\supercite{furth_esr1_2023}.
 
 \paragraph{Aging study}
-The aging study consists of 16 cohorts of mice, eight with the Esr1 transgene
-and eight with the CYP19A1 transgene.
+The aging study consists of 16 cohorts of mice, eight with the \gls{esr1}
+transgene and eight with the \gls{cyp19} transgene.
 At 12 months of age, one cohort of each genotype was euthanized to collect
 mammary gland tissue as a pre-transgene induction control.
 For three cohorts of each genotype, the transgene induction was started at 12
@@ -126,22 +128,22 @@ length\supercite{furth_esr1_2023,furth_overexpression_2023}.
 \subsubsection{Findings}
 
 \paragraph{Anti-hormonal study}
-The study found that Esr1 overexpression significantly increased the expression
-of genes related to cell proliferation, particularly those linked to poor
-prognostic indicators in early-stage hormone receptor-positive breast cancer.
+The study found that \gls{esr1} overexpression significantly increased the
+expression of genes related to cell proliferation, particularly those linked to
+poor prognostic indicators in early-stage \gls{hr+} breast cancer.
 Tamoxifen and letrozole treatments were able to reduce this elevated
-proliferative signature, but only Esr1 mice showed substantial responsiveness
-to tamoxifen during reproductive senescence.
+proliferative signature, but only \gls{esr1} mice showed substantial
+responsiveness to tamoxifen during reproductive senescence.
 Both models were responsive to letrozole before and after reproductive
 senescence\supercite{furth_esr1_2023}.
 
 \paragraph{Aging study}
-This study demonstrated that Esr1 overexpression in aged mice led to a higher
-prevalence of estrogen receptor-positive mammary adenocarcinomas.
-The tumors in Esr1-overexpressing mice were predominantly \gls{er}-positive,
-whereas CYP19A1 mice exhibited a mix of \gls{er}-positive and adenosquamous
-carcinomas.
-The Esr1 mice developed a persistent proliferative signature similar to that
-found in human \gls{er}-positive breast cancer, supporting the role of aging
-and prolonged estrogen exposure in the generation of these
+This study demonstrated that \gls{esr1} overexpression in aged mice led to a
+higher prevalence of \gls{er+} mammary adenocarcinomas.
+The tumors in \gls{esr1}-overexpressing mice were predominantly
+\gls{er+}, whereas \gls{cyp19} mice exhibited a mix of
+\gls{er+} and adenosquamous carcinomas.
+The \gls{esr1} mice developed a persistent proliferative signature similar to
+that found in human \gls{er+} breast cancer, supporting the role of
+aging and prolonged estrogen exposure in the generation of these
 cancers\supercite{furth_overexpression_2023}.
