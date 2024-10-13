@@ -1,15 +1,11 @@
 \chapter{Results and Discussion}
 
-For full analysis of \glspl{crna}, it is necessary to identify their \gls{fli}
-sequences.
-To reconstruct the full \gls{crna} sequence, a de novo assembly of the circular
-transcriptome that accounts for \glspl{bsj} is necessary.
-Tools like \gls{ciri-full}, \gls{circrnafull}, \gls{jccirc}, and \gls{psirc}
-can achieve this, but they rely on paired-end or long-read sequencing data.
-As of now, no tools are available for de novo assembly of \glspl{crna} using
-single-end short-read data, to my knowledge.
-Since the data used in this thesis is single-end, the focus will be limited to
-the detection, quantification, and analysis of \glspl{crna} on \gls{bsj}-level.
+For the results shown in this chapter, the raw sequencing data from the studies
+mentioned in \cref{sec:datasets} were processed using the \gls{nf-circrna}
+pipeline introduced in \cref{sec:nf-core_circrna}.
+The mm39 reference genome was used for the alignment of the reads.
+The pipeline was primarily run with the default settings, deviations will be
+mentioned in the respective sections.
 
 \input{chapters/4_results_and_discussion/1_bsj_detection.tex}
 \input{chapters/4_results_and_discussion/2_quantification.tex}
