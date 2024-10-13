@@ -2,37 +2,84 @@
 
 \subsection{Differential expression analysis}
 
-Multiple studies used aggregations of the counts of reads supporting a
-\gls{bsj} from multiple detection tools followed by differential expression
-analysis using traditional tools like DESeq2\supercite{love_moderated_2014} and
-EdgeR\supercite{robinson_edger_2010}
-\supercite{digby_nf-corecircrna_2023,gaffo_sensitive_2022}.
-
-This approach has recently been improved by \textcite{buratin_detecting_2022},
-who implemented a generalized linear mixed model approach which can handle the
-count information from multiple detection tools, without the need for prior
-aggregation\supercite{digby_computational_2024}.
-However, this approach is not yet implemented as an easy-to-use tool and was
-thus not used in this study.
-
 \subsubsection{DESeq2}
 
-Add description of DESeq2.
+DESeq2 is a widely utilized R package designed for analyzing differential gene
+expression from RNA-seq data, particularly through the application of the
+negative binomial distribution to model count data.
+It provides robust normalization methods and statistical tests to identify
+differentially expressed genes and \glspl{crna} across various biological
+conditions\supercite{love_moderated_2014,hu_integrative_2019,iparraguirre_blood_2023}.
+Recent studies have effectively employed DESeq2 for differential circRNA
+expression analysis, revealing significant changes in circRNA profiles under
+different experimental conditions.
+For instance, in the context of Varicella Zoster Virus infection, DESeq2
+identified 532 upregulated and 253 downregulated circRNAs in infected
+cells\supercite{yang_identification_2024}.
+Similarly, other research has confirmed its effectiveness in analyzing circRNA
+expression, highlighting its role in identifying potential biomarkers and
+understanding regulatory mechanisms in various
+diseases\supercite{wang_characterization_2022,feng_circrna_2022,feng_comprehensive_2022}.
 
 \subsubsection{\Glsfmtlong{ciriquant}}
 
-While \gls{ciriquant} is primarily a quantification tool, it also provides a
-differential expression analysis feature.
+While \gls{ciriquant} has already been introduced in \cref{sec:ciriquant} as a
+quantification tool, it also provides a differential expression analysis
+feature.
+It employs a generalized fold-change method, which accounts for both the
+magnitude of expression change and the variance in the posterior distribution
+of log2 fold changes, thus providing a robust framework for identifying
+differentially expressed \glspl{crna}\supercite{zhang_accurate_2020}.
 While it lacks the flexibility of DESeq2 (e.g., in terms of design matrix
 specification and tests for association with numeric covariates), it was
 specifically designed for \gls{crna} data.
 
-\subsection{Gene set enrichment analysis}
+\subsection{\Glsfmtfull{fea}}
+\glsunset{fea}
+
+\Gls{fea} is a crucial bioinformatics approach used to
+interpret large-scale genomic data by identifying biological functions and
+pathways associated with a set of genes.
+This method allows researchers to discern the biological significance of gene
+lists derived from high-throughput experiments, such as \gls{rna-seq} or
+microarray studies, by comparing them against predefined gene sets from
+databases like \gls{go} and
+\gls{kegg}\supercite{du_kegg-path_2014,wu_clusterprofiler_2021}.
+Enrichment analysis helps to uncover underlying biological processes, molecular
+functions, and cellular components that are overrepresented in the gene sets,
+thereby facilitating a deeper understanding of the molecular mechanisms at play
+in various biological contexts\supercite{wu_clusterprofiler_2021}.
+
+\subsubsection{\Glsfmtfull{go}}
+\glsunset{go}
+
+\Gls{go} provides a structured vocabulary that describes gene
+functions across different organisms, encompassing three main domains:
+biological processes, molecular functions, and cellular
+components\supercite{ashburner_gene_2000}.
+The \gls{go} framework enables researchers to annotate genes consistently and
+to compare gene functions across species, which is particularly valuable in
+evolutionary biology and comparative genomics\supercite{ashburner_gene_2000}.
+The dynamic nature of \gls{go} allows for the continuous updating of
+annotations as new biological knowledge emerges, thus supporting ongoing
+research efforts in functional genomics\supercite{ashburner_gene_2000}.
+This comprehensive approach to gene annotation is essential for elucidating the
+roles of genes in complex biological systems and diseases.
 
 \subsubsection{ClusterProfiler}
 
-Add description of ClusterProfiler.
-
-\subsubsection{Gene Ontology}
-
-Add description of Gene Ontology.
+The ClusterProfiler R package is a widely used tool for conducting functional
+enrichment analysis, particularly for \gls{go} and \gls{kegg}
+pathways\supercite{wu_clusterprofiler_2021,yu_clusterprofiler_2012}.
+It offers a user-friendly interface for analyzing and visualizing the results
+of enrichment analyses, making it accessible for researchers with varying
+levels of bioinformatics expertise\supercite{dai_identification_2020}.
+ClusterProfiler not only supports enrichment analysis but also facilitates the
+comparison of biological themes among gene clusters, enhancing the
+interpretability of high-throughput
+data\supercite{yu_clusterprofiler_2012,chen_identification_2021}.
+Its integration with other R packages allows for comprehensive data analysis,
+including visualization of results through various graphical representations
+\supercite{wu_clusterprofiler_2021,xie_identification_2022}.
+This versatility makes clusterProfiler an invaluable resource in the field of
+genomics and systems biology.
