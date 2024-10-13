@@ -6,21 +6,34 @@
         \begin{subfigure}{0.5\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
-            \caption{Hello world!
-            }
-            \label{fig:esr1_volcano}
-        \end{subfigure}
-        \begin{subfigure}{0.5\textwidth}
-            \centering
+            \caption{Volcano plot based on differential expression analysis
+                using DESeq2.
+                Coloring is based on the presence of a supporting database entry in any of the
+                used databases.
+            } \label{fig:esr1_volcano} \end{subfigure}
+        \begin{subfigure}{0.5\textwidth} \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/dot.png}
-            \caption{Hello world!
+            \caption{Functional enrichment of the host genes of the
+                \glspl{crna} marked as significantly associated with Esr1
+                expression.
             }
-            \label{fig:esr1_go_terms}
-        \end{subfigure} &
 
+            \label{fig:esr1_go_terms}
+        \end{subfigure}
     \end{tabular}
-    \caption{Hello world!
+    \caption{Results of differential expression analysis based on the
+        association with Esr1 expression.
+        Expression of the Esr1 gene was determined using the nf-core/rnaseq
+        pipeline\supercite{patel_nf-corernaseq_2024}.
+        The following design formula was used: $\sim age + transgene + induction + drug
+            + esr1$.
+        The expression matrix was tested for log2 fold changes with greater absolute
+        values than 2.
+        Benjamini-Hochberg correction was used to adjust the $p$-values for multiple
+        testing.
+        \Glspl{crna} were considered significantly associated with Esr1
+        expression if they had an adjusted $p$-value of less than 0.05.
     }
     \label{fig:dea_esr1}
 \end{figure}
