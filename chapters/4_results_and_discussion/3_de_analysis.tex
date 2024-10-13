@@ -6,15 +6,14 @@ expression analysis are presented.
 
 \subsection{\Glspl{crna} associated with estrogen receptor expression}
 
-In order to identify potential markers of estrogen levels, the expression of the
-
+In order to identify potential markers of estrogen levels, the expression of
+the 
 
 \begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
-                 \centering
+                 \centering 
 
                  \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
-                 \caption{Volcano plot based on differential expression
-                     analysis using DESeq2.
+                 \caption{Volcano plot based on differential expression analysis using DESeq2.
                      Coloring is based on the presence of a supporting database entry in any of the
                      used databases.
                  } \label{fig:esr1_volcano} \end{subfigure}
@@ -45,7 +44,7 @@ In order to identify potential markers of estrogen levels, the expression of the
     \label{fig:dea_esr1}
 \end{figure}
 
-\subsection{\Glspl{crna} associated with tamoxifen treatment}
+\subsection{\Glsfmtshortpl{crna} associated with \glsfmtlong{tam} treatment}
 
 \begin{figure}[H] \begin{tabular}{cc}
         \begin{subfigure}{0.5\textwidth} \centering
@@ -67,23 +66,23 @@ In order to identify potential markers of estrogen levels, the expression of the
             \caption{Volcano plot illustrating the differential expression
                 results obtained using \gls{ciriquant}.
                 Samples without treatment were used as the control group, and samples treated
-                with tamoxifen were used as the treatment group.
+                with \gls{tam} were used as the treatment group.
             }
             \label{fig:tamoxifen_volcano_ciriquant}
         \end{subfigure}
 
     \end{tabular}
     \caption{Results of differential expression analysis comparing untreated
-        samples with samples treated using tamoxifen (binary contrast).
+        samples with samples treated using \gls{tam} (binary contrast).
         Benjamini-Hochberg correction\supercite{benjamini_controlling_1995} was used to
         adjust the $p$-values for multiple testing.
-        \Glspl{crna} were considered significantly associated with tamoxifen
+        \Glspl{crna} were considered significantly associated with \gls{tam}
         treatment if they had an adjusted $p$-value of less than 0.05.
     } \label{fig:tamoxifen_volcano} \end{figure}
 
 \subsubsection{Potential target genes}
 
-\subsection{\Glspl{crna} associated with letrozole treatment}
+\subsection{\Glsfmtshortpl{crna} associated with \gls{let} treatment}
 
 \begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
                  \centering
@@ -102,7 +101,7 @@ In order to identify potential markers of estrogen levels, the expression of the
             \caption{Volcano plot illustrating the differential expression
                 results obtained using \gls{ciriquant}.
                 Samples without treatment were used as the control group, and samples treated
-                with letrozole were used as the treatment group.
+                with \gls{let} were used as the treatment group.
             }
             \label{fig:letrozole_volcano_ciriquant}
         \end{subfigure} &
@@ -111,7 +110,7 @@ In order to identify potential markers of estrogen levels, the expression of the
     \caption{Results of differential expression analysis using the same
         approach as in
         \cref{fig:tamoxifen_volcano}, but comparing samples treated with
-        letrozole
+        \gls{let}
         to untreated samples.
     }
     \label{fig:letrozole_volcano}
