@@ -79,32 +79,36 @@ This can result in the structures shown in \cref{fig:circrna_splicing}e and
 \Glspl{crna} can be classified into four main types based on their genomic
 origins and structures.
 Literature mostly uses a different nomenclature than the one presented here.
+The reason for this and the differences between the nomenclature used in this
+thesis and the one used in the literature are shown in
+\cref{tab:circrna_nomenclature}.
 
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{ccc}
-        \hline
-        Full name            & Thesis                & Literature
-        \\ \hline
-        \Glsfmtlong{e-crna}  & \glsfmtshort{e-crna}  & circRNA
-        \\
-        \Glsfmtlong{i-crna}  & \glsfmtshort{i-crna}  & ciRNA
-        \\
-        \Glsfmtlong{ei-crna} & \glsfmtshort{ei-crna} & EI-circRNA
-        \\
-        \Glsfmtlong{ig-crna} & \glsfmtshort{ig-crna} & Intergenic \gls{crna}
-        \\ \hline
-    \end{tabular}
-    \caption{Comparison between the thesis' and literature's nomenclature for
-        \glspl{crna}.
+\begin{table}[ht] \centering \begin{tabular}{ccc} \hline Full name &
+               Thesis                 & Literature
+               \\ \hline \Glsfmtlong{crna} &
+               \glsfmtshort{crna}     & (exonic) circRNA
+               \\ \Glsfmtlong{e-crna}  &
+               \glsfmtshort{e-crna}   & circRNA
+               \\ \Glsfmtlong{i-crna} & \glsfmtshort{i-crna}
+                                      & ciRNA
+               \\ \Glsfmtlong{ei-crna} & \glsfmtshort{ei-crna} & EI-circRNA \\
+               \Glsfmtlong{ig-crna}   & \glsfmtshort{ig-crna} & Intergenic
+               \gls{crna}                                                  \\
+               \hline
+    \end{tabular} \caption{Comparison between the thesis' and literature's
+        nomenclature for \glspl{crna}.
         The naming for \glspl{e-crna} is changed in order to avoid confusion with the
         overarching term \gls{crna}.
         The naming for \glspl{i-crna} is changed to be in line with the naming of
         \glspl{e-crna} and \glspl{ei-crna}.
     }
+    \label{tab:circrna_nomenclature}
 \end{table}
 
-\paragraph{\Glsfmtfullpl{e-crna}} are the most prevalent type of \glspl{crna},
+\subsubsection{\Glsfmtfullpl{e-crna}}
+\glsunset{e-crna}
+
+\Glspl{e-crna} are the most prevalent type of \glspl{crna},
 primarily formed from back-splicing of exons from protein-coding genes.
 They are typically located in the cytoplasm and can function as sponges for
 \glspl{mirna}, thereby modulating gene expression and influencing various
@@ -115,21 +119,26 @@ further regulate their stability and function (Zang et al., 2018).
 Their abundance and stability make them potential biomarkers for various
 diseases, including cancers (Li et al., 2021; Wang et al., 2021).
 
-\paragraph{\Glsfmtfullpl{i-crna}}, on the other hand, are derived
+\subsubsection{\Glsfmtfullpl{i-crna}}
+\glsunset{i-crna}
+
+\Glspl{i-crna}, on the other hand, are derived
 from introns
 and are predominantly localized in the nucleus.
 They play a role in regulating the transcription of their parental genes and
 are characterized by their constrained expression patterns (Ma et al., 2020;
 Xie et al., 2023).
-\gls{i-crna} are
-believed to interact with components of the transcription machinery, thereby
-influencing gene expression at the transcriptional level (Reddy et al., 2017).
+\gls{i-crna} are believed to interact with components of the transcription
+machinery, thereby influencing gene expression at the transcriptional level
+(Reddy et al., 2017).
 The nuclear localization of \glspl{i-crna} suggests they may have distinct
 regulatory functions compared to their \gls{e-crna} counterparts.
 
-\paragraph{\Glsfmtfullpl{ei-crna}} are a hybrid form that
-includes both
-exonic and intronic sequences.
+\subsubsection{\Glsfmtfullpl{ei-crna}}
+\glsunset{ei-crna}
+
+\Glspl{ei-crna} are a hybrid form that includes both exonic and intronic
+sequences.
 Like \glspl{i-crna}, \glspl{ei-crna} are also found in the nucleus and have
 been implicated in the regulation of gene transcription.
 They can enhance the expression of their parent genes by interacting with
@@ -138,11 +147,11 @@ This dual composition allows \glspl{ei-crna} to potentially serve as
 intermediaries in the regulation of gene expression, bridging the functions of
 both \glspl{e-crna} and \glspl{i-crna}.
 
-\paragraph{\Glsfmtfullpl{ig-crna}} are formed from regions of
-the
-genome
-that do not code for proteins and are often less characterized than the other
-types.
+\subsubsection{\Glsfmtfullpl{ig-crna}}
+\glsunset{ig-crna}
+
+\Glspl{ig-crna} are formed from regions of the genome that do not code for
+proteins and are often less characterized than the other types.
 Their functions remain largely unknown, but they are thought to contribute to
 the regulatory networks within cells, possibly by interacting with other
 \gls{rna} molecules or proteins (Li et al., 2021).
@@ -202,9 +211,9 @@ viral and cellular \glspl{mrna} contain sequences allowing ribosomes to
 initiate translation without a 5' cap \supercite{pelletier_internal_1988,
     jang_segment_1988}.
 These sequences are known as \gls{ires}.
-In 1995, Chen and Sarnow demonstrated that artificially engineered \glspl{crna}
-containing an \gls{ires} sequence are translated into peptides
-\supercite{chen_initiation_1995}.
+In 1995, \textcite{chen_initiation_1995} demonstrated that artificially
+engineered \glspl{crna} containing an \gls{ires} sequence are translated into
+peptides.
 Later, it was found that some \glspl{crna} naturally possess \gls{ires}
 sequences and can thus be translated into peptides
 \supercite{chen_expanding_2020,legnini_circ-znf609_2017,pamudurti_translation_2017}.
