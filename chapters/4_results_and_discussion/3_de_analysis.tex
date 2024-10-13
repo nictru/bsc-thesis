@@ -7,15 +7,25 @@ expression analysis are presented.
 \subsection{\Glspl{crna} associated with estrogen receptor expression}
 
 In order to identify potential markers of estrogen levels, the expression of
-the 
+the \gls{esr1} gene (described in \cref{sec:esr1}) was used as a proxy.
+As \gls{ciriquant} does not support the differential expression along a
+continuous variable, only the results obtained using DESeq2 are presented here.
+As shown in \cref{fig:esr1_volcano}, the differential expression analysis
+revealed a large number of \glspl{crna} significantly associated with the
+expression of \gls{esr1}.
+The functional enrichment analysis of the host genes of these \glspl{crna} is
+shown in \cref{fig:esr1_go_terms}.
 
 \begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
-                 \centering 
+                 \centering
 
                  \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/esr1/volcano.png}
-                 \caption{Volcano plot based on differential expression analysis using DESeq2.
+                 \caption{Volcano plot based on differential expression
+                     analysis using DESeq2.
                      Coloring is based on the presence of a supporting database entry in any of the
                      used databases.
+                     The labels represent the host genes of the respective \glspl{crna}.
+                     Not all labels are shown for better readability.
                  } \label{fig:esr1_volcano} \end{subfigure}
         \begin{subfigure}{0.5\textwidth} \centering
 
@@ -23,6 +33,7 @@ the
             \caption{Functional enrichment of the host genes of the
                 \glspl{crna} marked as significantly associated with \gls{esr1}
                 expression.
+                Only the ten highest-ranking terms are shown.
             }
 
             \label{fig:esr1_go_terms}
@@ -44,21 +55,76 @@ the
     \label{fig:dea_esr1}
 \end{figure}
 
+When looking at the result of the functional enrichment analysis, one has to
+keep in mind that the expression of \glspl{crna} is not necessarily directly
+linked to the expression of the host gene.
+Furthermore \glspl{crna} might have a different function than their respective
+host genes.
+
+However, the results show that there are many \glspl{crna} that both originate
+from host genes with a functional relation to estrogen and show a significant
+association with the expression of \gls{esr1}.
+
+In the following paragraphs I will discuss some of the most interesting GO
+terms that were found in the functional enrichment analysis.
+
+\paragraph{Developmental growth}
+The GO term \textit{developmental growth} is associated with the growth of a
+whole organism, a part of an organism, or a
+cell\supercite{noauthor_quickgodevelopmental_nodate,binns_quickgo_2009}.
+As discussed in \cref{sec:estrogen_signaling}, estrogen is known to promote
+cell proliferation and differentiation in the breast tissue and other organs.
+Thus, it is not surprising that the host genes of \glspl{crna} associated with
+\gls{esr1} expression are enriched for this term.
+
+\paragraph{Kinase binding}
+Kinase binding is another area where estrogen receptors exert influence.
+Estrogen receptors can interact with various kinases, which are essential for
+signal transduction pathways that regulate cell proliferation and survival.
+For instance, the activation of \gls{era} has been shown to involve the
+phosphorylation of specific kinases, such as p38 MAPK, which is crucial for
+mediating estrogen's effects on gene expression\supercite{lee_regulation_2002}.
+This interaction between \glspl{er} and kinases underscores the importance of
+kinase signaling in the regulation of estrogen-responsive genes, thereby
+linking kinase binding to the broader context of estrogen receptor
+signaling\supercite{campbell_phosphatidylinositol_2001}.
+Moreover, the role of kinases in modulating \gls{er} activity highlights their
+significance in the regulation of cell cycle processes and cellular
+growth\supercite{lu_regulation_2003}.
+
+\paragraph{Mitotic cell cycle and regulation of cell cycle process}
+The mitotic cell cycle and its regulation are closely tied to estrogen receptor
+signaling.
+Estrogen has been shown to promote cell cycle progression, particularly in
+hormone-responsive tissues.
+The interaction of \glspl{er} with cell cycle regulators facilitates the
+transition through various phases of the cell cycle, particularly in breast
+cancer cells where \gls{era} is a key
+player\supercite{drabovich_dynamics_2016}.
+The regulation of genes involved in the cell cycle by estrogen underscores the
+importance of ERs in maintaining proper cellular proliferation and
+function\supercite{bjornstrom_mechanisms_2005}.
+Additionally, studies have demonstrated that estrogen can induce the expression
+of cyclins and cyclin-dependent kinases, which are critical for cell cycle
+progression, further linking \gls{er} expression to the regulation of the cell
+cycle\supercite{g_widespread_2009}.
+
 \subsection{\Glsfmtshortpl{crna} associated with \glsfmtlong{tam} treatment}
 
-\begin{figure}[H] \begin{tabular}{cc}
-        \begin{subfigure}{0.5\textwidth} \centering
+\begin{figure}[H] \begin{tabular}{cc} \begin{subfigure}{0.5\textwidth}
+                 \centering
 
-            \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/tamoxifen/volcano.png}
-            \caption{Volcano plot illustrating the differential expression
-                results obtained using DESeq2.
-                The following design formula was used: $\sim age + transgene + induction +
-                    drug$.
-                The expression matrix was tested for log2 fold changes with greater absolute
-                values than 2.
-            }
-            \label{fig:tamoxifen_volcano_deseq2}
-        \end{subfigure}
+                 \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/tamoxifen/volcano.png}
+                 \caption{Volcano plot illustrating the differential expression
+                     results obtained
+                     using DESeq2.
+                     The following design formula was used: $\sim age + transgene + induction +
+                         drug$.
+                     The expression matrix was tested for log2 fold changes with greater absolute
+                     values than 2.
+                 }
+                 \label{fig:tamoxifen_volcano_deseq2}
+             \end{subfigure}
         \begin{subfigure}{0.5\textwidth}
             \centering
 
