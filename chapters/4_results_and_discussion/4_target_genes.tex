@@ -24,11 +24,14 @@ are based on the entire sequence of the \gls{crna} between the \gls{bsj} sites.
 Thus, regions of the \gls{crna} that are not part of the \gls{fli} are also
 considered in the analysis, which may lead to false positive predictions.
 
+The results of the target gene analysis for the differentially expressed
+\glspl{crna} are shown in \cref{fig:target_genes}.
+
 \begin{figure}[H] \begin{tabular}{ccc} \begin{subfigure}{0.5\textwidth}
                   \centering
 
                   \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/letrozole/chr5:87925915-87926842_targets.txt.png}
-                  \caption{The top 10 enriched \gls{go} terms in the target
+                  \caption{Top 10 enriched \gls{go} terms in the target
                       genes of the \textit{Csn1s2a} \gls{crna}.
                   }
                   \label{fig:tg_csn1s2a}
@@ -37,7 +40,7 @@ considered in the analysis, which may lead to false positive predictions.
             \centering
 
             \includegraphics[width=\linewidth]{chapters/4_results_and_discussion/figures/dea/deseq2/letrozole/chr5:87817372-87821139_targets.txt.png}
-            \caption{The top 10 enriched \gls{go} terms in the target
+            \caption{Top 10 enriched \gls{go} terms in the target
                 genes of the \textit{Csn1s1} \gls{crna}.
             }
             \label{fig:tg_csn1s1}
@@ -50,3 +53,17 @@ considered in the analysis, which may lead to false positive predictions.
     }
     \label{fig:target_genes}
 \end{figure}
+
+While the \textit{Bbs9} \gls{crna} did not have any predicted \gls{mirna}
+targets, the \textit{Csn1s2a} and \textit{Csn1s1} \glspl{crna} showed
+significant enrichment in several biological processes and pathways.
+The target genes of the \textit{Csn1s2a} \gls{crna} were enriched in processes
+related to immune response, while the target genes of the \textit{Csn1s1}
+\gls{crna} were enriched in catabolic processes.
+
+Interestingly, the \textit{Csn1s1} \gls{crna}, which was found significantly
+differentially expressed in the \gls{let}-treated group, showed
+\textit{aromatic compound catabolic process} as an enriched term.
+As \gls{let} acts as an aromatase inhibitor, this finding suggests that the
+\textit{Csn1s1} \gls{crna} may play a role in the metabolism of aromatase
+substrates.
