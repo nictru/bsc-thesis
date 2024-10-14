@@ -1,5 +1,7 @@
 \documentclass[pdftex,12pt,a4paper]{report}
 
+
+
 \usepackage[pdftex]{graphicx}
 \usepackage[ansinew]{inputenc}
 \usepackage{geometry}
@@ -8,7 +10,28 @@
 \geometry{a4paper,left=2.5cm,right=2.5cm, top=2.5cm, bottom=3cm}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{textgreek}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
+\usepackage{cleveref}
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=none
+]{biblatex}
+
+\addbibresource{thesis.bib}
+
 \begin{document}
+\setcounter{tocdepth}{4}
+
+\input{abbreviations.tex}
+
 \begin{titlepage}
 
     %%LR
@@ -29,7 +52,8 @@
 
         % Title
         \HRule \\[0.4cm]
-        { \huge \bfseries CircRNAs in estrogen signaling and breast cancer
+        { \huge \bfseries \Glsfmtlongpl{crna} in estrogen signaling and breast
+        cancer
         biology}\\[0.4cm]
 
         \HRule \\[1.5cm]
@@ -55,7 +79,8 @@
             {\Large Technical University of Munich}\\[0.5cm]
             {\Large Ludwig-Maximilians-Universit\"at M\"unchen}\\[1cm]
             {\Large Bachelor's Thesis in Bioinformatics}\\[1.5cm]
-            {\textbf{\LARGE CircRNAs in estrogen signaling and breast cancer
+            {\textbf{\LARGE \Glsfmtlongpl{crna} in estrogen signaling and
+                breast cancer
                 biology}}\\[1.5cm]
             {\textbf{\LARGE Zirkul\"are RNAs in der \"Ostrogensignalgebung und
                 der
@@ -66,24 +91,29 @@
 
         \begin{center}\Large
             \begin{tabular}{ll}
-                Author:    & Nico Trummer                                  \\ Supervisor: & Markus
-                Hoffmann, PhD                                              \\ Advisor: & Prof.
+                Author:    & Nico Trummer \\ Supervisor: & Markus Hoffmann, PhD \\ Advisor: &
+                   Prof.
                    Dr.
-                Markus List                                                \\ Advisor 2: & Prof.
+                Markus List               \\ Advisor 2: & Prof.
                    Dr.
-                Mathias Wilhelm                                            \\
-                Institute: & \makecell[l]{Data Science in Systems Biology, \\
-                Maximus-von-Imhof-Forum 3, 85354 Freising, Germany}
-                \\ Submitted: & 15.10.2024
-            \end{tabular}
-        \end{center}
+                Mathias Wilhelm           \\ Institute: & \makecell[l]{Data Science in Systems
+                Biology,                  \\ Maximus-von-Imhof-Forum 3, 85354 Freising, Germany} \\
+                Submitted: & 15.10.2024\end{tabular} \end{center} 
 
-    }% end title page
+    } 
 
-\end{titlepage}
+\end{titlepage} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% thesis content starts here
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/0_abstract.tex} \tableofcontents 
+
+\input{chapters/1_introduction/introduction.tex}
+\input{chapters/2_background/0_background.tex}
+\input{chapters/3_materials_and_methods/0_materials_and_methods.tex}
+\input{chapters/4_results_and_discussion/0_results_and_discussion.tex}
+\input{chapters/5_closing/0_closing.tex} 
+
+\printbibliography 
+
+ChatGPT was used for text refinement.
 
 \end{document}
