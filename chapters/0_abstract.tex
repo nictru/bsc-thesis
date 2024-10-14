@@ -40,6 +40,51 @@ Future research should prioritize systematically assessing the impact of the
 experimentally validating the candidate \glspl{crna} with additional datasets
 and methods.
 
+\newpage
+
 \section{Kurzzusammenfassung}
 
-Deutsche Version des Abstracts.
+Brustkrebs bleibt weltweit eine bedeutende gesundheitliche Herausforderung,
+wobei die Östrogensignalübertragung eine zentrale Rolle in seiner Entstehung
+und Progression spielt.
+In den letzten Jahren haben sich \glspl{crna} als wichtige Regulatoren der
+Genexpression und von Signalwegen herauskristallisiert, mit einem erheblichen
+Potenzial für das Verständnis der Brustkrebsbiologie.
+Aufgrund ihrer Stabilität und ihres gewebespezifischen Expressionsmusters
+werden \glspl{crna} zudem als vielversprechende Biomarker für die Krebsdiagnose
+und -therapie untersucht.
+
+In dieser Arbeit habe ich die \gls{nf-circrna}-Pipeline verwendet, um zwei
+Datensätze zu analysieren, die sich mit der Östrogensignalübertragung und
+Brustkrebs bei Mäusen beschäftigen.
+Der erste Datensatz untersuchte, wie die Überexpression von \gls{esr1} und
+\gls{cyp19} die Krebsentwicklung während der reproduktiven Seneszenz
+beeinflusst.
+Der zweite Datensatz befasste sich mit den Auswirkungen der gängigen
+Brustkrebsbehandlungen Letrozol und \Gls{tam} auf das Fortschreiten des
+Brustkrebses während der reproduktiven Seneszenz.
+
+Die Analyse zeigte, dass die Positionen der erkannten \glspl{crna} zwischen
+verschiedenen Erkennungsmethodens und Proben leicht variieren.
+Um dies zu beheben, habe ich einen neuen Parameter, \textit{max shift},
+eingeführt, um die Robustheit der \gls{crna}-Erkennung zu erhöhen.
+
+Darüber hinaus identifizierte die differentielle Expressionsanalyse mehrere
+\glspl{crna}, die signifikant mit der \gls{esr1}-Expression und den
+Behandlungsmethoden assoziiert waren.
+Unter diesen \glspl{crna} stachen drei besonders hervor, da sie eine starke
+Assoziation mit der \Gls{tam}- und Letrozol-Behandlung aufwiesen.
+
+Zudem wurden bekannte \glsfmtfull{mirna}-Gen-Interaktionen genutzt, um Zielgene
+der differentiell exprimierten \glspl{crna} zu identifizieren.
+Die Gen-Set-Anreicherungsanalyse zeigte, dass diese Zielgene in zentrale
+biologische Prozesse und Signalwege involviert sind, die mit den Auswirkungen
+der Letrozol- und \Gls{tam}-Behandlung in Verbindung stehen.
+
+Obwohl diese Ergebnisse vielversprechend sind, ist eine weitere Validierung des
+\textit{max shift}-Parameters und der identifizierten Kandidaten-\glspl{crna}
+erforderlich.
+Zukünftige Studien sollten sich darauf konzentrieren, systematisch die
+Auswirkungen des \textit{max shift}-Parameters auf die \gls{crna}-Erkennung zu
+untersuchen und die Kandidaten-\glspl{crna} mit weiteren Datensätzen und
+experimentellen Methoden zu validieren.
