@@ -220,22 +220,27 @@ Most interestingly, the most significant \gls{crna} is the exact same as the
 one found in the analysis of \gls{tam} treatment.
 An overview of the outliers from both analyses is shown in \cref{tab:outliers}.
 
-\begin{table}[H] \centering \begin{tabular}{cccc} \hline Location & Host gene
-                                      & Adjusted $p$-value (\gls{tam}) &
-               Adjusted $p$-value (\gls{let})
+\begin{table}[H] \centering \begin{tabular}{ccccc} \hline Location   &
+               Host gene
+                                         & Adj. $p$-val. (\gls{tam})
+                                         &
+               Adj. $p$-val. (\gls{let}) & Has DB entry
                \\ \hline
-               chr5:87925915-87926842 & \textit{Csn1s2a}
-                                      &
+               chr5:87925915-87926842    & \textit{Csn1s2a}
+                                         &
                2.554e-52
-                                      & 2.105e-17
+                                         & 2.105e-17
+                                         & No
                \\
-               chr5:87817372-87821140 & \textit{Csn1s1}
-                                      & not
-               significant            & 2.876e-14
+               chr5:87817372-87821140    & \textit{Csn1s1}
+                                         & not
+               significant               & 2.876e-14
+                                         & No
                \\
-               chr9:22555041-22570441 & \textit{Bbs9}
-                                      & not
-               significant            & 4.415e-08
+               chr9:22555041-22570441    & \textit{Bbs9}
+                                         & not
+               significant               & 4.415e-08
+                                         & Yes
                \\
                \hline
     \end{tabular} \caption{Overview of the outliers found in the differential
@@ -249,5 +254,32 @@ The fact that the same \gls{crna} was found to be significantly associated with
 both \gls{tam} and \gls{let} treatment is intriguing.
 Furthermore,there are two other \glspl{crna} that are significantly associated
 with \gls{let} treatment, but not with \gls{tam} treatment.
-In the following sections, I will refer to these three \glspl{crna} using their
-host gene names: \textit{Csn1s2a}, \textit{Csn1s1}, and \textit{Bbs9}.
+From now on, I will refer to these three \glspl{crna} using their host gene
+names: \textit{circ-Csn1s2a}, \textit{circ-Csn1s1}, and \textit{circ-Bbs9}.
+
+\subsection{Investigating the expression of the candidate \glsfmtshortpl{crna}}
+
+In order to get a better understanding of the expression patterns that led to
+the identification of the three candidate \glspl{crna}, the expression levels
+of these \glspl{crna} were visualized across all samples.
+
+\begin{figure}[H] \centering
+
+    \includegraphics[width=\textwidth]{chapters/4_results_and_discussion/figures/heatmap.png}
+    \caption{Clustermap showing the expression levels of the candidate
+        \glspl{crna} \textit{circ-Csn1s2a}, \textit{circ-Csn1s1}, and
+        \textit{circ-Bbs9} across all samples.
+        The expression values were log-normalized with a pseudo count of 1.
+        Covariates are shown on the top of the plot.
+        For numerical covariates, darker colors indicate higher values.
+    }
+    \label{fig:candidate_heatmap}
+\end{figure}
+
+The clustermap in \cref{fig:candidate_heatmap} shows the expression levels of
+the three candidate \glspl{crna} across all samples.
+While the expression all three \glspl{crna} have portions of samples with high
+expression, all of them are lowly in almost all treated samples.
+However, there are also many untreated samples with low expression levels.
+Interestingly, these samples are mostly from cohorts with the \gls{cyp19}
+transgene.
