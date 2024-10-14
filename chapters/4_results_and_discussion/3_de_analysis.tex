@@ -220,29 +220,33 @@ Most interestingly, the most significant \gls{crna} is the exact same as the
 one found in the analysis of \gls{tam} treatment.
 An overview of the outliers from both analyses is shown in \cref{tab:outliers}.
 
-\begin{table}[H] \centering \begin{tabular}{ccccc} \hline Location   &
+\begin{table}[H] \centering \begin{tabular}{|c|c|c|c|c|} \hline Location &
                Host gene
-                                         & Adj. $p$-val. (\gls{tam})
-                                         &
-               Adj. $p$-val. (\gls{let}) & Has DB entry
+                                             & \makecell{Adj. $p$-val. \\
+               \gls{tam}}
+                                             &
+               \makecell{Adj. $p$-val.                                 \\
+               \gls{let}}                    & Has DB entry
+               \\ \hline \hline
+               \makecell{chr5
+               \\87925915-87926842} & \textit{Csn1s2a}
+                                             &
+                 2.554e-52
+                                             & 2.105e-17
+                                             & No
                \\ \hline
-               chr5:87925915-87926842    & \textit{Csn1s2a}
-                                         &
-               2.554e-52
-                                         & 2.105e-17
-                                         & No
-               \\
-               chr5:87817372-87821140    & \textit{Csn1s1}
-                                         & not
-               significant               & 2.876e-14
-                                         & No
-               \\
-               chr9:22555041-22570441    & \textit{Bbs9}
-                                         & not
-               significant               & 4.415e-08
-                                         & Yes
-               \\
-               \hline
+               \makecell{chr5
+               \\87817372-87821140} & \textit{Csn1s1}
+                                             & not
+               significant                   & 2.876e-14
+                                             & No
+               \\ \hline
+               \makecell{chr9
+               \\22555041-22570441} & \textit{Bbs9}
+                                             & not
+               significant                   & 4.415e-08
+                                             & Yes
+               \\ \hline
     \end{tabular} \caption{Overview of the outliers found in the differential
         expression analysis of \gls{tam} and \gls{let} treatment.
         The \gls{bsj} location, host gene, and adjusted $p$-values are shown.
