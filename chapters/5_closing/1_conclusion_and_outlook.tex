@@ -1,47 +1,60 @@
 \chapter{Conclusion and Outlook}
 \label{sec:conclusion_and_outlook}
 
-In this thesis, I used the \gls{nf-circrna} pipeline to analyze the regulatory
-roles of \glspl{crna} in estrogen signaling and breast cancer.
-Although the used datasets were not optimal for the investigation of
-\glspl{crna}, some interesting findings were obtained.
+In this thesis, I utilized the \gls{nf-circrna} pipeline to analyze the
+regulatory roles of \glspl{crna} in estrogen signaling and breast cancer.
+Despite the limitations of the datasets for comprehensive \glspl{crna}
+analysis, the findings provide valuable insights and highlight novel
+methodological contributions that could advance future research.
 
-Looking at the exact positions of detected \glspl{bsj} in the genome revealed
-that there are small shifts in the \gls{bsj} positions across different tools
-and samples.
-By introducing a \textit{max shift} parameter, I was able to algorithmically
-overcome this issue and increase the overall agreement between the tools.
-While proper validation of the \textit{max shift} parameter is still pending,
-it provides a promising approach for future studies.
+One of the key technical challenges encountered was the slight positional
+variation of detected \glspl{bsj} across different tools and samples.
+To address this, I introduced the \textit{max shift} parameter, which
+algorithmically mitigates these discrepancies, significantly improving the
+consistency of \gls{crna} detection between tools.
+While full validation of the \textit{max shift} parameter is yet to be
+completed, this approach offers a promising solution that could be widely
+adopted in future \gls{crna} studies to enhance detection robustness.
 
-The analysis of different quantification methods showed that calculating the
-sum of the counts derived from the detection tools smoothens out the
-differences between the tools.
+In terms of quantification, I found that summing the counts derived from
+multiple detection tools reduced the variance between them, yielding smoother
+results.
 Dedicated quantification tools like \gls{ciriquant} and \gls{psirc-quant} were
 tested, but did not deliver promising results.
 This is most likely due to the fact that the data used in this study was not
 optimal for the analysis of \glspl{crna}.
+This emphasizes the importance of selecting appropriate data for such studies
+and suggests that further optimization of the quantification tools may be
+needed.
 
-The differential expression analysis revealed large numbers of \glspl{crna}
-significantly associated with \gls{esr1} expression and treatment with
-\gls{let} and \gls{tam}.
-While most of these \glspl{crna} formed clusters in the volcano plots, there
-were three \glspl{crna} that stood out due to their high significance.
-Two of them were not present in \gls{circatlas}, indicating that they might be
-novel \glspl{crna} associated with estrogen signaling and breast cancer.
+The differential expression analysis uncovered a substantial number of
+\glspl{crna} significantly associated with \gls{esr1} expression and treatment
+with \gls{let} and \gls{tam}.
+Notably, three \glspl{crna} stood out due to their high significance, and two
+of these were absent from \gls{circatlas}, suggesting they may be novel
+\glspl{crna} related to estrogen signaling and breast cancer.
+These \glspl{crna} could potentially serve as biomarkers for treatment efficacy
+or provide insights into the molecular mechanisms underlying therapeutic
+responses.
 
-Target genes were obtained using a study that identified \gls{mirna}-gene
-interactions in mouse mammary tissue.
-The \gls{nf-circrna} pipeline was used to predict interactions between
-differentially expressed \glspl{crna} and the \glspl{mirna} that are known to
-be active in the tissue.
-The results showed that the target genes of the differentially expressed
-\glspl{crna} are involved in various biological processes and pathways related
-to the effects of \gls{let} and \gls{tam} treatment.
+The exploration of \gls{mirna}-gene interactions further revealed that the
+target genes of the identified candidate \glspl{crna} are involved in critical
+biological processes and pathways associated with the effects of \gls{let} and
+\gls{tam} treatment.
+This demonstrates the regulatory potential of these \glspl{crna} in mediating
+the response to breast cancer therapies.
 
-Future work should focus on systematically investigating the effects of the
-\textit{max shift} parameter on the results of the \gls{bsj} detection,
-potentially leading to an optimal value for this parameter.
+\textbf{Outlook:}
+Future research should prioritize the systematic evaluation of the \textit{max
+    shift} parameter across different datasets and detection tools, with the goal
+of determining an optimal value that maximizes \gls{crna} detection accuracy.
+Additionally, further development of quantification methods tailored to
+\gls{crna}-specific challenges is necessary.
 
-Furthermore, the discovered candidate \glspl{crna} should be validated using
-more data and experimental methods.
+Moreover, the identified candidate \glspl{crna} should be validated using more
+comprehensive datasets and experimental approaches.
+Functional assays could provide a deeper understanding of their roles in
+estrogen signaling and their potential as biomarkers for therapeutic outcomes.
+Ultimately, this line of research could contribute to more personalized breast
+cancer treatment strategies by leveraging \glspl{crna} as diagnostic and
+prognostic tools.
