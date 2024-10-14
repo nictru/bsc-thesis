@@ -5,7 +5,6 @@ roles of \glspl{crna} in estrogen signaling and breast cancer.
 Although the used datasets were not optimal for the investigation of
 \glspl{crna}, some interesting findings were obtained.
 
-\paragraph{\Gls{bsj} detection}
 Looking at the exact positions of detected \glspl{bsj} in the genome revealed
 that there are small shifts in the \gls{bsj} positions across different tools
 and samples.
@@ -14,7 +13,6 @@ overcome this issue and increase the overall agreement between the tools.
 While proper validation of the \textit{max shift} parameter is still pending,
 it provides a promising approach for future studies.
 
-\paragraph{Quantification}
 The analysis of different quantification methods showed that calculating the
 sum of the counts derived from the detection tools smoothens out the
 differences between the tools.
@@ -23,7 +21,6 @@ tested, but did not deliver promising results.
 This is most likely due to the fact that the data used in this study was not
 optimal for the analysis of \glspl{crna}.
 
-\paragraph{Differential expression analysis}
 The differential expression analysis revealed large numbers of \glspl{crna}
 significantly associated with \gls{esr1} expression and treatment with
 \gls{let} and \gls{tam}.
@@ -32,11 +29,18 @@ were three \glspl{crna} that stood out due to their high significance.
 Two of them were not present in \gls{circatlas}, indicating that they might be
 novel \glspl{crna} associated with estrogen signaling and breast cancer.
 
-\paragraph{Target gene analysis}
 Target genes were obtained using a study that identified \gls{mirna}-gene
-interactions in mouse mammary tissue. The \gls{nf-circrna} pipeline was used to
-predict interactions between differentially expressed \glspl{crna} and the
-\glspl{mirna} that are known to be active in the tissue.
+interactions in mouse mammary tissue.
+The \gls{nf-circrna} pipeline was used to predict interactions between
+differentially expressed \glspl{crna} and the \glspl{mirna} that are known to
+be active in the tissue.
 The results showed that the target genes of the differentially expressed
 \glspl{crna} are involved in various biological processes and pathways related
 to the effects of \gls{let} and \gls{tam} treatment.
+
+Future work should focus on systematically investigating the effects of the
+\textit{max shift} parameter on the results of the \gls{bsj} detection,
+potentially leading to an optimal value for this parameter.
+
+Furthermore, the discovered candidate \glspl{crna} should be validated using
+more data and experimental methods.
