@@ -1,12 +1,45 @@
 \chapter{Abstract}
 
 \section{Abstract}
-The abstract of your thesis goes here.
+Breast cancer continues to be a major global health challenge, with estrogen
+signaling playing a pivotal role in its onset and progression.
+Recently, \glspl{crna} have emerged as important regulators of gene expression
+and signaling pathways, holding significant potential in understanding breast
+cancer biology.
+Due to their stability and tissue-specific expression, \glspl{crna} are also
+being explored as promising biomarkers for cancer diagnosis and therapy.
 
-\lipsum[1-6]
+In this thesis, I employed the \gls{nf-circrna} pipeline to analyze two
+datasets centered on estrogen signaling and breast cancer in mice.
+The first dataset explored the impact of \gls{esr1} and \gls{cyp19}
+overexpression on cancer development throughout reproductive senescence.
+The second dataset examined the effects of common breast cancer treatments,
+\gls{let} and \gls{tam}, on cancer progression during the same phase.
+
+Through the analysis, I found that the detected \glspl{crna} positions
+exhibited slight variations across different tools and samples.
+To address this, I introduced a novel parameter, \textit{max shift}, to enhance
+the robustness of \gls{crna} detection across datasets.
+
+Additionally, the differential expression analysis revealed several
+\glspl{crna} significantly associated with \gls{esr1} expression and the
+treatment methods.
+Of these, three \glspl{crna} demonstrated a particularly strong correlation
+with \gls{tam} and \gls{let} treatment.
+
+Furthermore, known \gls{mirna}-gene interactions were leveraged to identify the
+target genes of these differentially expressed \glspl{crna}.
+Gene set enrichment analysis revealed that the target genes are involved in key
+biological processes and pathways linked to the effects of \gls{let} and
+\gls{tam} treatment.
+
+While these findings are promising, further validation of the \textit{max
+    shift} parameter and the identified candidate \glspl{crna} is essential.
+Future research should prioritize systematically assessing the impact of the
+\textit{max shift} parameter on \gls{crna} detection outcomes and
+experimentally validating the candidate \glspl{crna} with additional datasets
+and methods.
 
 \section{Kurzzusammenfassung}
 
 Deutsche Version des Abstracts.
-
-\lipsum[1-6]
