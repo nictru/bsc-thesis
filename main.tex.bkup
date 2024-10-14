@@ -1,0 +1,59 @@
+\documentclass[
+  a4paper,
+  english,
+]{tumbook}
+
+% load additional packages
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{textgreek}
+\usepackage{svg}
+\usepackage{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=none
+]{biblatex}
+
+\addbibresource{thesis.bib}
+
+% thesis metadata
+\title{\Glsfmtlongpl{crna} in estrogen signaling and breast cancer biology}
+\subtitle{Zirkuläre RNAs in der Östrogensignalgebung und der Biologie des
+Brustkrebses}
+\author{Nico Trummer}
+
+\degree{Bachelor of Science (B.Sc.)}
+\dateSubmitted{15.10.2024}
+
+\examiner{Prof.\@~Dr.\@ Markus List}
+\supervisor{Markus Hoffmann, PhD}
+
+
+\begin{document}
+\setcounter{tocdepth}{4}
+
+\input{abbreviations.tex}
+
+\frontmatter
+\maketitle
+\input{chapters/0_abstract.tex}
+\tableofcontents
+
+\mainmatter
+\input{chapters/1_introduction/introduction.tex}
+\input{chapters/2_background/0_background.tex}
+\input{chapters/3_materials_and_methods/0_materials_and_methods.tex}
+\input{chapters/4_results_and_discussion/0_results_and_discussion.tex}
+\input{chapters/5_closing/0_closing.tex}
+
+\backmatter
+
+\printbibliography
+
+ChatGPT was used for text refinement.
+
+\end{document}
